@@ -10,21 +10,23 @@
 ############################
 
 # Name of website
-title: My website
+title: openQSE
 
 # Your name to show in the footer
-author: Some Person
+author: openQSE Initiative
 
 ###############################################
 # --- List of links in the navigation bar --- #
 ###############################################
 
 navbar-links:
-  About Me: "aboutme"
+  Docs: "#"
+  Current Efforts: "#"
+  Glossary: "#"
+  Meetings: "meetings"
   Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
+    - Github: "https://github.com/openQSE"
+    - Mailing Lists: "#"
 
 ################
 # --- Logo --- #
@@ -50,14 +52,14 @@ round-avatar: true
 # You can change the order that they show up on the page by changing the order here.
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
-  email: "someone@example.com"
+  email: "webmaster@openqse.org"
   rss: true  # remove this line if you don't want to show an RSS link at the bottom
-  facebook: deanattali
-  github: daattali
-  twitter: daattali
-  patreon: DeanAttali
-  youtube: "@daattali"
-  whatsapp: 15551212
+#  facebook: deanattali
+#  github: daattali
+#  twitter: daattali
+#  patreon: DeanAttali
+#  youtube: "@daattali"
+#  whatsapp: 15551212
 #  medium: yourname
 #  reddit: yourname or r/yoursubreddit
 #  linkedin: daattali
@@ -86,7 +88,7 @@ social-network-links:
 
 # If you want your website to generate an RSS feed, provide a description
 # The URL for the feed will be https://<your_website>/feed.xml
-rss-description: This website is a virtual proof that I'm awesome
+rss-description: The goal is for openQSE to be a unified initiative to bring together vendors, collaborators, labs and universities in building an open community.
 
 ###########################
 # --- General options --- #
@@ -102,7 +104,7 @@ share-links-active:
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "MyWebsite.com"
+url-pretty: "openQSE.org"
 
 # Add the website title to the title of every page
 title-on-all-pages: true
@@ -130,6 +132,10 @@ navbar-var-length: false
 # The keywords to associate with your website, for SEO purposes
 #keywords: "my,list,of,keywords"
 
+# Custom Collections Configuration
+collections:
+  - meetings
+
 ######################################
 # --- Colours / background image --- #
 ######################################
@@ -138,12 +144,12 @@ navbar-var-length: false
 
 page-col: "#FFFFFF"
 text-col: "#404040"
-link-col: "#008AFF"
-hover-col: "#0085A1"
-navbar-col: "#EAEAEA"
+link-col: "#007833"
+hover-col: "#007833"
+navbar-col: "#C5C5C5"
 navbar-text-col: "#404040"
 navbar-border-col: "#DDDDDD"
-footer-col: "#EAEAEA"
+footer-col: "#C5C5C5"
 footer-text-col: "#777777"
 footer-link-col: "#404040"
 footer-hover-col: "#0085A1"
@@ -260,7 +266,7 @@ date_format: "%B %-d, %Y"
 #################################################################################
 
 # Output options (more information on Jekyll's site)
-timezone: "America/Toronto"
+timezone: "America/New_York"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
@@ -277,8 +283,8 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      comments: true  # add comments to all blog posts
-      social-share: true # add social media sharing buttons to all blog posts
+      comments: false  # add comments to all blog posts
+      social-share: false # add social media sharing buttons to all blog posts
   -
     scope:
       path: "" # any file that's not a post will be a "page" layout by default
