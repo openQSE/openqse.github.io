@@ -1,1 +1,0 @@
-Sitemap: /pr-9/sitemap.xml
