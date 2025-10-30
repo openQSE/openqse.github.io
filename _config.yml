@@ -22,6 +22,8 @@ author: openQSE Initiative
 navbar-links:
   #Docs: "#"
   #Glossary: "#"
+  TestMe:
+    - OpenQSE Website: "https://github.com/openQSE/openqse.github.io"
   Current Efforts:
     - OpenQSE-Spec: "https://github.com/openQSE/openqse-spec"
   Meetings: "meetings"
