@@ -135,7 +135,10 @@ navbar-var-length: false
 
 # Custom Collections Configuration
 collections:
-  - meetings
+  meetings:
+    output: true
+    permalink: /:collection/:name/
+
 
 ######################################
 # --- Colours / background image --- #
