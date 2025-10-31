@@ -6,9 +6,10 @@ layout: page
 
 {% assign posts = paginator.meetings | default: site.meetings %}
 
-<ul class="space-y-6" role="list">
-  {% for post in posts %}
-  <li class="border-b border-gray-200 pb-6">
+<!-- role="list" needed so that `list-style: none` in Safari doesn't remove the list semantics -->
+<ul class="posts-list list-unstyled" role="list">
+  {% for post in posts reversed %}
+  <li class="post-preview">
     <article>
       <a href="{{ post.url | absolute_url }}" class="no-underline">
         <h2 class="text-2xl font-bold text-gray-900 hover:text-blue-500">{{ post.title | strip_html }}</h2>
