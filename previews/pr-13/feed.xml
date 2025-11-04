@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    
+    <title>openQSE</title>
+    
+    
+    <description>The goal is for openQSE to be a unified initiative to bring together vendors, collaborators, labs and universities in building an open community.</description>
+    
+    <link>/previews/pr-13/</link>
+    <atom:link href="/previews/pr-13/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+      <item>
+        <title>Sample blog post to learn markdown tips</title>
+        
+        <dc:creator><![CDATA[ Bill Smith ]]></dc:creator>
+        
+        <description>
+          There&apos;s lots to learn! - 
+          This is a demo post to show you how to write blog posts with markdown. I strongly encourage you to take 5 minutes to learn how to write in markdown - it’ll teach you how to transform regular text into bold/italics/tables/etc.I also encourage you to look at the code that...
+        </description>
+        <pubDate>Fri, 28 Feb 2020 00:00:00 -0500</pubDate>
+        <link>/previews/pr-13/2020-02-28-sample-markdown/</link>
+        <guid isPermaLink="true">/previews/pr-13/2020-02-28-sample-markdown/</guid>
+      </item>
+    
+  </channel>
+</rss>
