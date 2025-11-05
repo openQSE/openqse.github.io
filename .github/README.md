@@ -26,10 +26,14 @@
 
 #### PR Status Checks
 - **Workflow:** `.github/workflows/pr-checks.yml`
-- Runs on every PR (opened, updated, labeled)
+- Runs on every PR (opened, updated, reopened) - does NOT run on label changes for efficiency
+- Two-stage validation:
+  1. **Build Stage:** Validates Jekyll build succeeds
+  2. **Merge Check Stage:** Runs only after build succeeds, checks for DO-NOT-MERGE label
 - Blocks merge if:
-  - PR has `DO-NOT-MERGE` label, OR
-  - Jekyll build fails
+  - Jekyll build fails (build-test job), OR
+  - PR has `DO-NOT-MERGE` label (check-merge-status job depends on build-test)
+- **Note:** Label check runs on next push, not immediately when label is added/removed
 - Uses shared build workflow to validate changes
 
 #### PR Previews
