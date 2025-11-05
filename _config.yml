@@ -147,3 +147,5 @@ exclude:
   - docs/
   - _includes.bak
   - _layouts.bak
+  - vendor/
+  - .bundle/
