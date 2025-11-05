@@ -1,0 +1,46 @@
+<ul class="list-reset lg:flex justify-end flex-1 items-center">
+    <li class="mr-3">
+        <a class="inline-block py-2 px-4 text-white no-underline hover:text-pink-500 toggleColour" href="/meetings">Meetings</a>
+    </li>
+    <li class="mr-3 relative">
+        <a class="inline-block py-2 px-4 text-white no-underline hover:text-pink-500 toggleColour cursor-pointer" onclick="toggleDropdown(event, 'dropdown-efforts')">Current Efforts ▾</a>
+        <ul id="dropdown-efforts" class="absolute hidden bg-white text-gray-800 shadow-lg mt-2 py-2 rounded z-50" style="min-width: 180px;">
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-pink-500 no-underline text-gray-800" href="https://github.com/openQSE/openqse-spec" target="_blank">OpenQSE-Spec</a></li>
+        </ul>
+    </li>
+    <li class="mr-3 relative">
+        <a class="inline-block py-2 px-4 text-white no-underline hover:text-pink-500 toggleColour cursor-pointer" onclick="toggleDropdown(event, 'dropdown-resources')">Resources ▾</a>
+        <ul id="dropdown-resources" class="absolute hidden bg-white text-gray-800 shadow-lg mt-2 py-2 rounded z-50" style="min-width: 150px;">
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-pink-500 no-underline text-gray-800" href="https://github.com/openQSE" target="_blank">Github</a></li>
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-pink-500 no-underline text-gray-800" href="https://openqse.slack.com" target="_blank">Slack</a></li>
+        </ul>
+    </li>
+</ul>
+
+<script>
+function toggleDropdown(event, dropdownId) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const dropdown = document.getElementById(dropdownId);
+    const allDropdowns = document.querySelectorAll('[id^="dropdown-"]');
+
+    // Close all other dropdowns
+    allDropdowns.forEach(function(dd) {
+        if (dd.id !== dropdownId) {
+            dd.classList.add('hidden');
+        }
+    });
+
+    // Toggle this dropdown
+    dropdown.classList.toggle('hidden');
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', function() {
+    const allDropdowns = document.querySelectorAll('[id^="dropdown-"]');
+    allDropdowns.forEach(function(dd) {
+        dd.classList.add('hidden');
+    });
+});
+</script>

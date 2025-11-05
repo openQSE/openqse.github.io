@@ -1,31 +1,24 @@
----
-layout: base
----
+<!DOCTYPE HTML>
+<html>
 
-{% include header.html type="page" %}
+<head lang="en">
+    {% include head.html %}
+</head>
 
-<main class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
-  <div class="row">
-    <div class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}">
-      {% if page.before-content %}
-        <div class="before-content">
-          {% for file in page.before-content %}
-            {% include {{ file }} %}
-          {% endfor %}
+<body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
+
+    {% include header_page.html %}
+
+    <section class="bg-white py-8 page">
+        <div class="container mx-auto px-2 pt-4 pb-12 text-gray-800">
+            {{ content }}
         </div>
-      {% endif %}
+    </section>
 
-      {{ content }}
+    <footer class="bg-white">
+        {% include footer.html %}
+    </footer>
 
-      {% if page.after-content %}
-        <div class="after-content">
-          {% for file in page.after-content %}
-            {% include {{ file }} %}
-          {% endfor %}
-        </div>
-      {% endif %}
+</body>
 
-      {% include comments.html %}
-    </div>
-  </div>
-</main>
+</html>
