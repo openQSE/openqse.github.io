@@ -17,7 +17,7 @@ jobs:
       - name: Checkout PR
         uses: actions/checkout@v4
 
-      # IMPORTANT: If you change ruby-version here, also update it in jekyll.yml
+      # IMPORTANT: If you change ruby-version here, also update it in build-jekyll.yml
       - name: Setup Ruby
         uses: ruby/setup-ruby@4a9ddd6f338a97768b8006bf671dfbad383215f4
         with:

@@ -17,17 +17,38 @@
 
 ## How It Works
 
-### Main Deployment
-- `main` branch → Deploys to `gh-pages` branch root → `openqse.org`
-- Workflow: `.github/workflows/jekyll.yml`
+### Workflows Overview
 
-### PR Previews
+#### Build Workflow (Shared)
+- **Workflow:** `.github/workflows/build-jekyll.yml`
+- Reusable workflow that builds the Jekyll site with configurable baseurl
+- Used by both PR checks and production deployment to ensure consistency
+
+#### PR Status Checks
+- **Workflow:** `.github/workflows/pr-checks.yml`
+- Runs on every PR (opened, updated, reopened) - does NOT run on label changes for efficiency
+- Two-stage validation:
+  1. **Build Stage:** Validates Jekyll build succeeds
+  2. **Merge Check Stage:** Runs only after build succeeds, checks for DO-NOT-MERGE label
+- Blocks merge if:
+  - Jekyll build fails (build-test job), OR
+  - PR has `DO-NOT-MERGE` label (check-merge-status job depends on build-test)
+- **Note:** Label check runs on next push, not immediately when label is added/removed
+- Uses shared build workflow to validate changes
+
+#### PR Previews
+- **Workflow:** `.github/workflows/pr-preview.yml`
 - PR branches → Deploy to `gh-pages/previews/pr-X/` subdirectories → `https://openqse.org/previews/pr-X/`
-- Workflow: `.github/workflows/pr-preview.yml`
 - Bot comments on PR with preview URL
 - Auto-updates on new commits
 - Auto-cleans up when PR closes
 - **Note:** Previews are accessible via the custom domain once main site is deployed
+
+#### Main Deployment
+- **Workflow:** `.github/workflows/deploy-jekyll.yml`
+- `main` branch → Deploys to `gh-pages` branch root → `openqse.org`
+- Uses shared build workflow, then deploys artifact to production
+- Keeps PR preview directories intact (`keep_files: true`)
 
 ---
 
@@ -80,9 +101,15 @@ In repository **Settings** → **Actions** → **General**:
 
 ### Merging to Production
 1. Review your changes at the PR preview URL
-2. Merge the PR to `main`
-3. The main workflow deploys to production at `https://openqse.org`
-4. The PR preview is automatically cleaned up
+2. Ensure PR checks pass (build succeeds, no DO-NOT-MERGE label)
+3. Merge the PR to `main`
+4. The deployment workflow deploys to production at `https://openqse.org`
+5. The PR preview is automatically cleaned up
+
+### Using DO-NOT-MERGE Label
+- Add `DO-NOT-MERGE` label to a PR to prevent accidental merging
+- PR checks will fail while this label is present
+- Remove the label when the PR is ready to merge
 
 ---
 
