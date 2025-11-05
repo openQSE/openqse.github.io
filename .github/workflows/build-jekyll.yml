@@ -1,0 +1,37 @@
+name: Build Jekyll Site
+
+on:
+  workflow_call:
+    inputs:
+      baseurl:
+        required: false
+        type: string
+        default: ""
+        description: "Base URL for Jekyll build"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # IMPORTANT: If you change ruby-version here, update across all workflows
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@4a9ddd6f338a97768b8006bf671dfbad383215f4
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+          cache-version: 0
+
+      - name: Build with Jekyll
+        run: bundle exec jekyll build --baseurl "${{ inputs.baseurl }}"
+        env:
+          JEKYLL_ENV: production
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: jekyll-site-${{ github.sha }}
+          path: _site/
+          retention-days: 1
