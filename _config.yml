@@ -24,7 +24,7 @@ navbar-links:
   #Glossary: "#"
   Current Efforts:
     - OpenQSE-Spec: "https://github.com/openQSE/openqse-spec"
-  Meetings: "meetings"
+  Meetings: "meetings" FOOBAR SYNTAX ERROR HERE
   Resources:
     - Github: "https://github.com/openQSE"
     - Slack: "https://openqse.slack.com"
