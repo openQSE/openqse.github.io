@@ -9,8 +9,14 @@ permissions:
   contents: read
 
 jobs:
+  build-test:
+    uses: ./.github/workflows/build-jekyll.yml
+    with:
+      baseurl: ""
+
   check-merge-status:
     runs-on: ubuntu-latest
+    needs: [build-test]
     steps:
       - name: Check for DO-NOT-MERGE label
         uses: actions/github-script@v7
@@ -33,8 +39,3 @@ jobs:
             } else {
               console.log('✅ No DO-NOT-MERGE label found. PR can be merged.');
             }
-
-  build-test:
-    uses: ./.github/workflows/build-jekyll.yml
-    with:
-      baseurl: ""
