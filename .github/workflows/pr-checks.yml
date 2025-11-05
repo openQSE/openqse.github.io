@@ -1,0 +1,49 @@
+name: PR Status Checks
+
+on:
+  pull_request:
+    # Only run on code changes (opened, synchronize, reopened)
+    # Does NOT run on label changes (labeled, unlabeled) for efficiency
+    # Label check will run on next push after label is added/removed
+    types: [opened, synchronize, reopened]
+
+permissions:
+  pull-requests: read
+  contents: read
+
+jobs:
+  # Stage 1: Build validation
+  # Calls reusable build workflow to ensure Jekyll site builds successfully
+  build-test:
+    uses: ./.github/workflows/build-jekyll.yml
+    with:
+      baseurl: ""
+
+  # Stage 2: Merge status check
+  # Only runs after build-test succeeds (via needs dependency)
+  # Fails if PR has DO-NOT-MERGE label, preventing accidental merges
+  check-merge-status:
+    runs-on: ubuntu-latest
+    needs: [build-test]
+    steps:
+      - name: Check for DO-NOT-MERGE label
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data: pullRequest } = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number,
+            });
+
+            const labels = pullRequest.labels.map(label => label.name);
+            const hasDoNotMerge = labels.some(label =>
+              label.toLowerCase() === 'do-not-merge' ||
+              label.toLowerCase() === 'do not merge'
+            );
+
+            if (hasDoNotMerge) {
+              core.setFailed('❌ This PR has the DO-NOT-MERGE label and cannot be merged. Remove the label to proceed.');
+            } else {
+              console.log('✅ No DO-NOT-MERGE label found. PR can be merged.');
+            }
