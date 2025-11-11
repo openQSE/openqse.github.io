@@ -19,7 +19,11 @@
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               {%- for childlink in link[1] -%}
                 {%- for linkparts in childlink %}
-                  <a class="dropdown-item" href="{{ linkparts[1] | relative_url }}">{{ linkparts[0] }}</a>
+                  {%- if linkparts[1].url -%}
+                    <a class="dropdown-item" href="{{ linkparts[1].url | relative_url }}"{% if linkparts[1].new-window %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ linkparts[0] }}</a>
+                  {%- else -%}
+                    <a class="dropdown-item" href="{{ linkparts[1] | relative_url }}">{{ linkparts[0] }}</a>
+                  {%- endif -%}
                 {%- endfor -%}
               {%- endfor %}
             </div>
