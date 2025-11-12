@@ -4,9 +4,19 @@ title: 404 - Page not found
 permalink: /404.html
 ---
 
-<div class="text-center">
-  <h1>Whoops, this page doesn't exist.</h1>
-  <h1>Move along. (404 error)</h1>
-  <br/>
+<div class="container mx-auto px-4 py-16 md:py-24">
+  <div class="max-w-3xl mx-auto text-center">
+    <div class="mb-8 bg-white p-8 rounded-lg shadow-md">
+      <h1 class="text-5xl md:text-6xl font-bold text-gray-800 mb-4">404</h1>
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-700 mb-6">Page Not Found</h2>
+      <p class="text-xl text-gray-600 leading-relaxed mb-8">
+        We could not find the page you are looking for. The page may have been moved, deleted, or the URL might be incorrect.
+      </p>
+      <a href="{{ '/' | relative_url }}"
+         class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+        Return to Homepage
+      </a>
+    </div>
 
+  </div>
 </div>
