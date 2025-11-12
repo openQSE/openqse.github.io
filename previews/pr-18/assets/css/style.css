@@ -108,10 +108,10 @@
 }
 
 .prose a {
-    color: #ec4899;
+    color: #3b82f6; /* blue-500 - regular link */
     text-decoration: underline;
 }
 
 .prose a:hover {
-    color: #db2777;
+    color: #1d4ed8; /* blue-700 - hover link */
 }
