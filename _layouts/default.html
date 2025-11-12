@@ -1,25 +1,20 @@
----
-layout: base
----
+<!DOCTYPE HTML>
+<html>
 
-<div class="intro-header"></div>
+<head lang="en">
+    {% include head.html %}
+</head>
 
-<main class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
-  {% if page.before-content %}
-    <div class="before-content">
-      {% for file in page.before-content %}
-        {% include {{ file }} %}
-      {% endfor %}
-    </div>
-  {% endif %}
+<body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
 
-  {{ content }}
+    {% include header.html %}
 
-  {% if page.after-content %}
-    <div class="after-content">
-      {% for file in page.after-content %}
-        {% include {{ file }} %}
-      {% endfor %}
-    </div>
-  {% endif %}
-</main>
+    {{ content }}
+
+    <footer class="bg-white">
+        {% include footer.html %}
+    </footer>
+
+</body>
+
+</html>
