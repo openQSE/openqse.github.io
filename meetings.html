@@ -3,12 +3,29 @@ layout: meeting
 title: Meetings
 ---
 
+<div class="meeting-times-link">
+  <a href="https://github.com/openQSE/openqse-admin/wiki#meetings" target="_blank" rel="noopener noreferrer">Meeting Times</a>
+</div>
 
-<ul>
+<!--
+    NOTE: Meetings are reverse-chronologically sorted (manually).
 
-  <li><a href="https://github.com/openQSE/openqse-admin/wiki#meetings">Meeting
-    Times</a>
+        * Only need to edit this file when adding an include
+          for a new YEAR.
+          Example:
+            1. Copy previous year to new year file under _includes/
+            2. Add include of new file to top-of-list below
 
-  <li><a href="https://github.com/openQSE/openqse-admin/wiki/2025-Meetings">2025 Meetings</a>
+        * Weekly meeting updates, see _includes/ file.
+          (e.g., "<YEAR>-meetings.html")
+  -->
 
-</ul>
+
+<!-- 2025 Meetings Section -->
+{% include 2025-meetings.html %}
+
+<!-- 2024 Meetings Section -->
+{% include 2024-meetings.html %}
+
+<!-- 2023 Meetings Section -->
+{% include 2023-meetings.html %}
