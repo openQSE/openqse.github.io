@@ -1,13 +1,5 @@
 [ 
  
-{ 
-"title"    : "Sample blog post to learn markdown tips", 
-"desc"     : "Sample blog post to learn markdown tips", 
-"category" : "test", 
-"url"      : "/previews/pr-18/2020-02-28-sample-markdown/", 
-"date"     : "February 28, 2020" 
-}, 
- 
  
 { 
 "title"    : "OpenQSE", 
