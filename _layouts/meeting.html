@@ -11,7 +11,7 @@ layout: page
   <li class="border-b border-gray-200 pb-6">
     <article>
       <a href="{{ post.url | absolute_url }}" class="no-underline">
-        <h2 class="text-2xl font-bold text-gray-900 hover:text-pink-500">{{ post.title | strip_html }}</h2>
+        <h2 class="text-2xl font-bold text-gray-900 hover:text-blue-500">{{ post.title | strip_html }}</h2>
 
         {% if post.subtitle %}
           <h3 class="text-lg text-gray-600 mt-1">
@@ -35,7 +35,7 @@ layout: page
         {{ post.excerpt | strip_html | truncatewords: excerpt_length }}
         {% assign excerpt_word_count = post.excerpt | number_of_words %}
         {% if post.content != post.excerpt or excerpt_word_count > excerpt_length %}
-          <a href="{{ post.url | absolute_url }}" class="text-pink-500 hover:text-pink-600">[Read&nbsp;More]</a>
+          <a href="{{ post.url | absolute_url }}" class="text-blue-500 hover:text-blue-600">[Read&nbsp;More]</a>
         {% endif %}
       </div>
       {% endunless %}
@@ -58,7 +58,7 @@ layout: page
 <div class="flex justify-between mt-8">
   {% if paginator.previous_page %}
   <a href="{{ paginator.previous_page_path | absolute_url }}"
-     class="inline-block bg-pink-500 text-white px-6 py-2 rounded hover:bg-pink-600">
+     class="inline-block bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">
     ← Newer Posts
   </a>
   {% else %}
@@ -67,7 +67,7 @@ layout: page
 
   {% if paginator.next_page %}
   <a href="{{ paginator.next_page_path | absolute_url }}"
-     class="inline-block bg-pink-500 text-white px-6 py-2 rounded hover:bg-pink-600">
+     class="inline-block bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">
     Older Posts →
   </a>
   {% endif %}
