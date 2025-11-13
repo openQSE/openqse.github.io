@@ -40,6 +40,7 @@ This is the most common "gotcha" when maintaining this site. Unlike many Jekyll 
 
 **Current menu structure:**
 - Meetings → `/meetings`
+- Community → `/community`
 - Resources (dropdown)
   - Github → `https://github.com/openQSE`
   - Slack → `https://openqse.slack.com`
@@ -60,6 +61,19 @@ This is the most common "gotcha" when maintaining this site. Unlike many Jekyll 
 3. Add content to the file
 4. **Manually add navigation link** to `_includes/menu.html` (see above)
 5. Test locally: `bundle exec jekyll serve`
+
+### Adding Organization Logos to Community Page
+
+1. Add logo images to `assets/img/` directory
+2. Edit `community.html`
+3. Update the org cards with real organization info:
+   ```html
+   <div class="org-card">
+     <img src="/assets/img/org-logo.png" alt="Org Name" class="org-logo">
+     <div class="org-name">Organization Name</div>
+     <div class="org-description">Brief description</div>
+   </div>
+   ```
 
 ### Adding a Blog Post
 
@@ -118,7 +132,8 @@ This is the most common "gotcha" when maintaining this site. Unlike many Jekyll 
 │   └── js/             # JavaScript files
 ├── _config.yml         # Jekyll configuration
 ├── index.html          # Homepage
-└── meetings.html       # Meetings index page
+├── meetings.html       # Meetings index page
+└── community.html      # Community page
 ```
 
 ### Key Files
