@@ -163,43 +163,54 @@ document.addEventListener('click', function() {
   <div class="community-grid">
 
     <!--
-        NOTE: Sorting based on Org name (in abbreviated format),
-        i.e., Alice before AMD.
+        NOTE: Sorting based on Org name (in abbreviated format), i.e., Alice before AMD.
+
+        IMPORTANT: All asset URLs must use Jekyll's relative_url filter to work
+        correctly in both production and PR preview environments.
+
+        Example:
+          /previews/pr-25/assets/img/logos/logo.png
+
+        This ensures URLs work in:
+          - Production: https://openqse.org/assets/img/logos/logo.png
+          - PR Preview: https://openqse.org/pr-123/assets/img/logos/logo.png
+
+        DO NOT use absolute paths like /assets/... as they will break in PR previews.
      -->
 
     <!-- Org: Alice & Bob -->
     <div class="org-card">
-      <a href="https://alice-bob.com/"><img src="/assets/img/logos/alice-bob.png" alt="Alice & Bob" class="org-logo"></a>
+      <a href="https://alice-bob.com/"><img src="/previews/pr-25/assets/img/logos/alice-bob.png" alt="Alice & Bob" class="org-logo"></a>
       <!-- <div class="org-name">Alice &amp; Bob</div> -->
     </div>
 
     <!-- Org: AMD -->
     <div class="org-card">
-      <a href="https://www.amd.com/"><img src="/assets/img/logos/amd.png" alt="AMD" class="org-logo"></a>
+      <a href="https://www.amd.com/"><img src="/previews/pr-25/assets/img/logos/amd.png" alt="AMD" class="org-logo"></a>
       <!-- <div class="org-name">Advanced Micro Devices</div> -->
     </div>
 
     <!-- Org: IBM -->
     <div class="org-card">
-      <a href="https://www.ibm.com/"><img src="/assets/img/logos/ibm.svg" alt="IBM" class="org-logo"></a>
+      <a href="https://www.ibm.com/"><img src="/previews/pr-25/assets/img/logos/ibm.svg" alt="IBM" class="org-logo"></a>
       <!-- <div class="org-name">IBM</div> -->
     </div>
 
     <!-- Org: IonQ-->
     <div class="org-card">
-      <a href="https://ionq.com/"><img src="/assets/img/logos/ionq.png" alt="IonQ" class="org-logo"></a>
+      <a href="https://ionq.com/"><img src="/previews/pr-25/assets/img/logos/ionq.png" alt="IonQ" class="org-logo"></a>
       <!-- <div class="org-name">IonQ</div> -->
     </div>
 
     <!-- Org: MQSC -->
     <div class="org-card">
-      <a href="https://munichquantum.software/"><img src="/assets/img/logos/mqsc.png" alt="MQSC" class="org-logo"></a>
+      <a href="https://munichquantum.software/"><img src="/previews/pr-25/assets/img/logos/mqsc.png" alt="MQSC" class="org-logo"></a>
       <!-- <div class="org-name">Munich Quantum Software Company</div> -->
     </div>
 
     <!-- Org: ORNL -->
     <div class="org-card">
-      <a href="https://www.ornl.gov/"><img src="/assets/img/logos/ornl.svg" alt="ORNL" class="org-logo"></a>
+      <a href="https://www.ornl.gov/"><img src="/previews/pr-25/assets/img/logos/ornl.svg" alt="ORNL" class="org-logo"></a>
       <!-- <div class="org-name">Oak Ridge National Laboratory</div> -->
     </div>
 
