@@ -1,0 +1,447 @@
+<!DOCTYPE HTML>
+<html>
+
+<head lang="en">
+    <title> Weekly: Oct. 06, 2025 - openQSE</title>
+
+<meta charset="UTF-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="The goal is for openQSE to be a unified initiative to bring together vendors, collaborators, labs and universities in building an open community." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="icon" type="image/png" href="/previews/pr-23/assets/img/openQSE-logo.png">
+
+<link rel="stylesheet" href="/previews/pr-23/assets/css/tailwind.min.css">
+<link rel="stylesheet" href="/previews/pr-23/assets/css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+
+<style>
+    .gradient {
+        background: linear-gradient(90deg, #07326a 0%, #064089 50%, #0F2027 100%);
+    }
+</style>
+
+</head>
+
+<body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
+
+    <nav id="header" class="fixed w-full z-30 top-0 text-white">
+    <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+        <div class="pl-4 flex items-center">
+            <a class="text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="/previews/pr-23/">
+                <img src="/previews/pr-23/assets/img/openQSE-logo.png" style="max-height: 1em; float: left" id="logo" />
+                <span style="padding-left: 0.5em; font-size: .6em; vertical-align: top;">openQSE</span>
+            </a>
+        </div>
+        <div class="block lg:hidden pr-4">
+            <button id="nav-toggle"
+                class="flex items-center p-1 text-blue-400 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Menu</title>
+                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                </svg>
+            </button>
+        </div>
+        <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20"
+            id="nav-content">
+            <ul class="list-reset lg:flex justify-end flex-1 items-center">
+    <li class="mr-3">
+        <a class="inline-block py-2 px-4 text-white no-underline hover:text-blue-500 toggleColour" href="/previews/pr-23/meetings">Meetings</a>
+    </li>
+    <li class="mr-3 relative">
+        <a class="inline-block py-2 px-4 text-white no-underline hover:text-blue-500 toggleColour cursor-pointer" onclick="toggleDropdown(event, 'dropdown-resources')">Resources ▾</a>
+        <ul id="dropdown-resources" class="absolute hidden bg-white text-gray-800 shadow-lg mt-2 py-2 rounded z-50" style="min-width: 150px;">
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="https://github.com/openQSE" target="_blank" rel="noopener noreferrer">Github</a></li>
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="https://openqse.slack.com" target="_blank" rel="noopener noreferrer">Slack</a></li>
+        </ul>
+    </li>
+</ul>
+
+<script>
+function toggleDropdown(event, dropdownId) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const dropdown = document.getElementById(dropdownId);
+    const allDropdowns = document.querySelectorAll('[id^="dropdown-"]');
+
+    // Close all other dropdowns
+    allDropdowns.forEach(function(dd) {
+        if (dd.id !== dropdownId) {
+            dd.classList.add('hidden');
+        }
+    });
+
+    // Toggle this dropdown
+    dropdown.classList.toggle('hidden');
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', function() {
+    const allDropdowns = document.querySelectorAll('[id^="dropdown-"]');
+    allDropdowns.forEach(function(dd) {
+        dd.classList.add('hidden');
+    });
+});
+</script>
+
+        </div>
+    </div>
+    <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
+</nav>
+
+<section class="pt-24">
+    <div class="container mx-auto px-2 pt-4 pb-12 text-gray-800">
+        <h1 class="w-full my-2 text-3xl font-bold leading-tight text-center text-white">
+            Weekly: Oct. 06, 2025
+        </h1>
+    </div>
+</section>
+
+
+    <section class="bg-white py-8 page">
+        <div class="max-w-full mx-auto px-4 pt-4 pb-12 text-gray-800">
+            <article class="w-full">
+                <div class="text-sm text-gray-600 mb-4">
+                    
+                    <time datetime="2025-10-06T00:00:00-04:00">October 6, 2025</time>
+                    
+                    
+                </div>
+
+                <!-- Post Navigation (Top) -->
+                <div class="mb-8 pb-8 border-b border-gray-300">
+                    <nav class="grid grid-cols-3 gap-4 items-center">
+    <!-- Previous -->
+    <div class="justify-self-start">
+        
+        <a href="/meetings/2025-09-29-meeting/" class="flex items-center text-blue-600 hover:text-blue-800 group">
+            <svg class="w-5 h-5 mr-2 flex-shrink-0 transform group-hover:-translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <div class="text-left">
+                <div class="text-xs text-gray-500 uppercase tracking-wide">Previous</div>
+                <div class="font-medium">Weekly: Sep. 29, 2025</div>
+            </div>
+        </a>
+        
+    </div>
+
+    <!-- All Meetings -->
+    <div class="justify-self-center">
+        <a href="/meetings" class="flex items-center justify-center text-blue-600 hover:text-blue-800 group">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+            </svg>
+            <div class="text-center">
+                <div class="text-xs text-gray-500 uppercase tracking-wide">All Meetings</div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Next -->
+    <div class="justify-self-end">
+        
+        <a href="/meetings/2025-10-13-meeting/" class="flex items-center text-blue-600 hover:text-blue-800 group">
+            <div class="text-right">
+                <div class="text-xs text-gray-500 uppercase tracking-wide">Next</div>
+                <div class="font-medium">Weekly: Oct. 13, 2025</div>
+            </div>
+            <svg class="w-5 h-5 ml-2 flex-shrink-0 transform group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+            </svg>
+        </a>
+        
+    </div>
+</nav>
+
+                </div>
+
+                <h2 id="meeting---october-06-2025">Meeting - October 06, 2025</h2>
+
+<ul>
+  <li><strong>Date</strong>: Oct. 06, 2025</li>
+  <li><strong>Time</strong>: 7 pm - 8 pm US Eastern Daylight Time (<a href="https://time.is/1900_06_October_2025_in_ET">View Meeting Time in Your Timezone</a>)</li>
+  <li><strong>Location</strong>: Virtual Meeting.</li>
+</ul>
+
+<h2 id="upcoming-meetings"><strong>Upcoming meetings</strong></h2>
+<ul>
+  <li>Next: Monday, Oct. 13, 2025 @ 12 pm ET - 1 pm US Eastern Daylight Time (<a href="https://time.is/1200_13_October_2025_in_ET">View Meeting Time in Your Timezone</a>)</li>
+</ul>
+
+<h2 id="agenda">Agenda</h2>
+<ul>
+  <li>Go over the sequence diagrams included in the commit referenced by <a href="https://github.com/openQSE/openqse-spec/issues/5">Issue #5</a></li>
+</ul>
+
+<h2 id="attendance">Attendance</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Person</th>
+      <th>Institution</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ashlyn Burch Grinevich</td>
+      <td>ORNL</td>
+    </tr>
+    <tr>
+      <td>Patrick Deuley</td>
+      <td>IonQ</td>
+    </tr>
+    <tr>
+      <td>Vicente Ortega</td>
+      <td>ORNL</td>
+    </tr>
+    <tr>
+      <td>Miwako Tsuji</td>
+      <td>RIKAN</td>
+    </tr>
+    <tr>
+      <td>Catalina Albornoz</td>
+      <td>Xanadu</td>
+    </tr>
+    <tr>
+      <td>Kevin Kissel</td>
+      <td>Alice &amp; Bob</td>
+    </tr>
+    <tr>
+      <td>Heidi Nelson-Quillin</td>
+      <td>IonQ</td>
+    </tr>
+    <tr>
+      <td>Ermal Rrapaj</td>
+      <td>LBNL/Nersc</td>
+    </tr>
+    <tr>
+      <td>Andreas Sawadsky</td>
+      <td>Quantum Brilliance</td>
+    </tr>
+    <tr>
+      <td>Laura Schulz</td>
+      <td>ANL</td>
+    </tr>
+    <tr>
+      <td>Elaine Wong</td>
+      <td>ORNL</td>
+    </tr>
+    <tr>
+      <td>Amir Shehata</td>
+      <td>ORNL</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="notes">Notes</h2>
+<ul>
+  <li>In depth discussion of
+    <ul>
+      <li>The possible Quantum/HPC workflows</li>
+      <li>The roles and responsibilities of classical compute in the workflows</li>
+      <li>The relationship between classical compute and quantum compute
+        <ul>
+          <li>Catalina proposed being specific about what is pre- and post-processing steps vs the execution itself</li>
+          <li>How different architectures/use cases/applications/customers may have different workload designs which may have very different inner/outer loops</li>
+          <li>Patrick cited his team identifying six distinct <em>“styles”</em> of hybrid programs, listed in Slack for further discussion
+            <ul>
+              <li>From slack:
+***
+“Hybrid is a theme not a feature” and can occur at multiple layers, and if we’re planning for 2030, there’s a lot we might see by then:</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Dynamic circuits define execute classical logic directly in the IR and process it in the coherence window itself</li>
+  <li><a href="https://arxiv.org/abs/2407.18527">This paper</a> proposes low-latency, external classical co-processors working via socket with the control software (!!)</li>
+  <li>Securely deployed function containers may be operating directly on the system head for minimal latency</li>
+  <li>Classical co-processing may be happening on an HPC system locally for “tightly coupled” workloads, or remotely for “loosely coupled” workloads</li>
+  <li>Co-processors may be running on containers colocated with the QPU, in some cases as a black box service</li>
+  <li>
+    <p>Co-processors may be running on a hosted cloud service provided as SaaS
+***</p>
+  </li>
+  <li><strong>Preliminary agreement on the term “Quantum Resource”</strong>
+    <ul>
+      <li>Quantum Resource includes the QPU and classical resources</li>
+      <li>Classical compute in the Quantum Resource performs computation in support of quantum operations (e.g., error correction)
+        <ul>
+          <li>General consensus that while classical capacity in a “quantum resource” <em>may</em> be capable of more, it’s better to scope this to only the classical processing power required for the execution itself and not additional pre/post processing.</li>
+        </ul>
+      </li>
+      <li>Classical only nodes should be described separately (even if they are functionally the same system) for architectural uniformity</li>
+    </ul>
+  </li>
+  <li><strong>Questions/topics for future consideration</strong>
+    <ul>
+      <li>How do we estimate needed resources for hybrid workloads? Where do lines get drawn?</li>
+      <li>How do we think NISQ-era and post-NISQ workloads will change and differ in processing needs? Is it worth describing them separately?</li>
+      <li>What are the major ways in which different architectures approach these workload problems differently?</li>
+      <li>Are there some common workload designs we can agree on as references to backtest against?</li>
+      <li>Tierkreis (Quantinuum) was used as a reference for this sequence diagram—what are some other systems/frameworks we could evaluate as prior art in this space?</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="todos">Todos</h2>
+<ul>
+  <li>Open invitation for participants to create more sequence diagrams to express the workflows they have in mind</li>
+</ul>
+
+
+
+                
+                <div class="mt-8 pt-4 border-t border-gray-200">
+                    <span class="text-gray-600 text-sm">Tags: </span>
+                    
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-700 mr-2 mb-2">#meeting</span>
+                    
+                </div>
+                
+
+                <!-- Post Navigation (Bottom) -->
+                <div class="mt-12 pt-8 border-t border-gray-300">
+                    <nav class="grid grid-cols-3 gap-4 items-center">
+    <!-- Previous -->
+    <div class="justify-self-start">
+        
+        <a href="/meetings/2025-09-29-meeting/" class="flex items-center text-blue-600 hover:text-blue-800 group">
+            <svg class="w-5 h-5 mr-2 flex-shrink-0 transform group-hover:-translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <div class="text-left">
+                <div class="text-xs text-gray-500 uppercase tracking-wide">Previous</div>
+                <div class="font-medium">Weekly: Sep. 29, 2025</div>
+            </div>
+        </a>
+        
+    </div>
+
+    <!-- All Meetings -->
+    <div class="justify-self-center">
+        <a href="/meetings" class="flex items-center justify-center text-blue-600 hover:text-blue-800 group">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+            </svg>
+            <div class="text-center">
+                <div class="text-xs text-gray-500 uppercase tracking-wide">All Meetings</div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Next -->
+    <div class="justify-self-end">
+        
+        <a href="/meetings/2025-10-13-meeting/" class="flex items-center text-blue-600 hover:text-blue-800 group">
+            <div class="text-right">
+                <div class="text-xs text-gray-500 uppercase tracking-wide">Next</div>
+                <div class="font-medium">Weekly: Oct. 13, 2025</div>
+            </div>
+            <svg class="w-5 h-5 ml-2 flex-shrink-0 transform group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+            </svg>
+        </a>
+        
+    </div>
+</nav>
+
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <footer class="bg-white">
+        <div class="container mx-auto px-8">
+    <div class="w-full flex flex-col md:flex-row py-6">
+        <div class="flex-1 mb-6 text-black">
+            <a class="no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="/previews/pr-23/">
+                <img src="/previews/pr-23/assets/img/openQSE-logo.png" style="max-height: 1em; float: left" id="logo" />
+                <span style="padding-left: 0.5em; font-size: .6em; vertical-align: top;" id="logo-text">openQSE</span>
+            </a>
+            <p class="text-gray-500 text-sm mt-2">
+                &copy;2025 openQSE Initiative
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    var scrollpos = window.scrollY;
+    var header = document.getElementById("header");
+    var navcontent = document.getElementById("nav-content");
+    var logo = document.getElementById("logo");
+    var toToggle = document.querySelectorAll(".toggleColour");
+
+    document.addEventListener('scroll', function () {
+        scrollpos = window.scrollY;
+
+        if (scrollpos > 10) {
+            header.classList.add("bg-white");
+            header.classList.add("text-gray-800");
+            header.classList.remove("text-white");
+            for (var i = 0; i < toToggle.length; i++) {
+                toToggle[i].classList.add("text-gray-800");
+                toToggle[i].classList.remove("text-white");
+            }
+            header.classList.add("shadow");
+            navcontent.classList.remove("bg-gray-100");
+            navcontent.classList.add("bg-white");
+        } else {
+            header.classList.remove("bg-white");
+            header.classList.remove("text-gray-800");
+            header.classList.add("text-white");
+            for (var i = 0; i < toToggle.length; i++) {
+                toToggle[i].classList.add("text-white");
+                toToggle[i].classList.remove("text-gray-800");
+            }
+            header.classList.remove("shadow");
+            navcontent.classList.remove("bg-white");
+            navcontent.classList.add("bg-gray-100");
+        }
+    });
+</script>
+
+<script>
+    var navMenuDiv = document.getElementById("nav-content");
+    var navMenu = document.getElementById("nav-toggle");
+
+    document.onclick = check;
+
+    function check(e) {
+        var target = (e && e.target) || (event && event.srcElement);
+
+        if (!checkParent(target, navMenuDiv)) {
+            if (checkParent(target, navMenu)) {
+                if (navMenuDiv.classList.contains("hidden")) {
+                    navMenuDiv.classList.remove("hidden");
+                } else {
+                    navMenuDiv.classList.add("hidden");
+                }
+            } else {
+                navMenuDiv.classList.add("hidden");
+            }
+        }
+    }
+
+    function checkParent(t, elm) {
+        while (t.parentNode) {
+            if (t == elm) {
+                return true;
+            }
+            t = t.parentNode;
+        }
+        return false;
+    }
+</script>
+
+    </footer>
+
+</body>
+
+</html>

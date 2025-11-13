@@ -1,0 +1,582 @@
+<!DOCTYPE HTML>
+<html>
+
+<head lang="en">
+    <title> Weekly: Oct. 27, 2025 - openQSE</title>
+
+<meta charset="UTF-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="The goal is for openQSE to be a unified initiative to bring together vendors, collaborators, labs and universities in building an open community." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="icon" type="image/png" href="/previews/pr-23/assets/img/openQSE-logo.png">
+
+<link rel="stylesheet" href="/previews/pr-23/assets/css/tailwind.min.css">
+<link rel="stylesheet" href="/previews/pr-23/assets/css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+
+<style>
+    .gradient {
+        background: linear-gradient(90deg, #07326a 0%, #064089 50%, #0F2027 100%);
+    }
+</style>
+
+</head>
+
+<body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
+
+    <nav id="header" class="fixed w-full z-30 top-0 text-white">
+    <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+        <div class="pl-4 flex items-center">
+            <a class="text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="/previews/pr-23/">
+                <img src="/previews/pr-23/assets/img/openQSE-logo.png" style="max-height: 1em; float: left" id="logo" />
+                <span style="padding-left: 0.5em; font-size: .6em; vertical-align: top;">openQSE</span>
+            </a>
+        </div>
+        <div class="block lg:hidden pr-4">
+            <button id="nav-toggle"
+                class="flex items-center p-1 text-blue-400 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Menu</title>
+                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                </svg>
+            </button>
+        </div>
+        <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20"
+            id="nav-content">
+            <ul class="list-reset lg:flex justify-end flex-1 items-center">
+    <li class="mr-3">
+        <a class="inline-block py-2 px-4 text-white no-underline hover:text-blue-500 toggleColour" href="/previews/pr-23/meetings">Meetings</a>
+    </li>
+    <li class="mr-3 relative">
+        <a class="inline-block py-2 px-4 text-white no-underline hover:text-blue-500 toggleColour cursor-pointer" onclick="toggleDropdown(event, 'dropdown-resources')">Resources ▾</a>
+        <ul id="dropdown-resources" class="absolute hidden bg-white text-gray-800 shadow-lg mt-2 py-2 rounded z-50" style="min-width: 150px;">
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="https://github.com/openQSE" target="_blank" rel="noopener noreferrer">Github</a></li>
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="https://openqse.slack.com" target="_blank" rel="noopener noreferrer">Slack</a></li>
+        </ul>
+    </li>
+</ul>
+
+<script>
+function toggleDropdown(event, dropdownId) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const dropdown = document.getElementById(dropdownId);
+    const allDropdowns = document.querySelectorAll('[id^="dropdown-"]');
+
+    // Close all other dropdowns
+    allDropdowns.forEach(function(dd) {
+        if (dd.id !== dropdownId) {
+            dd.classList.add('hidden');
+        }
+    });
+
+    // Toggle this dropdown
+    dropdown.classList.toggle('hidden');
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', function() {
+    const allDropdowns = document.querySelectorAll('[id^="dropdown-"]');
+    allDropdowns.forEach(function(dd) {
+        dd.classList.add('hidden');
+    });
+});
+</script>
+
+        </div>
+    </div>
+    <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
+</nav>
+
+<section class="pt-24">
+    <div class="container mx-auto px-2 pt-4 pb-12 text-gray-800">
+        <h1 class="w-full my-2 text-3xl font-bold leading-tight text-center text-white">
+            Weekly: Oct. 27, 2025
+        </h1>
+    </div>
+</section>
+
+
+    <section class="bg-white py-8 page">
+        <div class="max-w-full mx-auto px-4 pt-4 pb-12 text-gray-800">
+            <article class="w-full">
+                <div class="text-sm text-gray-600 mb-4">
+                    
+                    <time datetime="2025-10-27T00:00:00-04:00">October 27, 2025</time>
+                    
+                    
+                </div>
+
+                <!-- Post Navigation (Top) -->
+                <div class="mb-8 pb-8 border-b border-gray-300">
+                    <nav class="grid grid-cols-3 gap-4 items-center">
+    <!-- Previous -->
+    <div class="justify-self-start">
+        
+        <a href="/meetings/2025-10-20-meeting/" class="flex items-center text-blue-600 hover:text-blue-800 group">
+            <svg class="w-5 h-5 mr-2 flex-shrink-0 transform group-hover:-translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <div class="text-left">
+                <div class="text-xs text-gray-500 uppercase tracking-wide">Previous</div>
+                <div class="font-medium">Weekly: Oct. 20, 2025</div>
+            </div>
+        </a>
+        
+    </div>
+
+    <!-- All Meetings -->
+    <div class="justify-self-center">
+        <a href="/meetings" class="flex items-center justify-center text-blue-600 hover:text-blue-800 group">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+            </svg>
+            <div class="text-center">
+                <div class="text-xs text-gray-500 uppercase tracking-wide">All Meetings</div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Next -->
+    <div class="justify-self-end">
+        
+    </div>
+</nav>
+
+                </div>
+
+                <ul>
+  <li><strong>Date</strong>: Oct. 27, 2025</li>
+  <li><strong>Time</strong>: 12 pm - 1 pm US Eastern Daylight Time (<a href="https://time.is/1200_27_October_2025_in_ET">View Meeting Time in Your Timezone</a>)</li>
+  <li><strong>Location</strong>: Virtual Meeting.</li>
+</ul>
+
+<h2 id="upcoming-meetings"><strong>Upcoming meetings</strong></h2>
+<ul>
+  <li>Next: Monday, Nov. 3, 2025 @ 7 pm - 8 pm US Eastern Daylight Time (<a href="https://time.is/1900_03_November_2025_in_ET">View Meeting Time in Your Timezone</a>)</li>
+</ul>
+
+<h2 id="agenda">Agenda</h2>
+<ul>
+  <li>
+    <h2 id="note-the-meeting-will-be-recorded-to-enable-transcription-for-easy-meeting-notes">Note: The meeting will be recorded to enable transcription for easy meeting notes.</h2>
+    <h3 id="proposed-approach">Proposed Approach</h3>
+  </li>
+</ul>
+
+<p>(<a href="https://github.com/openQSE/openqse-spec/pull/19">#19</a>) Our goal is to develop a <strong>specification</strong> for the quantum/HPC software stack. To reach this goal efficiently—without limiting healthy discussion—we propose the following approach:</p>
+
+<ol>
+  <li>
+    <p><strong>Stage-by-Stage Progress</strong></p>
+
+    <ul>
+      <li>Start by agreeing on the main <em>entities</em> (software layers).</li>
+      <li>Next, define <em>how they interact</em>.</li>
+      <li>Then, move into deeper technical discussions.</li>
+      <li>This keeps everyone aligned, creates a common vocabulary and prevents confusion.</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Use Concrete Artifacts</strong></p>
+
+    <ul>
+      <li>Each stage should produce a working example or prototype.</li>
+      <li>These can be based on existing tools (e.g., QRMI/QDMI).</li>
+      <li>Seeing real code helps ground discussions and validate ideas.</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Stay Out of the Weeds Early</strong></p>
+
+    <ul>
+      <li>Avoid getting stuck on detailed questions too soon.</li>
+      <li>
+        <h2 id="build-a-shared-model-first-then-dive-deeper-as-needed">Build a shared model first, then dive deeper as needed.</h2>
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  - **Ready-to-Review PRs**:
+</code></pre></div>        </div>
+      </li>
+      <li><a href="https://github.com/openQSE/openqse-spec/pull/19">#19: Procedure: Add community approach and procedures</a></li>
+      <li><a href="https://github.com/openQSE/openqse-spec/pull/18">#18: procedures: add new procedures area w/ contrib workflow</a></li>
+      <li><a href="https://github.com/openQSE/openqse-spec/pull/14">#14: QCRes: Definition of a Quantum Computing Resource</a> (see also: <a href="https://github.com/openQSE/openqse-spec/pull/16">#16</a> )</li>
+      <li><a href="https://github.com/openQSE/openqse-spec/pull/15">#15: Formatting and updates on diagram</a></li>
+    </ul>
+  </li>
+</ol>
+
+<ul>
+  <li><strong>General Discussion</strong>
+    <ul>
+      <li><a href="https://github.com/openQSE/openqse-spec/pull/16">#16: Proposal: Definitions for Quantum/Classical Resources, Programs, and Workflows</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="attendance">Attendance</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Person</th>
+      <th>Institution</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Neal Erickson</td>
+      <td>Quantinuum</td>
+    </tr>
+    <tr>
+      <td>Ermal Rrapaj</td>
+      <td>LBNL/NERSC</td>
+    </tr>
+    <tr>
+      <td>Peter Gorszkowski</td>
+      <td>ORNL</td>
+    </tr>
+    <tr>
+      <td>Jorge</td>
+      <td>LRZ</td>
+    </tr>
+    <tr>
+      <td>Hiroshi Horii</td>
+      <td>IBM</td>
+    </tr>
+    <tr>
+      <td>Eric Mansfield</td>
+      <td>IQM</td>
+    </tr>
+    <tr>
+      <td>Josh Moles</td>
+      <td>IonQ</td>
+    </tr>
+    <tr>
+      <td>Kevin Kissel</td>
+      <td>Alice &amp; Bob</td>
+    </tr>
+    <tr>
+      <td>Yasuko Eckert</td>
+      <td>AMD</td>
+    </tr>
+    <tr>
+      <td>Thomas Naughton</td>
+      <td>ORNL</td>
+    </tr>
+    <tr>
+      <td>Coleman Collins</td>
+      <td>IonQ</td>
+    </tr>
+    <tr>
+      <td>Patrick Deuley</td>
+      <td>IonQ</td>
+    </tr>
+    <tr>
+      <td>Martin Schulz</td>
+      <td>TUM</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="notes">Notes</h2>
+
+<h3 id="meeting-focus"><strong>Meeting Focus</strong></h3>
+
+<p>The session focused on refining <strong>definitions and abstractions</strong> within OpenQSE, especially around key entities like <strong>quantum resources</strong>, <strong>quantum programs</strong>, and how they interact in a hybrid (quantum-classical) computing environment. The team also discussed improving their <strong>GitHub collaboration workflow</strong>.</p>
+
+<hr />
+
+<h3 id="key-discussion-points"><strong>Key Discussion Points</strong></h3>
+
+<h4 id="1-approach-to-progress">1. <strong>Approach to Progress</strong></h4>
+
+<ul>
+  <li><strong>Amir Shehata</strong> suggested starting with defining <strong>main entities</strong> (software layers, interactions) before diving into technical details.</li>
+  <li>Aim: align on shared vocabulary and develop prototypes using existing components (QRMI, QDMI) to ground the discussion.</li>
+  <li>Plan to form <strong>working groups</strong> later to tackle specific technical areas.</li>
+</ul>
+
+<h4 id="2-level-of-detail-in-definitions">2. <strong>Level of Detail in Definitions</strong></h4>
+
+<ul>
+  <li><strong>Kevin K</strong> cautioned against both excessive abstraction and unnecessary detail. He emphasized clear, crisp definitions that can evolve as needed.</li>
+  <li>Consensus: stay high-level for now, iterating gradually instead of resolving all technical specifics immediately.</li>
+</ul>
+
+<h4 id="3-defining-quantum-resource-and-coherentquantum-program">3. <strong>Defining “Quantum Resource” and “Coherent/Quantum Program”</strong></h4>
+
+<ul>
+  <li>Debate on whether “<strong>coherent program</strong>” is the right term—<strong>Coleman Collins</strong>, <strong>Kevin K</strong>, and others preferred <strong>“quantum program”</strong> for clarity.</li>
+  <li>
+    <p>Concerns:</p>
+
+    <ul>
+      <li>The definition was <strong>recursive</strong> (quantum program ↔ quantum resource).</li>
+      <li>Should the output be strictly “qubit output,” or allow broader results (post-processing, distributions, etc.)?</li>
+    </ul>
+  </li>
+  <li><strong>Neal Erickson</strong> and <strong>Coleman</strong> proposed thinking of quantum programs like <strong>classical programs</strong>—potentially including control flow, not just circuits.</li>
+  <li><strong>Kevin</strong> suggested using metaphors like <strong>“quantum basic block”</strong> (a unit of quantum execution) to make the model intuitive for classical computing experts.</li>
+</ul>
+
+<h4 id="4-quantum-resource-vs-classical-resource">4. <strong>Quantum Resource vs. Classical Resource</strong></h4>
+
+<ul>
+  <li>
+    <p><strong>Jorge</strong>, <strong>Martin Schulz</strong>, and others raised issues with defining a “quantum resource” too narrowly:</p>
+
+    <ul>
+      <li>How to represent <strong>stacks-as-devices</strong> (e.g., remote or interconnected systems)?</li>
+      <li>The term <em>resource</em> was considered <strong>too broad or ambiguous</strong>; alternatives like “quantum device” were suggested.</li>
+      <li>Need to include <strong>quantum memory</strong> and <strong>stateful operations</strong>, not just functional input/output.</li>
+      <li>The <strong>hybrid computation model</strong> must consider dynamic allocation and classical-quantum interaction beyond pre/post-processing.</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Amir</strong> clarified that “resource” originates from <strong>resource management</strong>, describing something users allocate and release (as in QDMI/QRMI).</p>
+  </li>
+  <li>
+    <p><strong>Kevin</strong> related this to <strong>Slurm scheduling</strong>, where nodes are tagged with features like “quantum” to describe capabilities. <strong>Martin</strong> countered that hybrid systems might need <strong>co-scheduling</strong> or dynamic resource allocation.</p>
+  </li>
+</ul>
+
+<h4 id="5-toward-a-general-flexible-model">5. <strong>Toward a General, Flexible Model</strong></h4>
+
+<ul>
+  <li>
+    <p>Agreement that the model should be <strong>modular and future-proof</strong>, supporting:</p>
+
+    <ul>
+      <li>Different scheduling models.</li>
+      <li>Mixed or dynamic hybrid jobs.</li>
+      <li>Both HPC-like and cloud-like workflows.</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Martin</strong> and <strong>Kevin</strong> agreed on balancing current HPC paradigms with flexibility for emerging hybrid paradigms.</p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="github-collaboration-walkthrough"><strong>GitHub Collaboration Walkthrough</strong></h3>
+
+<ul>
+  <li>
+    <p><strong>Patrick Deuley</strong> demonstrated how to:</p>
+
+    <ul>
+      <li>Use <strong>pull requests (PRs)</strong> for collaboration.</li>
+      <li>Comment and suggest line edits.</li>
+      <li>Use <strong>“suggest changes”</strong> and <strong>multi-line comments</strong>.</li>
+      <li>Edit and preview <strong>Mermaid diagrams</strong> directly within GitHub.</li>
+    </ul>
+  </li>
+  <li><strong>Coleman</strong> and <strong>Neal</strong> added that Markdown-based diagrams can be reviewed via the “rich diff” view.</li>
+  <li>Team agreed to use PRs for <strong>collective editing</strong> rather than isolated contributions.</li>
+</ul>
+
+<hr />
+
+<h3 id="next-steps"><strong>Next Steps</strong></h3>
+
+<ul>
+  <li><strong>Next meeting</strong>: review the <strong>sequence diagram</strong> to better visualize interactions between components.</li>
+  <li>Continue iterating on the <strong>quantum resource</strong> and <strong>quantum program</strong> definitions.</li>
+  <li>Encourage contributions via PRs and GitHub comments.</li>
+</ul>
+
+<hr />
+
+<h3 id="key-takeaways"><strong>Key Takeaways</strong></h3>
+
+<ul>
+  <li>Consensus to rename “coherent program” → <strong>“quantum program.”</strong></li>
+  <li>“Quantum resource” needs clearer boundaries—possibly split into <strong>device</strong>, <strong>memory</strong>, and <strong>software stack</strong> concepts.</li>
+  <li>Model should remain <strong>flexible</strong>, <strong>non-recursive</strong>, and <strong>implementation-neutral.</strong></li>
+  <li>Practical GitHub workflows now established for collaborative editing.</li>
+</ul>
+
+<hr />
+
+<h3 id="key-decisions"><strong>Key Decisions</strong></h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Topic</th>
+      <th>Decision / Direction</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>“Coherent Program” term</td>
+      <td>Renamed to <strong>Quantum Program</strong></td>
+    </tr>
+    <tr>
+      <td>Quantum Resource scope</td>
+      <td>Needs redefinition—potentially renamed to <strong>Quantum Device</strong></td>
+    </tr>
+    <tr>
+      <td>Modeling philosophy</td>
+      <td>Start simple, evolve iteratively</td>
+    </tr>
+    <tr>
+      <td>Workflow</td>
+      <td>Use GitHub PRs as single source of truth</td>
+    </tr>
+    <tr>
+      <td>Next meeting focus</td>
+      <td>Review sequence diagram &amp; refine definitions</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="files">Files</h2>
+<ul>
+  <li><a href="https://raw.githubusercontent.com/wiki/openQSE/openqse-admin/2025/Meeting-2025-10-27-transcript.docx">Download Transcript</a></li>
+</ul>
+
+
+
+                
+                <div class="mt-8 pt-4 border-t border-gray-200">
+                    <span class="text-gray-600 text-sm">Tags: </span>
+                    
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-700 mr-2 mb-2">#meeting</span>
+                    
+                </div>
+                
+
+                <!-- Post Navigation (Bottom) -->
+                <div class="mt-12 pt-8 border-t border-gray-300">
+                    <nav class="grid grid-cols-3 gap-4 items-center">
+    <!-- Previous -->
+    <div class="justify-self-start">
+        
+        <a href="/meetings/2025-10-20-meeting/" class="flex items-center text-blue-600 hover:text-blue-800 group">
+            <svg class="w-5 h-5 mr-2 flex-shrink-0 transform group-hover:-translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <div class="text-left">
+                <div class="text-xs text-gray-500 uppercase tracking-wide">Previous</div>
+                <div class="font-medium">Weekly: Oct. 20, 2025</div>
+            </div>
+        </a>
+        
+    </div>
+
+    <!-- All Meetings -->
+    <div class="justify-self-center">
+        <a href="/meetings" class="flex items-center justify-center text-blue-600 hover:text-blue-800 group">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+            </svg>
+            <div class="text-center">
+                <div class="text-xs text-gray-500 uppercase tracking-wide">All Meetings</div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Next -->
+    <div class="justify-self-end">
+        
+    </div>
+</nav>
+
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <footer class="bg-white">
+        <div class="container mx-auto px-8">
+    <div class="w-full flex flex-col md:flex-row py-6">
+        <div class="flex-1 mb-6 text-black">
+            <a class="no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="/previews/pr-23/">
+                <img src="/previews/pr-23/assets/img/openQSE-logo.png" style="max-height: 1em; float: left" id="logo" />
+                <span style="padding-left: 0.5em; font-size: .6em; vertical-align: top;" id="logo-text">openQSE</span>
+            </a>
+            <p class="text-gray-500 text-sm mt-2">
+                &copy;2025 openQSE Initiative
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    var scrollpos = window.scrollY;
+    var header = document.getElementById("header");
+    var navcontent = document.getElementById("nav-content");
+    var logo = document.getElementById("logo");
+    var toToggle = document.querySelectorAll(".toggleColour");
+
+    document.addEventListener('scroll', function () {
+        scrollpos = window.scrollY;
+
+        if (scrollpos > 10) {
+            header.classList.add("bg-white");
+            header.classList.add("text-gray-800");
+            header.classList.remove("text-white");
+            for (var i = 0; i < toToggle.length; i++) {
+                toToggle[i].classList.add("text-gray-800");
+                toToggle[i].classList.remove("text-white");
+            }
+            header.classList.add("shadow");
+            navcontent.classList.remove("bg-gray-100");
+            navcontent.classList.add("bg-white");
+        } else {
+            header.classList.remove("bg-white");
+            header.classList.remove("text-gray-800");
+            header.classList.add("text-white");
+            for (var i = 0; i < toToggle.length; i++) {
+                toToggle[i].classList.add("text-white");
+                toToggle[i].classList.remove("text-gray-800");
+            }
+            header.classList.remove("shadow");
+            navcontent.classList.remove("bg-white");
+            navcontent.classList.add("bg-gray-100");
+        }
+    });
+</script>
+
+<script>
+    var navMenuDiv = document.getElementById("nav-content");
+    var navMenu = document.getElementById("nav-toggle");
+
+    document.onclick = check;
+
+    function check(e) {
+        var target = (e && e.target) || (event && event.srcElement);
+
+        if (!checkParent(target, navMenuDiv)) {
+            if (checkParent(target, navMenu)) {
+                if (navMenuDiv.classList.contains("hidden")) {
+                    navMenuDiv.classList.remove("hidden");
+                } else {
+                    navMenuDiv.classList.add("hidden");
+                }
+            } else {
+                navMenuDiv.classList.add("hidden");
+            }
+        }
+    }
+
+    function checkParent(t, elm) {
+        while (t.parentNode) {
+            if (t == elm) {
+                return true;
+            }
+            t = t.parentNode;
+        }
+        return false;
+    }
+</script>
+
+    </footer>
+
+</body>
+
+</html>
