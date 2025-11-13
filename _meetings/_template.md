@@ -1,6 +1,6 @@
 ---
-layout: meeting
-title: "Regular Weekly"
+layout: meeting-post
+title: "Weekly: MMM. DD, YYYY"
 tags: [meeting]
 published: false
 ---

@@ -1,33 +1,8 @@
----
-layout: page
----
-
-<article class="prose max-w-none">
-    <div class="text-sm text-gray-600 mb-4">
-        {% if page.date %}
-        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
-        {% endif %}
-        {% if page.author %}
-        <span class="mx-2">•</span>
-        <span>{{ page.author }}</span>
-        {% endif %}
-    </div>
-
-    {{ content }}
-
-    {% if page.tags %}
-    <div class="mt-8 pt-4 border-t border-gray-200">
-        <span class="text-gray-600 text-sm">Tags: </span>
-        {% for tag in page.tags %}
-        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-700 mr-2 mb-2">#{{ tag }}</span>
-        {% endfor %}
-    </div>
-    {% endif %}
-
-    <!-- Post Navigation -->
-    <nav class="flex justify-between items-center mt-12 pt-8 border-t border-gray-300">
+<nav class="grid grid-cols-3 gap-4 items-center">
+    <!-- Previous -->
+    <div class="justify-self-start">
         {% if page.previous.url %}
-        <a href="{{ page.previous.url }}" class="flex items-center text-blue-600 hover:text-blue-800 group max-w-md">
+        <a href="{{ page.previous.url }}" class="flex items-center text-blue-600 hover:text-blue-800 group">
             <svg class="w-5 h-5 mr-2 flex-shrink-0 transform group-hover:-translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/>
             </svg>
@@ -36,12 +11,25 @@ layout: page
                 <div class="font-medium">{{ page.previous.title }}</div>
             </div>
         </a>
-        {% else %}
-        <div></div>
         {% endif %}
+    </div>
 
+    <!-- All Meetings -->
+    <div class="justify-self-center">
+        <a href="/meetings" class="flex items-center justify-center text-blue-600 hover:text-blue-800 group">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+            </svg>
+            <div class="text-center">
+                <div class="text-xs text-gray-500 uppercase tracking-wide">All Meetings</div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Next -->
+    <div class="justify-self-end">
         {% if page.next.url %}
-        <a href="{{ page.next.url }}" class="flex items-center text-blue-600 hover:text-blue-800 group max-w-md">
+        <a href="{{ page.next.url }}" class="flex items-center text-blue-600 hover:text-blue-800 group">
             <div class="text-right">
                 <div class="text-xs text-gray-500 uppercase tracking-wide">Next</div>
                 <div class="font-medium">{{ page.next.title }}</div>
@@ -50,8 +38,6 @@ layout: page
                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
             </svg>
         </a>
-        {% else %}
-        <div></div>
         {% endif %}
-    </nav>
-</article>
+    </div>
+</nav>

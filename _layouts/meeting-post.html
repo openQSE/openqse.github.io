@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+
+<head lang="en">
+    {% include head.html %}
+</head>
+
+<body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
+
+    {% include header_page.html %}
+
+    <section class="bg-white py-8 page">
+        <div class="max-w-full mx-auto px-4 pt-4 pb-12 text-gray-800">
+            <article class="w-full">
+                <div class="text-sm text-gray-600 mb-4">
+                    {% if page.date %}
+                    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+                    {% endif %}
+                    {% if page.author %}
+                    <span class="mx-2">•</span>
+                    <span>{{ page.author }}</span>
+                    {% endif %}
+                </div>
+
+                <!-- Post Navigation (Top) -->
+                <div class="mb-8 pb-8 border-b border-gray-300">
+                    {% include meeting-navigation.html %}
+                </div>
+
+                {{ content }}
+
+                {% if page.tags %}
+                <div class="mt-8 pt-4 border-t border-gray-200">
+                    <span class="text-gray-600 text-sm">Tags: </span>
+                    {% for tag in page.tags %}
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-700 mr-2 mb-2">#{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <!-- Post Navigation (Bottom) -->
+                <div class="mt-12 pt-8 border-t border-gray-300">
+                    {% include meeting-navigation.html %}
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <footer class="bg-white">
+        {% include footer.html %}
+    </footer>
+
+</body>
+
+</html>
