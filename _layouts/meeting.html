@@ -10,7 +10,7 @@ layout: page
   {% for post in posts reversed %}
   <div class="post-preview mb-8 pb-8 border-b border-gray-200">
     <article>
-      <a href="{{ post.url | absolute_url }}" class="no-underline">
+      <a href="{{ post.url | relative_url }}" class="no-underline">
         <h2 class="text-2xl font-bold text-gray-900 hover:text-blue-500">{{ post.title | strip_html }}</h2>
 
         {% if post.subtitle %}
@@ -35,7 +35,7 @@ layout: page
         {{ post.excerpt | strip_html | truncatewords: excerpt_length }}
         {% assign excerpt_word_count = post.excerpt | number_of_words %}
         {% if post.content != post.excerpt or excerpt_word_count > excerpt_length %}
-          <a href="{{ post.url | absolute_url }}" class="text-blue-500 hover:text-blue-600">[Read&nbsp;More]</a>
+          <a href="{{ post.url | relative_url }}" class="text-blue-500 hover:text-blue-600">[Read&nbsp;More]</a>
         {% endif %}
       </div>
       {% endunless %}
@@ -57,7 +57,7 @@ layout: page
 {% if paginator.total_pages > 1 %}
 <div class="flex justify-between mt-8">
   {% if paginator.previous_page %}
-  <a href="{{ paginator.previous_page_path | absolute_url }}"
+  <a href="{{ paginator.previous_page_path | relative_url }}"
      class="inline-block bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">
     ← Newer Posts
   </a>
@@ -66,7 +66,7 @@ layout: page
   {% endif %}
 
   {% if paginator.next_page %}
-  <a href="{{ paginator.next_page_path | absolute_url }}"
+  <a href="{{ paginator.next_page_path | relative_url }}"
      class="inline-block bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">
     Older Posts →
   </a>
