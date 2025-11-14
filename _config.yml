@@ -10,6 +10,7 @@ navbar-links:
   #Docs: "#"
   #Glossary: "#"
   Meetings: "meetings"
+  Community: "community"
   Resources:
     - Github:
         url: "https://github.com/openQSE"
