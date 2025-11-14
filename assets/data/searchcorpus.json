@@ -2,6 +2,14 @@
  
  
 { 
+"title"    : "Community", 
+"desc"     : "Community", 
+"category" : "page", 
+"url"      : "/community/", 
+"date"     : "January 1, 1970" 
+}, 
+ 
+{ 
 "title"    : "OpenQSE", 
 "desc"     : "OpenQSE", 
 "category" : "page", 
