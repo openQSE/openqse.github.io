@@ -4,7 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is the openQSE Initiative website built using Jekyll and the Beautiful Jekyll theme (v6.0.1). The site serves as a unified platform for the quantum software ecosystem community, bringing together vendors, collaborators, labs, and universities.
+This is the openQSE Initiative website built using Jekyll static site generator. The site serves as a unified platform for the quantum software ecosystem community, bringing together vendors, collaborators, labs, and universities.
+
+**Note:** The main branch now uses a custom Tailwind CSS implementation. Previous versions used the Beautiful Jekyll theme.
 
 ## Development Setup
 
@@ -35,9 +37,20 @@ The built site will be in the `_site` directory (gitignored).
 
 ### Site Structure
 - **Jekyll Static Site Generator**: Uses Jekyll 3.9.3+ with Kramdown markdown processor and Rouge syntax highlighter
-- **Beautiful Jekyll Theme**: Pre-built responsive theme with customizations in `_config.yml`
+- **Styling**: Custom Tailwind CSS implementation
+  - Main CSS: `assets/css/tailwind.min.css`
+  - Custom overrides: `assets/css/style.css`
+  - No Bootstrap or jQuery dependencies
 - **Timezone**: America/New_York
 - **Permalink structure**: `/:year-:month-:day-:title/`
+
+### Key Design Features
+- Custom Tailwind CSS implementation
+- Simplified layouts without Bootstrap dependencies
+- Gradient hero header with SVG wave divider on homepage
+- Custom navigation with mobile toggle (vanilla JavaScript)
+- Blue color scheme for links (`text-blue-600`) with hover states
+- Responsive grid layouts using Tailwind utility classes
 
 ### Content Organization
 
@@ -52,30 +65,37 @@ The built site will be in the `_site` directory (gitignored).
   - Accessed via the "Meetings" navbar link (`/meetings`)
 
 #### Layouts (`_layouts/`)
-- `base.html`: Base layout with HTML structure
-- `default.html`: Default layout for most pages
-- `page.html`: Standard page layout
-- `post.html`: Blog post layout with date, author, and social sharing
-- `meeting.html`: Custom layout that lists all meetings collection items with pagination support
-- `home.html`: Homepage layout
-- `minimal.html`: Minimal layout without header/footer
+- `default.html`: Base layout that includes header, content, and footer
+- `page.html`: Standard page layout for static pages
+- `post.html`: Blog post layout with date, author, and metadata
+- `meeting.html`: Custom layout that lists all meetings collection items with excerpts
+- `home.html`: Homepage layout (used for index)
+
+**Layout hierarchy:** All layouts inherit from `default.html`, which includes `_includes/head.html`, `_includes/header.html`, and `_includes/footer.html`.
 
 ### Configuration (_config.yml)
 
 Key customizations:
 - **Site identity**: Title "openQSE", author "openQSE Initiative"
-- **Navigation**: Docs, Current Efforts, Glossary, Meetings, Resources (Github, Mailing Lists)
+- **Navigation**: Defined in `_config.yml` for reference, but **actual menu is hardcoded in `_includes/menu.html`**
 - **Collections**: Custom `meetings` collection defined for meeting notes
-- **Theme colors**: Custom color scheme with link color #007833
-- **Features enabled**: Post search, edit page button, RSS feed
+- **Features enabled**: RSS feed, sitemap, SEO tags
 - **Defaults**: Posts have comments/social-share disabled by default
+- **Plugins**: jekyll-sitemap, jekyll-feed, jekyll-seo-tag, jekyll-paginate
 
-### Theme Files
-- `_includes/`: Reusable HTML partials (nav, footer, comments, analytics, etc.)
-- `_data/ui-text.yml`: UI text strings
-- `assets/`: CSS, JavaScript, images
-  - `/assets/img/avatar-icon.png`: Site logo in navbar
-  - Custom CSS can be added via `site-css` in config
+### Key Files and Directories
+- `_includes/`: Reusable HTML partials
+  - `head.html`: Meta tags, CSS includes, favicon
+  - `header.html`: Main hero header with gradient background and navigation
+  - `header_page.html`: Simplified header for non-homepage pages
+  - `menu.html`: **Navigation menu items (hardcoded - see Navigation section below)**
+  - `footer.html`: Site footer with social links
+- `assets/`: Static assets
+  - `assets/css/tailwind.min.css`: Tailwind CSS framework
+  - `assets/css/style.css`: Custom CSS overrides
+  - `assets/css/pygment_highlights.css`: Syntax highlighting for code blocks
+  - `assets/img/openQSE-logo.png`: Primary site logo
+  - `assets/js/mermaid-init.js`: Mermaid diagram initialization
 
 ### Front Matter Examples
 
@@ -107,13 +127,62 @@ author: Organizer Name
 
 - Markdown files use Kramdown (GFM input mode)
 - MathJax available when `mathjax: true` in front matter
-- Custom box styles: `.box-note`, `.box-warning`, `.box-error`
 - Syntax highlighting with Rouge using triple backticks or `{% highlight %}` tags
 - Excerpt length: 50 words (configurable)
 - Date format: "%B %-d, %Y" (e.g., "September 16, 2025")
+- Mermaid diagrams supported via `assets/js/mermaid-init.js`
 
-## Deployment Notes
+## Deployment and Build
 
-- Exclude list in `_config.yml` prevents CHANGELOG.md, README.md, Gemfile, docs/, etc. from being built
-- The site uses `jekyll-paginate` (5 posts per page) and `jekyll-sitemap` plugins
-- RSS feed generated at `/feed.xml` with description from config
+- Built site is generated in `_site/` directory (gitignored)
+- Exclude list in `_config.yml` prevents CLAUDE.md, README.md, Gemfile, docs/, backup directories from being built
+- Plugins: `jekyll-sitemap`, `jekyll-feed`, `jekyll-seo-tag`, `jekyll-paginate` (5 posts per page)
+- RSS feed generated at `/feed.xml` with project description
+- Use `make build` or `bundle exec jekyll build` to verify builds before committing
+
+## Important Considerations
+
+### Navigation Configuration
+
+**⚠️ CRITICAL: Navigation links are hardcoded in `_includes/menu.html`**
+
+Unlike typical Jekyll themes where navigation is generated from `_config.yml`, this site's navigation menu is **manually defined** in the HTML template.
+
+**To add or modify navigation links:**
+1. Edit `_includes/menu.html` directly
+2. Add/remove/modify `<li>` elements in the menu structure
+3. Changes take effect immediately with Jekyll's live reload (no restart needed)
+
+**Example - Adding a simple link:**
+```html
+<li class="mr-3">
+    <a class="inline-block py-2 px-4 text-white no-underline hover:text-blue-500 toggleColour"
+       href="{{ '/your-page' | relative_url }}">Your Link</a>
+</li>
+```
+
+**Example - Adding a dropdown menu:**
+```html
+<li class="mr-3 relative">
+    <a class="inline-block py-2 px-4 text-white no-underline hover:text-blue-500 toggleColour cursor-pointer"
+       onclick="toggleDropdown(event, 'dropdown-id')">Dropdown ▾</a>
+    <ul id="dropdown-id" class="absolute hidden bg-white text-gray-800 shadow-lg mt-2 py-2 rounded z-50">
+        <li><a class="block px-4 py-2 hover:bg-gray-100" href="URL">Item</a></li>
+    </ul>
+</li>
+```
+
+**Note:** While `_config.yml` contains a `navbar-links` section for reference, it is **not used** to generate the navigation menu in this implementation.
+
+### Styling and Customization
+- Site uses Tailwind CSS utility classes throughout
+- Custom CSS overrides go in `assets/css/style.css`
+- Color scheme: Blue links (`text-blue-600`) with hover states
+- Gradient header with purple-to-blue gradient on homepage
+- Mobile navigation uses vanilla JavaScript toggle (no jQuery)
+
+### Collections System
+- The `meetings` collection is defined in `_config.yml` with `output: true`
+- Meeting posts go in `_meetings/` directory
+- Both posts and meetings use similar front matter but different permalinks
+- Meeting index page uses special `meeting.html` layout that lists all meetings

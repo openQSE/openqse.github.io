@@ -128,3 +128,13 @@ In repository **Settings** → **Actions** → **General**:
 - Verify the CNAME file contains `openqse.org`
 - Check Settings → Pages shows "Custom domain: openqse.org"
 - DNS settings should already be correct (no changes needed)
+
+---
+
+## Site Maintenance
+
+This document covers **deployment workflows**. For **site content and maintenance** (adding pages, navigation links, blog posts, etc.), see:
+
+**→ [MAINTAINERS.md](../MAINTAINERS.md)** - Quick reference guide for common site maintenance tasks
+
+**→ [CLAUDE.md](../CLAUDE.md)** - Comprehensive technical documentation for site architecture
