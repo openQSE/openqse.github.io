@@ -1,0 +1,321 @@
+<!DOCTYPE HTML>
+<html>
+
+<head lang="en">
+    <title> Community - openQSE</title>
+
+<meta charset="UTF-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="The goal is for openQSE to be a unified initiative to bring together vendors, collaborators, labs and universities in building an open community." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="icon" type="image/png" href="/previews/pr-26/assets/img/openQSE-logo.png">
+
+<link rel="stylesheet" href="/previews/pr-26/assets/css/tailwind.min.css">
+<link rel="stylesheet" href="/previews/pr-26/assets/css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+
+<style>
+    .gradient {
+        background: linear-gradient(90deg, #07326a 0%, #064089 50%, #0F2027 100%);
+    }
+</style>
+
+</head>
+
+<body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
+
+    <nav id="header" class="fixed w-full z-30 top-0 text-white">
+    <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+        <div class="pl-4 flex items-center">
+            <a class="text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="/previews/pr-26/">
+                <img src="/previews/pr-26/assets/img/openQSE-logo.png" style="max-height: 1em; float: left" id="logo" />
+                <span style="padding-left: 0.5em; font-size: .6em; vertical-align: top;">openQSE</span>
+            </a>
+        </div>
+        <div class="block lg:hidden pr-4">
+            <button id="nav-toggle"
+                class="flex items-center p-1 text-blue-400 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Menu</title>
+                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                </svg>
+            </button>
+        </div>
+        <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20"
+            id="nav-content">
+            <ul class="list-reset lg:flex justify-end flex-1 items-center">
+    <li class="mr-3">
+        <a class="inline-block py-2 px-4 text-white no-underline hover:text-blue-500 toggleColour" href="/previews/pr-26/meetings">Meetings</a>
+    </li>
+    <li class="mr-3">
+        <a class="inline-block py-2 px-4 text-white no-underline hover:text-blue-500 toggleColour" href="/previews/pr-26/community">Community</a>
+    </li>
+    <li class="mr-3 relative">
+        <a class="inline-block py-2 px-4 text-white no-underline hover:text-blue-500 toggleColour cursor-pointer" onclick="toggleDropdown(event, 'dropdown-resources')">Resources ▾</a>
+        <ul id="dropdown-resources" class="absolute hidden bg-white text-gray-800 shadow-lg mt-2 py-2 rounded z-50" style="min-width: 150px;">
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="https://github.com/openQSE" target="_blank" rel="noopener noreferrer">Github</a></li>
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="https://openqse.slack.com" target="_blank" rel="noopener noreferrer">Slack</a></li>
+        </ul>
+    </li>
+</ul>
+
+<script>
+function toggleDropdown(event, dropdownId) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const dropdown = document.getElementById(dropdownId);
+    const allDropdowns = document.querySelectorAll('[id^="dropdown-"]');
+
+    // Close all other dropdowns
+    allDropdowns.forEach(function(dd) {
+        if (dd.id !== dropdownId) {
+            dd.classList.add('hidden');
+        }
+    });
+
+    // Toggle this dropdown
+    dropdown.classList.toggle('hidden');
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', function() {
+    const allDropdowns = document.querySelectorAll('[id^="dropdown-"]');
+    allDropdowns.forEach(function(dd) {
+        dd.classList.add('hidden');
+    });
+});
+</script>
+
+        </div>
+    </div>
+    <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
+</nav>
+
+<section class="pt-24">
+    <div class="container mx-auto px-2 pt-4 pb-12 text-gray-800">
+        <h1 class="w-full my-2 text-3xl font-bold leading-tight text-center text-white">
+            Community
+        </h1>
+    </div>
+</section>
+
+
+    <section class="bg-white py-8 page">
+        <div class="container mx-auto px-2 pt-4 pb-12 text-gray-800">
+            <style>
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.org-card {
+  text-align: center;
+  padding: 1.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+  background: white;
+}
+
+.org-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.org-logo {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+.org-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 0.5rem;
+}
+
+.org-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.community-join a {
+  color: #2563eb; /* blue-600 */
+  text-decoration: underline;
+}
+
+.community-join a:hover {
+  color: #1e40af; /* blue-800 */
+}
+</style>
+
+<div class="community-section">
+  <p>The openQSE Initiative brings together a diverse community of organizations working to advance the quantum-HPC software ecosystem. Our community includes vendors, research institutions, and national laboratories.</p>
+
+  <div class="community-grid">
+
+    <!--
+        NOTE: Sorting based on Org name (in abbreviated format), i.e., Alice before AMD.
+
+        IMPORTANT: All asset URLs must use Jekyll's relative_url filter to work
+        correctly in both production and PR preview environments.
+
+        Example:
+          /previews/pr-26/assets/img/logos/logo.png
+
+        This ensures URLs work in:
+          - Production: https://openqse.org/assets/img/logos/logo.png
+          - PR Preview: https://openqse.org/pr-123/assets/img/logos/logo.png
+
+        DO NOT use absolute paths like /assets/... as they will break in PR previews.
+     -->
+
+    <!-- Org: Alice & Bob -->
+    <div class="org-card">
+      <a href="https://alice-bob.com/"><img src="/previews/pr-26/assets/img/logos/alice-bob.png" alt="Alice & Bob" class="org-logo"></a>
+      <!-- <div class="org-name">Alice &amp; Bob</div> -->
+    </div>
+
+    <!-- Org: IBM -->
+    <div class="org-card">
+      <a href="https://www.ibm.com/"><img src="/previews/pr-26/assets/img/logos/ibm.svg" alt="IBM" class="org-logo"></a>
+      <!-- <div class="org-name">IBM</div> -->
+    </div>
+
+    <!-- Org: IonQ-->
+    <div class="org-card">
+      <a href="https://ionq.com/"><img src="/previews/pr-26/assets/img/logos/ionq.png" alt="IonQ" class="org-logo"></a>
+      <!-- <div class="org-name">IonQ</div> -->
+    </div>
+
+    <!-- Org: MQSC -->
+    <div class="org-card">
+      <a href="https://munichquantum.software/"><img src="/previews/pr-26/assets/img/logos/mqsc.png" alt="MQSC" class="org-logo"></a>
+      <!-- <div class="org-name">Munich Quantum Software Company</div> -->
+    </div>
+
+    <!-- Org: ORNL -->
+    <div class="org-card">
+      <a href="https://www.ornl.gov/"><img src="/previews/pr-26/assets/img/logos/ornl.svg" alt="ORNL" class="org-logo"></a>
+      <!-- <div class="org-name">Oak Ridge National Laboratory</div> -->
+    </div>
+
+    <!-- Org: Quantum Brilliance-->
+    <div class="org-card">
+      <a href="https://quantumbrilliance.com//"><img src="/previews/pr-26/assets/img/logos/qb.png" alt="Quantum Brilliance" class="org-logo"></a>
+      <!-- <div class="org-name">Quantum Brilliance</div> -->
+    </div>
+
+
+  </div>
+</div>
+
+<div style="margin-top: 3rem;" class="community-join">
+  <h3>Join Our Community</h3>
+
+  <p>Interested in contributing to the openQSE Initiative?
+     Contact us on <a href="https://openqse.slack.com/" target="_blank" rel="noopener noreferrer">OpenQSE Slack</a>
+     or <a href="/previews/pr-26/meetings">join a Meeting</a>!
+  </p>
+</div>
+
+        </div>
+    </section>
+
+    <footer class="bg-white">
+        <div class="container mx-auto px-8">
+    <div class="w-full flex flex-col md:flex-row py-6">
+        <div class="flex-1 mb-6 text-black">
+            <a class="no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="/previews/pr-26/">
+                <img src="/previews/pr-26/assets/img/openQSE-logo.png" style="max-height: 1em; float: left" id="logo" />
+                <span style="padding-left: 0.5em; font-size: .6em; vertical-align: top;" id="logo-text">openQSE</span>
+            </a>
+            <p class="text-gray-500 text-sm mt-2">
+                &copy;2025 openQSE Initiative
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    var scrollpos = window.scrollY;
+    var header = document.getElementById("header");
+    var navcontent = document.getElementById("nav-content");
+    var logo = document.getElementById("logo");
+    var toToggle = document.querySelectorAll(".toggleColour");
+
+    document.addEventListener('scroll', function () {
+        scrollpos = window.scrollY;
+
+        if (scrollpos > 10) {
+            header.classList.add("bg-white");
+            header.classList.add("text-gray-800");
+            header.classList.remove("text-white");
+            for (var i = 0; i < toToggle.length; i++) {
+                toToggle[i].classList.add("text-gray-800");
+                toToggle[i].classList.remove("text-white");
+            }
+            header.classList.add("shadow");
+            navcontent.classList.remove("bg-gray-100");
+            navcontent.classList.add("bg-white");
+        } else {
+            header.classList.remove("bg-white");
+            header.classList.remove("text-gray-800");
+            header.classList.add("text-white");
+            for (var i = 0; i < toToggle.length; i++) {
+                toToggle[i].classList.add("text-white");
+                toToggle[i].classList.remove("text-gray-800");
+            }
+            header.classList.remove("shadow");
+            navcontent.classList.remove("bg-white");
+            navcontent.classList.add("bg-gray-100");
+        }
+    });
+</script>
+
+<script>
+    var navMenuDiv = document.getElementById("nav-content");
+    var navMenu = document.getElementById("nav-toggle");
+
+    document.onclick = check;
+
+    function check(e) {
+        var target = (e && e.target) || (event && event.srcElement);
+
+        if (!checkParent(target, navMenuDiv)) {
+            if (checkParent(target, navMenu)) {
+                if (navMenuDiv.classList.contains("hidden")) {
+                    navMenuDiv.classList.remove("hidden");
+                } else {
+                    navMenuDiv.classList.add("hidden");
+                }
+            } else {
+                navMenuDiv.classList.add("hidden");
+            }
+        }
+    }
+
+    function checkParent(t, elm) {
+        while (t.parentNode) {
+            if (t == elm) {
+                return true;
+            }
+            t = t.parentNode;
+        }
+        return false;
+    }
+</script>
+
+    </footer>
+
+</body>
+
+</html>
