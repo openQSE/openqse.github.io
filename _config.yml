@@ -107,6 +107,9 @@ collections:
   meetings:
     output: true
     permalink: /meetings/:path/
+  events:
+    output: true
+    permalink: /events/:path/
 
 # Default layouts
 defaults:
@@ -120,6 +123,12 @@ defaults:
     scope:
       path: ""
       type: "meetings"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: ""
+      type: "events"
     values:
       layout: "post"
   -
