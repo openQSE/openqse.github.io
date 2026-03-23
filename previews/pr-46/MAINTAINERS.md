@@ -44,6 +44,7 @@ This is the most common "gotcha" when maintaining this site. Unlike many Jekyll 
 - Resources (dropdown)
   - Github → `https://github.com/openQSE`
   - Slack → `https://openqse.slack.com`
+  - Confluence → `https://openqse.atlassian.net`
 
 ## Common Tasks
 
