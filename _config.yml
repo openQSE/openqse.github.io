@@ -18,6 +18,9 @@ navbar-links:
     - Slack:
         url: "https://openqse.slack.com"
         new-window: true
+    - Confluence:
+        url: "https://openqse.atlassian.net"
+        new-window: true
 
 ################
 # --- Logo --- #
