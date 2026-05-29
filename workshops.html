@@ -1,0 +1,83 @@
+---
+layout: page
+title: Workshops
+subtitle: openQSE community workshops and tutorials
+---
+
+<style>
+.workshops-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.workshop-card {
+  padding: 1.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+  background: white;
+}
+
+.workshop-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.workshop-card h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.workshop-card h2 a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.workshop-card h2 a:hover {
+  text-decoration: underline;
+}
+
+.workshop-meta {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.75rem;
+}
+
+.workshop-card p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.workshop-tag {
+  display: inline-block;
+  background: #dbeafe;
+  color: #1e40af;
+  border-radius: 9999px;
+  padding: 0.15rem 0.75rem;
+  font-size: 0.8rem;
+  margin-top: 0.75rem;
+}
+</style>
+
+<p>openQSE organizes and participates in workshops at major quantum computing and HPC venues.
+   These events bring the community together to share progress, discuss standards, and
+   collaborate on the open quantum software ecosystem.</p>
+
+<div class="workshops-grid">
+
+  <!-- Workshop: QCE2026 -->
+  <div class="workshop-card">
+    <h2><a href="{{ '/workshops/QCE2026/' | relative_url }}">openQSE @ QCE26</a></h2>
+    <div class="workshop-meta">
+      September 2026 &nbsp;·&nbsp; IEEE Quantum Week 2026
+    </div>
+    <p>openQSE workshop co-located with IEEE Quantum Week 2026 (QCE26).
+       Talks, tutorials, and community discussions on open quantum software standards
+       and the quantum-HPC software ecosystem.</p>
+    <span class="workshop-tag">QCE26</span>
+    <span class="workshop-tag">IEEE Quantum Week</span>
+  </div>
+
+</div>
