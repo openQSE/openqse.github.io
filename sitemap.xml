@@ -4,6 +4,9 @@
 <loc>/community/</loc>
 </url>
 <url>
+<loc>/workshops/QCE2026/</loc>
+</url>
+<url>
 <loc>/</loc>
 </url>
 <url>
@@ -11,5 +14,8 @@
 </url>
 <url>
 <loc>/tags/</loc>
+</url>
+<url>
+<loc>/workshops/</loc>
 </url>
 </urlset>
