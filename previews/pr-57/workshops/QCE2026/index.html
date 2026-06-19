@@ -1,0 +1,876 @@
+<!DOCTYPE HTML>
+<html>
+
+<head lang="en">
+    <title> openQSE: Co-Designing the Quantum Software Stack from Applications to Control Systems - openQSE</title>
+
+<meta charset="UTF-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="The goal is for openQSE to be a unified initiative to bring together vendors, collaborators, labs and universities in building an open community." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="icon" type="image/png" href="/previews/pr-57/assets/img/openQSE-logo.png">
+
+<link rel="stylesheet" href="/previews/pr-57/assets/css/tailwind.min.css">
+<link rel="stylesheet" href="/previews/pr-57/assets/css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+
+<style>
+    .gradient {
+        background: linear-gradient(90deg, #07326a 0%, #064089 50%, #0F2027 100%);
+    }
+</style>
+
+</head>
+
+<body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
+
+    <nav id="header" class="fixed w-full z-30 top-0 text-white">
+    <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+        <div class="pl-4 flex items-center">
+            <a class="text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="/previews/pr-57/">
+                <img src="/previews/pr-57/assets/img/openQSE-logo.png" style="max-height: 1em; float: left" id="logo" />
+                <span style="padding-left: 0.5em; font-size: .6em; vertical-align: top;">openQSE</span>
+            </a>
+        </div>
+        <div class="block lg:hidden pr-4">
+            <button id="nav-toggle"
+                class="flex items-center p-1 text-blue-400 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Menu</title>
+                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                </svg>
+            </button>
+        </div>
+        <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20"
+            id="nav-content">
+            <ul class="list-reset lg:flex justify-end flex-1 items-center">
+    <li class="mr-3">
+        <a class="inline-block py-2 px-4 text-white no-underline hover:text-blue-500 toggleColour" href="/previews/pr-57/meetings">Meetings</a>
+    </li>
+    <li class="mr-3">
+        <a class="inline-block py-2 px-4 text-white no-underline hover:text-blue-500 toggleColour" href="/previews/pr-57/community">Community</a>
+    </li>
+    <li class="mr-3 relative">
+        <a class="inline-block py-2 px-4 text-white no-underline hover:text-blue-500 toggleColour cursor-pointer" onclick="toggleDropdown(event, 'dropdown-workshops')">Workshops ▾</a>
+        <ul id="dropdown-workshops" class="absolute hidden bg-white text-gray-800 shadow-lg mt-2 py-2 rounded z-50" style="min-width: 160px;">
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="/previews/pr-57/workshops">All Workshops</a></li>
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="/previews/pr-57/workshops/QCE2026/">IEEE QCE-2026</a></li>
+        </ul>
+    </li>
+    <li class="mr-3 relative">
+        <a class="inline-block py-2 px-4 text-white no-underline hover:text-blue-500 toggleColour cursor-pointer" onclick="toggleDropdown(event, 'dropdown-resources')">Resources ▾</a>
+        <ul id="dropdown-resources" class="absolute hidden bg-white text-gray-800 shadow-lg mt-2 py-2 rounded z-50" style="min-width: 150px;">
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="https://github.com/openQSE" target="_blank" rel="noopener noreferrer">Github</a></li>
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="https://openqse.slack.com" target="_blank" rel="noopener noreferrer">Slack</a></li>
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="https://openqse.atlassian.net" target="_blank" rel="noopener noreferrer">Confluence</a></li>
+        </ul>
+    </li>
+</ul>
+
+<script>
+function toggleDropdown(event, dropdownId) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const dropdown = document.getElementById(dropdownId);
+    const allDropdowns = document.querySelectorAll('[id^="dropdown-"]');
+
+    // Close all other dropdowns
+    allDropdowns.forEach(function(dd) {
+        if (dd.id !== dropdownId) {
+            dd.classList.add('hidden');
+        }
+    });
+
+    // Toggle this dropdown
+    dropdown.classList.toggle('hidden');
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', function() {
+    const allDropdowns = document.querySelectorAll('[id^="dropdown-"]');
+    allDropdowns.forEach(function(dd) {
+        dd.classList.add('hidden');
+    });
+});
+</script>
+
+        </div>
+    </div>
+    <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
+</nav>
+
+<section class="pt-24">
+    <div class="container mx-auto px-2 pt-4 pb-12 text-gray-800">
+        <h1 class="w-full my-2 text-3xl font-bold leading-tight text-center text-white">
+            openQSE: Co-Designing the Quantum Software Stack from Applications to Control Systems
+        </h1>
+    </div>
+</section>
+
+
+    <section class="bg-white py-8 page">
+        <div class="container mx-auto px-2 pt-4 pb-12 text-gray-800">
+            <style>
+.oqse-section {
+  margin-top: 2.5rem;
+}
+
+.oqse-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e3a5f;
+  border-bottom: 2px solid #dbeafe;
+  padding-bottom: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.oqse-section h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e40af;
+  margin: 1.25rem 0 0.5rem;
+}
+
+/* Details table */
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.info-table td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: top;
+}
+
+.info-table td:first-child {
+  font-weight: 600;
+  color: #374151;
+  white-space: nowrap;
+  width: 8rem;
+}
+
+/* Calendar buttons */
+.cal-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.cal-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  color: #374151;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.cal-btn:hover {
+  background: #f3f4f6;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-decoration: none;
+}
+
+/* Objectives */
+.oqse-section ul {
+  margin: 0.5rem 0 0 1.25rem;
+  color: #374151;
+}
+
+.oqse-section ul li {
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+
+/* Program format table */
+.format-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  margin-top: 0.75rem;
+}
+
+.format-table th {
+  background: #eff6ff;
+  color: #1e3a5f;
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  font-weight: 600;
+  border-bottom: 2px solid #bfdbfe;
+}
+
+.format-table td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: top;
+}
+
+.format-table td:first-child {
+  white-space: nowrap;
+  font-weight: 600;
+  color: #374151;
+  width: 12rem;
+}
+
+.format-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Speakers grid */
+.speakers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.speaker-card {
+  padding: 1.25rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  transition: box-shadow 0.2s;
+}
+
+.speaker-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.speaker-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.speaker-org {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 0.15rem;
+}
+
+.speaker-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1e40af;
+  margin-top: 0.6rem;
+}
+
+.speaker-abstract {
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin-top: 0.4rem;
+}
+
+/* Organizer cards */
+.organizer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.organizer-card {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  align-items: flex-start;
+}
+
+.organizer-photo {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #dbeafe;
+}
+
+.organizer-initials {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #dbeafe;
+  border: 2px solid #bfdbfe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1e40af;
+}
+
+.organizer-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.organizer-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.organizer-role {
+  display: inline-block;
+  background: #dbeafe;
+  color: #1e40af;
+  border-radius: 9999px;
+  padding: 0.1rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.organizer-affil {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 0.2rem;
+}
+
+.organizer-bio {
+  font-size: 0.875rem;
+  color: #374151;
+  margin-top: 0.6rem;
+  line-height: 1.55;
+}
+
+.organizer-links {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.organizer-links a {
+  color: #2563eb;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.organizer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumb a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.placeholder-notice {
+  background: #fef9c3;
+  border-left: 4px solid #facc15;
+  padding: 0.75rem 1rem;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.9rem;
+  color: #713f12;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .organizer-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .organizer-links {
+    text-align: center;
+  }
+}
+</style>
+
+<div class="breadcrumb">
+  <a href="/previews/pr-57/workshops">Workshops</a> &rsaquo; IEEE QCE-2026
+</div>
+
+<div class="placeholder-notice">
+  Workshop details are being finalized. Check back soon for the full program, schedule, and registration information.
+</div>
+
+<!-- ═══════════════════════════════════════════════════ Overview -->
+<div class="oqse-section">
+  <h2>Overview</h2>
+
+  <p><strong>openQSE: Co-Designing the Quantum Software Stack from Applications to Control Systems</strong></p>
+
+  <p>As quantum computing evolves from isolated experimental platforms toward integration with
+     high-performance computing (HPC) environments, the need for interoperable quantum-HPC
+     software infrastructure is becoming increasingly urgent. Developing such middleware requires
+     co-design across the full quantum computing stack. Application-level choices about how
+     problems are formulated and expressed in quantum workflows directly influence how workloads
+     are compiled and executed on hardware. At the same time, constraints imposed by hardware
+     control systems and device execution models shape the abstractions and services that
+     middleware must provide.</p>
+
+  <p>To this end, openQSE is a collaborative initiative involving twenty-seven institutions
+     spanning academia, national laboratories, and industry that is working to develop open
+     specifications and reference implementations for quantum software middleware supporting
+     the orchestration and execution of quantum workloads in HPC systems.</p>
+
+  <p>This workshop will convene researchers and practitioners across the quantum-HPC software
+     stack to examine cross-layer interactions in quantum workload execution. All participants
+     are welcome — joining openQSE is not a requirement for attending. Through short technical
+     talks and an interactive co-design session, the workshop will explore how workloads evolve
+     from application specification to hardware execution and identify challenges in defining
+     interoperable middleware interfaces.</p>
+
+  <p>The workshop is intended to serve as a community forum to gather perspectives and help
+     shape a roadmap for open and interoperable quantum-HPC software infrastructure.</p>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ Details -->
+<div class="oqse-section">
+  <h2>Details</h2>
+  <table class="info-table">
+    <tr>
+      <td>Event</td>
+      <td><a href="https://qce.quantum.ieee.org/" target="_blank" rel="noopener noreferrer">IEEE Quantum Week 2026 (QCE26)</a></td>
+    </tr>
+    <tr>
+      <td>Date</td>
+      <td>TBD &mdash; September 2026</td>
+    </tr>
+    <tr>
+      <td>Time</td>
+      <td>TBD</td>
+    </tr>
+    <tr>
+      <td>Duration</td>
+      <td>4.5 hours</td>
+    </tr>
+    <tr>
+      <td>Location</td>
+      <td>TBD</td>
+    </tr>
+    <tr>
+      <td>Room</td>
+      <td>TBD</td>
+    </tr>
+    <tr>
+      <td>Format</td>
+      <td>Hybrid (in-person + remote) &mdash; TBC</td>
+    </tr>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ Calendar -->
+<div class="oqse-section">
+  <h2>Add to Calendar</h2>
+  <p>Once the date is confirmed, add the workshop to your calendar:</p>
+  <div class="cal-buttons">
+    <!--
+      TODO: Replace # hrefs with real calendar links once date/time/location are confirmed.
+      Google Calendar URL format:
+        https://calendar.google.com/calendar/render?action=TEMPLATE
+          &text=OQSE+Workshop+at+IEEE+QCE26
+          &dates=20260901T090000Z/20260901T133000Z
+          &details=openQSE+Workshop+at+IEEE+Quantum+Week+2026
+          &location=TBD
+      .ics file: place at workshops/QCE2026/QCE2026-openQSE-workshop.ics
+    -->
+    <a class="cal-btn" href="#" title="Add to Google Calendar">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="4" width="18" height="17" rx="2" stroke="#4285F4" stroke-width="2" fill="white"/>
+        <path d="M16 2v4M8 2v4M3 9h18" stroke="#4285F4" stroke-width="2" stroke-linecap="round"/>
+        <rect x="8" y="13" width="3" height="3" rx="0.5" fill="#EA4335"/>
+        <rect x="13" y="13" width="3" height="3" rx="0.5" fill="#34A853"/>
+        <rect x="8" y="17" width="3" height="2" rx="0.5" fill="#FBBC05"/>
+        <rect x="13" y="17" width="3" height="2" rx="0.5" fill="#4285F4"/>
+      </svg>
+      Google Calendar
+    </a>
+    <a class="cal-btn" href="#" download="QCE2026-openQSE-workshop.ics" title="Download .ics for Apple Calendar or Outlook">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="4" width="18" height="17" rx="2" stroke="#555" stroke-width="2" fill="white"/>
+        <path d="M16 2v4M8 2v4M3 9h18" stroke="#555" stroke-width="2" stroke-linecap="round"/>
+        <path d="M8 14h8M8 17h5" stroke="#555" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      Apple / Outlook (.ics)
+    </a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ Objectives -->
+<div class="oqse-section">
+  <h2>Objectives</h2>
+
+  <h3>Short-Term</h3>
+  <ul>
+    <li>Establish a shared understanding of co-design challenges across applications, middleware, and control systems.</li>
+    <li>Collect concrete use cases and requirements that directly impact middleware design and interface specifications.</li>
+    <li>Identify gaps in current abstractions and interfaces that limit interoperability and portability across quantum-HPC systems.</li>
+    <li>Foster cross-domain collaboration between application developers, middleware architects, and hardware/control vendors.</li>
+    <li>Generate actionable outcomes from discussions and deep dives to inform ongoing research and development.</li>
+  </ul>
+
+  <h3>Long-Term</h3>
+  <ul>
+    <li>Lay the groundwork for common interfaces, best practices, and abstractions across the quantum software stack.</li>
+    <li>Create a sustained community network across application, middleware, and hardware domains.</li>
+    <li>Integrate workshop outcomes into hybrid quantum-HPC architecture co-design.</li>
+    <li>Promote best practices for middleware design and resource abstraction.</li>
+    <li>Enable long-term alignment between hardware evolution and software ecosystem development.</li>
+  </ul>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ Program -->
+<div class="oqse-section">
+  <h2>Program</h2>
+
+  <p>The workshop is 4.5 hours and combines short technical talks with structured interactive
+     sessions. The tentative format is:</p>
+
+  <table class="format-table">
+    <thead>
+      <tr>
+        <th>Segment</th>
+        <th>Duration</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Opening overview</td>
+        <td>25 min</td>
+        <td>Introduction to openQSE, workshop goals, and framing of cross-layer co-design challenges.</td>
+      </tr>
+      <tr>
+        <td>Invited talks</td>
+        <td>95 min</td>
+        <td>Short technical presentations (15&ndash;20 min each) from practitioners across the quantum computing stack.</td>
+      </tr>
+      <tr>
+        <td>Co-design sessions</td>
+        <td>90 min</td>
+        <td>Facilitated small-group breakouts analyzing example workloads, followed by group synthesis.</td>
+      </tr>
+      <tr>
+        <td>Panel</td>
+        <td>45 min</td>
+        <td>Moderated discussion with speakers and participants on open challenges and directions.</td>
+      </tr>
+      <tr>
+        <td>Closing discussion</td>
+        <td>15 min</td>
+        <td>Summary of key findings, action items, and next steps.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top:1rem;"><em>Detailed schedule and speaker assignments will be posted as they are confirmed.</em></p>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ Target Audience -->
+<div class="oqse-section">
+  <h2>Target Audience</h2>
+  <p>Attendees are expected to have a basic understanding of quantum computing and/or HPC systems. The workshop welcomes:</p>
+  <ul>
+    <li>Quantum application developers</li>
+    <li>Middleware and runtime developers</li>
+    <li>HPC architects and operators</li>
+    <li>Quantum software engineering researchers</li>
+    <li>Quantum hardware and control system developers</li>
+  </ul>
+  <p>Expected attendance: 30&ndash;50 participants. Participation is open; joining openQSE is not required.</p>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ Speakers -->
+<div class="oqse-section">
+  <h2>Speakers</h2>
+  <p><em>Invited speakers will be announced as they are confirmed.</em></p>
+  <!--
+    TODO: Add speaker cards here as speakers are confirmed.
+    Use the pattern below for each speaker:
+
+    <div class="speakers-grid">
+      <div class="speaker-card">
+        <div class="speaker-name">Speaker Name</div>
+        <div class="speaker-org">Affiliation</div>
+        <div class="speaker-title">Talk Title</div>
+        <div class="speaker-abstract">Abstract text.</div>
+      </div>
+    </div>
+  -->
+</div>
+
+<!-- ═══════════════════════════════════════════════════ Organizers -->
+<div class="oqse-section">
+  <h2>Organizers</h2>
+
+  <div class="organizer-list">
+
+    <!-- Amir Shehata -->
+    <div class="organizer-card">
+      <img class="organizer-photo"
+           src="/previews/pr-57/assets/img/workshops/QCE2026/amir.jpeg"
+           alt="Amir Shehata">
+      <div class="organizer-info">
+        <div class="organizer-name">Amir Shehata <span class="organizer-role">Main Contact</span></div>
+        <div class="organizer-affil">Oak Ridge National Laboratory (ORNL)</div>
+        <div class="organizer-bio">Amir Shehata is a Principal Investigator at Oak Ridge National Laboratory,
+          where he leads efforts at the intersection of high-performance computing (HPC) and quantum computing.
+          His work focuses on building scalable software frameworks and architectures that enable the integration
+          of quantum systems into HPC environments. He is a leading contributor to openQSE, driving initiatives
+          in hybrid workflows, system design, and cross-platform interoperability for emerging quantum-HPC
+          ecosystems. He has experience organizing community activities, including leading the quantum-HPC
+          Integration Workshop at ORNL in July 2025 and organizing a Birds-of-a-Feather session at SC Asia 2026
+          focused on quantum-HPC integration.</div>
+        <div class="organizer-links">
+          <a href="https://www.linkedin.com/in/amir-shehata-6998b747/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alex Chernoguzov -->
+    <div class="organizer-card">
+      <img class="organizer-photo"
+           src="/previews/pr-57/assets/img/workshops/QCE2026/Alex.jpeg"
+           alt="Alex Chernoguzov">
+      <div class="organizer-info">
+        <div class="organizer-name">Alex Chernoguzov</div>
+        <div class="organizer-affil">Quantinuum</div>
+        <div class="organizer-bio">Alex Chernoguzov is the Chief Engineer of Commercial Products at Quantinuum,
+          where he works on quantum computing systems and software integration. His work focuses on bridging
+          quantum hardware capabilities with software stacks to enable scalable and reliable quantum applications.
+          He contributes to the development of hybrid quantum-classical workflows and the broader quantum computing
+          ecosystem, including participation in cross-organizational efforts to define interoperable software
+          interfaces and engage in community-driven technical discussions.</div>
+        <div class="organizer-links">
+          <a href="https://www.linkedin.com/in/alexander-chernoguzov-2768664a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Andrea Delgado -->
+    <div class="organizer-card">
+      <img class="organizer-photo"
+           src="/previews/pr-57/assets/img/workshops/QCE2026/Andrea.jpeg"
+           alt="Andrea Delgado">
+      <div class="organizer-info">
+        <div class="organizer-name">Andrea Delgado</div>
+        <div class="organizer-affil">Qblox</div>
+        <div class="organizer-bio">Andrea Delgado is a roadmap leader at Qblox, where she drives product strategy
+          and long-term planning for quantum control systems. Her work focuses on aligning hardware capabilities
+          with emerging requirements in quantum computing and scalable system architectures. She is a key organizer
+          within the IEEE Quantum Week (QCE) conference series, serving as Program Board Chair for QCE 2026 and
+          previously as Technical Papers Program Chair for QCE 2025 and 2023, as well as Track Chair roles in
+          earlier editions.</div>
+        <div class="organizer-links">
+          <a href="https://www.linkedin.com/in/delgadoandrea21/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ermal Rrapaj -->
+    <div class="organizer-card">
+      <img class="organizer-photo"
+           src="/previews/pr-57/assets/img/workshops/QCE2026/Ermal.png"
+           alt="Ermal Rrapaj">
+      <div class="organizer-info">
+        <div class="organizer-name">Ermal Rrapaj</div>
+        <div class="organizer-affil">NERSC, Lawrence Berkeley National Laboratory</div>
+        <div class="organizer-bio">Ermal Rrapaj is a Computer Systems Engineer and quantum computing researcher
+          at the National Energy Research Scientific Computing Center (NERSC) at Lawrence Berkeley National
+          Laboratory. His work focuses on the intersection of scientific computing algorithms and HPC system
+          architecture, as well as analyzing quantum computing use cases for large-scale scientific applications.
+          His research spans quantum computing algorithms, quantum-HPC integration, machine learning for
+          scientific workloads, and performance analysis of large-scale HPC systems.</div>
+        <div class="organizer-links">
+          <a href="https://www.linkedin.com/in/ermalrrapaj/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Josh Moles -->
+    <div class="organizer-card">
+      <img class="organizer-photo"
+           src="/previews/pr-57/assets/img/workshops/QCE2026/Josh.png"
+           alt="Josh Moles">
+      <div class="organizer-info">
+        <div class="organizer-name">Josh Moles</div>
+        <div class="organizer-affil">IonQ</div>
+        <div class="organizer-bio">Josh Moles is a technical program manager at IonQ, where he leads the
+          strategic and technical direction for hybrid quantum-classical computing platforms, enabling enterprise
+          access to quantum resources at scale. His work focuses on bridging quantum hardware capabilities with
+          software infrastructure to enable practical application development. Through his role at IonQ, he
+          contributes to the company's active participation in major community venues such as IEEE Quantum Week
+          and the Supercomputing (SC) conference series.</div>
+        <div class="organizer-links">
+          <a href="https://www.linkedin.com/in/josh-moles/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lee J. O'Riordan -->
+    <div class="organizer-card">
+      <img class="organizer-photo"
+           src="/previews/pr-57/assets/img/workshops/QCE2026/lee.jpeg"
+           alt="Lee J. O'Riordan">
+      <div class="organizer-info">
+        <div class="organizer-name">Lee J. O'Riordan</div>
+        <div class="organizer-affil">Xanadu</div>
+        <div class="organizer-bio">Lee J. O'Riordan is a Senior Quantum Software Developer II at Xanadu, where
+          he focuses on advancing high-performance computing capabilities within quantum software, particularly
+          through performance optimization of PennyLane. His work includes enabling multi-vendor CPU support,
+          GPU acceleration, and distributed computing to improve the scalability and efficiency of quantum
+          simulations. He specializes in template metaprogramming, SIMD, and compiler optimization.</div>
+        <div class="organizer-links">
+          <a href="https://www.linkedin.com/in/loriordan/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Thomas Naughton -->
+    <div class="organizer-card">
+      <img class="organizer-photo"
+           src="/previews/pr-57/assets/img/workshops/QCE2026/Thomas.jpeg"
+           alt="Thomas Naughton">
+      <div class="organizer-info">
+        <div class="organizer-name">Thomas Naughton</div>
+        <div class="organizer-affil">Oak Ridge National Laboratory (ORNL)</div>
+        <div class="organizer-bio">Thomas Naughton is a researcher at Oak Ridge National Laboratory specializing
+          in high-performance computing systems and software. His work focuses on scalable system architecture,
+          performance optimization, and integration of emerging technologies into HPC environments. He contributes
+          to advancing hybrid computing models and infrastructure for next-generation scientific workloads. He is
+          also actively involved in community leadership, including organizing Birds-of-a-Feather sessions at the
+          Supercomputing (SC) conference for PMIx and participating in MPI workshops and BoFs.</div>
+        <div class="organizer-links">
+          <a href="https://www.ornl.gov/staff-profile/thomas-j-naughton-iii" target="_blank" rel="noopener noreferrer">ORNL Profile</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ Materials -->
+<div class="oqse-section">
+  <h2>Materials</h2>
+  <p><em>Slides, recordings, and other materials will be posted here after the event.</em></p>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ Contact -->
+<div class="oqse-section">
+  <h2>Contact</h2>
+  <p>Questions about the workshop? Contact the main organizer
+     Amir Shehata or reach the broader openQSE community on
+     <a href="https://openqse.slack.com/" target="_blank" rel="noopener noreferrer">openQSE Slack</a>.</p>
+</div>
+
+        </div>
+    </section>
+
+    <footer class="bg-white">
+        <div class="container mx-auto px-8">
+    <div class="w-full flex flex-col md:flex-row py-6">
+        <div class="flex-1 mb-6 text-black">
+            <a class="no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="/previews/pr-57/">
+                <img src="/previews/pr-57/assets/img/openQSE-logo.png" style="max-height: 1em; float: left" id="logo" />
+                <span style="padding-left: 0.5em; font-size: .6em; vertical-align: top;" id="logo-text">openQSE</span>
+            </a>
+            <p class="text-gray-500 text-sm mt-2">
+                &copy;2026 openQSE Initiative
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    var scrollpos = window.scrollY;
+    var header = document.getElementById("header");
+    var navcontent = document.getElementById("nav-content");
+    var logo = document.getElementById("logo");
+    var toToggle = document.querySelectorAll(".toggleColour");
+
+    document.addEventListener('scroll', function () {
+        scrollpos = window.scrollY;
+
+        if (scrollpos > 10) {
+            header.classList.add("bg-white");
+            header.classList.add("text-gray-800");
+            header.classList.remove("text-white");
+            for (var i = 0; i < toToggle.length; i++) {
+                toToggle[i].classList.add("text-gray-800");
+                toToggle[i].classList.remove("text-white");
+            }
+            header.classList.add("shadow");
+            navcontent.classList.remove("bg-gray-100");
+            navcontent.classList.add("bg-white");
+        } else {
+            header.classList.remove("bg-white");
+            header.classList.remove("text-gray-800");
+            header.classList.add("text-white");
+            for (var i = 0; i < toToggle.length; i++) {
+                toToggle[i].classList.add("text-white");
+                toToggle[i].classList.remove("text-gray-800");
+            }
+            header.classList.remove("shadow");
+            navcontent.classList.remove("bg-white");
+            navcontent.classList.add("bg-gray-100");
+        }
+    });
+</script>
+
+<script>
+    var navMenuDiv = document.getElementById("nav-content");
+    var navMenu = document.getElementById("nav-toggle");
+
+    document.onclick = check;
+
+    function check(e) {
+        var target = (e && e.target) || (event && event.srcElement);
+
+        if (!checkParent(target, navMenuDiv)) {
+            if (checkParent(target, navMenu)) {
+                if (navMenuDiv.classList.contains("hidden")) {
+                    navMenuDiv.classList.remove("hidden");
+                } else {
+                    navMenuDiv.classList.add("hidden");
+                }
+            } else {
+                navMenuDiv.classList.add("hidden");
+            }
+        }
+    }
+
+    function checkParent(t, elm) {
+        while (t.parentNode) {
+            if (t == elm) {
+                return true;
+            }
+            t = t.parentNode;
+        }
+        return false;
+    }
+</script>
+
+    </footer>
+
+</body>
+
+</html>
