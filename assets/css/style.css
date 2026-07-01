@@ -133,6 +133,19 @@
     text-decoration: underline;
 }
 
+.meeting-details-link {
+    margin: 0 0 1.5rem 0;
+}
+
+.meeting-details-link a {
+    color: #3b82f6;
+    text-decoration: underline;
+}
+
+.meeting-details-link a:hover {
+    color: #1d4ed8;
+}
+
 /* Style the summary marker */
 details summary {
     list-style: none;
