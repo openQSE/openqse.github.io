@@ -59,22 +59,37 @@ Update Meeting Info
 
 Assumes initial setup (above) complete and just changing meeting data.
 
- 1. Manually format the "meeting info" with any desired HTML formatting.
+ 1. Copy the current committed template to a local private data file.
+    The template should keep the desired HTML formatting but must not
+    contain real meeting URLs, IDs, passcodes, dial-in numbers, or other
+    meeting details.
 
- 2. Encode (base64) the meeting data (e.g., `meetings.dat => meetings.dat.enc`)
+    ```
+      cp 2026.template.dat 2026.private.dat
+    ```
+
+ 2. Edit the private data file with the real meeting details. Do not commit
+    the filled-in private data file.
+
+ 3. Encode (base64) the meeting data (e.g.,
+    `2026.private.dat => 2026.dat.enc`). The encoded output is
+    reversible, so it should be treated as containing the real meeting
+    details too.
     - NOTE: You can decode the meeting data to double check encode/decode
       using the same script (see: `encode.py -h`)
 
     ```
-      ./_misc/encode.py meetings.dat > meetings.dat.enc
+      ./_misc/encode.py 2026.private.dat > 2026.dat.enc
     ```
 
- 3. Edit `success.html`, update `encodedData` with contents of encoded data
-    string (e.g., copy/paste `meetings.dat.enc`).
+ 4. Edit `success.html`, update `encodedData` with contents of encoded data
+    string (e.g., copy/paste `2026.dat.enc`).
 
- 4. As needed, update any titles/headings in HTML (e.g., 2025 Meetings).
+ 5. As needed, update any titles/headings in HTML (e.g., 2026 Meetings).
 
- 5. Commit changes to repo and the gh-pages will be updated automatically.
+ 6. Commit the template and page changes only. The filled-in `.dat` file and
+    generated `.dat.enc` file should stay local unless intentionally updating
+    the live page payload.
 
 
 Misc
@@ -85,4 +100,3 @@ Misc
  - Encode script at `_misc/encode.py`
  - Example HTML formatted meeting data at `_misc/example.dat`
  - hCaptcha: [https://dashboard.hcaptcha.com](https://dashboard.hcaptcha.com)
-
