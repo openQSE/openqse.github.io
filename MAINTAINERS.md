@@ -41,6 +41,8 @@ This is the most common "gotcha" when maintaining this site. Unlike many Jekyll 
 **Current menu structure:**
 - Meetings → `/meetings`
 - Community → `/community`
+- Events (dropdown)
+  - 2026 → `/events/2026/`
 - Resources (dropdown)
   - Github → `https://github.com/openQSE`
   - Slack → `https://openqse.slack.com`
@@ -62,6 +64,53 @@ This is the most common "gotcha" when maintaining this site. Unlike many Jekyll 
 3. Add content to the file
 4. **Manually add navigation link** to `_includes/menu.html` (see above)
 5. Test locally: `bundle exec jekyll serve`
+
+### Adding a New Event
+
+Events use the canonical URL pattern `/events/YEAR/slug/`. The `/events/` page lists all events, and each `/events/YEAR/` page lists events for that year.
+
+1. Create the event detail page:
+   ```text
+   events/2026/qce-bof/index.html
+   ```
+2. Add front matter to the event page:
+   ```yaml
+   ---
+   layout: page
+   title: "openQSE BoF at IEEE Quantum Week 2026"
+   subtitle: "Birds-of-a-Feather session at IEEE QCE 2026"
+   permalink: /events/2026/qce-bof/
+   event_year: "2026"
+   event_type: BoF
+   ---
+   ```
+3. Add the event card metadata to `_data/events.yml`:
+   ```yaml
+   - title: "IEEE QCE-2026: openQSE BoF"
+     url: "/events/2026/qce-bof/"
+     year: "2026"
+     date_label: "September 2026"
+     venue: "IEEE Quantum Week 2026"
+     event_type: "BoF"
+     summary: "openQSE Birds-of-a-Feather session at IEEE Quantum Week 2026 focused on community discussion around open quantum-HPC software infrastructure."
+     tags:
+       - QCE2026
+       - IEEE Quantum Week
+       - BoF
+   ```
+4. If this is the first event for a new year, create the year index page:
+   ```text
+   events/2027/index.html
+   ```
+   using the existing `events/2026/index.html` page as a template, and add that year to the Events dropdown in `_includes/menu.html`.
+5. Add static assets under `assets/`, not inside the routed `events/` page directory:
+   - Images and logos: `assets/img/events/YEAR/slug/`
+   - PDFs, calendar files, slides, or other downloads: `assets/files/events/YEAR/slug/`
+   - Example image path: `assets/img/events/2026/qce-bof/logo.png`
+6. Only add redirects for URLs that were previously public. New events should not get `/workshops/...` aliases.
+7. Test locally: `bundle exec jekyll build`
+
+Do not add individual events to the top navigation. The Events dropdown should stay year-based, and the year page should list the event details.
 
 ### Adding Organization Logos to Community Page
 

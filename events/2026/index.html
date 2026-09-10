@@ -2,7 +2,7 @@
 <html>
 
 <head lang="en">
-    <title> Tag Index - openQSE</title>
+    <title> 2026 Events - openQSE</title>
 
 <meta charset="UTF-8" />
 <meta name="keywords" content="" />
@@ -104,7 +104,7 @@ document.addEventListener('click', function() {
 <section class="pt-24">
     <div class="container mx-auto px-2 pt-4 pb-12 text-gray-800">
         <h1 class="w-full my-2 text-3xl font-bold leading-tight text-center text-white">
-            Tag Index
+            2026 Events
         </h1>
     </div>
 </section>
@@ -112,7 +112,105 @@ document.addEventListener('click', function() {
 
     <section class="bg-white py-8 page">
         <div class="container mx-auto px-2 pt-4 pb-12 text-gray-800">
-            <div id="full-tags-list"></div>
+            <p>Browse all openQSE events planned for 2026.</p>
+
+<style>
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.event-card {
+  padding: 1.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+  background: white;
+}
+
+.event-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.event-type {
+  display: inline-block;
+  background: #e0f2fe;
+  color: #075985;
+  border-radius: 9999px;
+  padding: 0.15rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.event-card h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.event-card h2 a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.event-card h2 a:hover {
+  text-decoration: underline;
+}
+
+.event-meta {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.75rem;
+}
+
+.event-card p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.event-tag {
+  display: inline-block;
+  background: #dbeafe;
+  color: #1e40af;
+  border-radius: 9999px;
+  padding: 0.15rem 0.75rem;
+  font-size: 0.8rem;
+  margin-top: 0.75rem;
+  margin-right: 0.25rem;
+}
+</style>
+
+
+<div class="events-grid">
+  
+    
+      
+      <article class="event-card">
+        <div class="event-type">Workshop</div>
+        <h2><a href="/events/2026/qce-workshop/">IEEE QCE-2026: openQSE Workshop</a></h2>
+        <div class="event-meta">
+          September 17, 2026 &nbsp;&middot;&nbsp; IEEE Quantum Week 2026
+        </div>
+        <p>openQSE workshop co-located with IEEE Quantum Week 2026 (QCE26). Talks, tutorials, and community discussions on open quantum software standards and the quantum-HPC software ecosystem.</p>
+        
+          <div class="event-tags">
+            
+              <span class="event-tag">QCE2026</span>
+            
+              <span class="event-tag">IEEE Quantum Week</span>
+            
+          </div>
+        
+      </article>
+    
+  
+</div>
+
+
+
 
         </div>
     </section>
