@@ -26,6 +26,14 @@
 }, 
  
 { 
+"title"    : "OpenQSE: An Open Ecosystem for Quantum-HPC Software", 
+"desc"     : "OpenQSE: An Open Ecosystem for Quantum-HPC Software", 
+"category" : "page", 
+"url"      : "/events/2026/qce-bof/", 
+"date"     : "January 1, 1970" 
+}, 
+ 
+{ 
 "title"    : "2026 Events", 
 "desc"     : "2026 Events", 
 "category" : "page", 
