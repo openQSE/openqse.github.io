@@ -8,3 +8,16 @@
   tags:
     - QCE2026
     - IEEE Quantum Week
+    - Workshop
+
+- title: "IEEE QCE-2026: openQSE BoF"
+  url: "/events/2026/qce-bof/"
+  year: "2026"
+  date_label: "September 14, 2026"
+  venue: "IEEE Quantum Week 2026, Room 601A/B"
+  event_type: "BoF"
+  summary: "OpenQSE Birds-of-a-Feather session at IEEE Quantum Week 2026 focused on open interfaces, community requirements, and roadmap priorities for quantum-HPC software."
+  tags:
+    - QCE2026
+    - IEEE Quantum Week
+    - BoF
