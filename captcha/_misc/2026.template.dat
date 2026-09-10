@@ -1,102 +1,118 @@
 <h1>Open QHPC Software Ecosystem (openQSE) Meetings - 2026</h1>
 
-<!-- ------------------------------------------------------------ -->
 <hr>
 
-<h2>OpenQSE General Meetings</h2>
+<p>Times follow local daylight-saving conventions. Use the calendar invitation as the authoritative time.</p>
 
-<p><b>Meeting Page:</b> <a href="https://openqse.org/meetings/">OpenQSE Meetings</a> (for specific dates and slot details)</p>
-
-<table border="0" cellpadding="12" cellspacing="0" width="100%">
-  <tr>
-    <td valign="top" width="50%">
-      <h3>General Meeting<br>Slot #1</h3>
-
-      <table border="1" cellpadding="6" cellspacing="0" width="100%">
-        <tr>
-          <th>Location</th>
-          <th>Local Time</th>
-        </tr>
-        <tr><td>US Pacific (San Francisco, PT)</td><td>9:00 AM PT</td></tr>
-        <tr><td>US Mountain (Denver, MT)</td><td>10:00 AM MT</td></tr>
-        <tr><td>US Central (Chicago, CT)</td><td>11:00 AM CT</td></tr>
-        <tr><td>US Eastern (New York, ET)</td><td>12:00 PM ET</td></tr>
-        <tr><td>London (UK, BST)</td><td>5:00 PM BST</td></tr>
-        <tr><td>Munich (Germany, CEST)</td><td>6:00 PM CEST</td></tr>
-        <tr><td>Tokyo (Japan, JST)</td><td>1:00 AM JST (next day)</td></tr>
-      </table>
-
-      <p><b>Meeting Link:</b> <a href="MEETING-URL-HERE"><b>Join Microsoft Teams</b></a></p>
-      <ul>
-        <li>Meeting ID: MEETING-ID-HERE</li>
-        <li>Passcode: PASSCODE-HERE</li>
-      </ul>
-
-      <p><b>Dial-in (audio only)</b></p>
-      <ul>
-        <li>DIAL-IN-NUMBER-HERE</li>
-        <li>Phone conference ID: PHONE-CONFERENCE-ID-HERE</li>
-        <li><a href="DIAL-IN-URL-HERE">Find your local number</a></li>
-      </ul>
-    </td>
-
-    <td valign="top" width="50%">
-      <h3>General Meeting<br>Slot #2</h3>
-
-      <table border="1" cellpadding="6" cellspacing="0" width="100%">
-        <tr>
-          <th>Location</th>
-          <th>Local Time</th>
-        </tr>
-        <tr><td>US Pacific (San Francisco, PT)</td><td>4:00 PM PT</td></tr>
-        <tr><td>US Mountain (Denver, MT)</td><td>5:00 PM MT</td></tr>
-        <tr><td>US Central (Chicago, CT)</td><td>6:00 PM CT</td></tr>
-        <tr><td>US Eastern (New York, ET)</td><td>7:00 PM ET</td></tr>
-        <tr><td>London (UK, BST)</td><td>12:00 AM BST (next day)</td></tr>
-        <tr><td>Munich (Germany, CEST)</td><td>1:00 AM CEST (next day)</td></tr>
-        <tr><td>Tokyo (Japan, JST)</td><td>8:00 AM JST (next day)</td></tr>
-      </table>
-
-      <p><b>Meeting Link:</b> <a href="MEETING-URL-HERE"><b>Join Microsoft Teams</b></a></p>
-      <ul>
-        <li>Meeting ID: MEETING-ID-HERE</li>
-        <li>Passcode: PASSCODE-HERE</li>
-      </ul>
-
-      <p><b>Dial-in (audio only)</b></p>
-      <ul>
-        <li>DIAL-IN-NUMBER-HERE</li>
-        <li>Phone conference ID: PHONE-CONFERENCE-ID-HERE</li>
-        <li><a href="DIAL-IN-URL-HERE">Find your local number</a></li>
-      </ul>
-    </td>
-  </tr>
+<table border="0" cellpadding="0" cellspacing="0" class="meeting-list" width="100%"><tr><td class="meeting-cell meeting-cell--shaded" valign="top" width="100%"><h2>OpenQSE General Meetings</h2><p><b>Meeting Page:</b> <a href="https://openqse.org/meetings/">OpenQSE Meetings</a> (for specific dates and slot details)</p><table border="0" cellpadding="12" cellspacing="0" class="slot-grid" width="100%">
+<tr>
+<td class="slot-cell" valign="top" width="50%">
+<h3>General Meeting<br/>Slot #1</h3>
+<table border="1" cellpadding="6" cellspacing="0" class="time-table" width="100%">
+<tr>
+<th>Location</th>
+<th>Local Time</th>
+</tr>
+<tr><td>US Pacific (San Francisco, PT)</td><td>9:00 AM PT</td></tr>
+<tr><td>US Mountain (Denver, MT)</td><td>10:00 AM MT</td></tr>
+<tr><td>US Central (Chicago, CT)</td><td>11:00 AM CT</td></tr>
+<tr><td>US Eastern (New York, ET)</td><td>12:00 PM ET</td></tr>
+<tr><td>London (UK, BST)</td><td>5:00 PM BST</td></tr>
+<tr><td>Munich (Germany, CEST)</td><td>6:00 PM CEST</td></tr>
+<tr><td>Tokyo (Japan, JST)</td><td>1:00 AM JST (next day)</td></tr>
 </table>
-
-
-
-<!-- ------------------------------------------------------------ -->
-<hr>
-
-<h2>Working Group Meetings</h2>
-
-<h3>Workflows</h3>
-
-<p><b>Meeting Link:</b> <a href="WG-MEETING-URL-HERE"><b>Join Zoom</b></a></p>
+<p><b>Meeting Link:</b> <a href="MEETING-URL-HERE"><b>Join Microsoft Teams</b></a></p>
 <ul>
-  <li>Meeting ID: WG-MEETING-ID-HERE</li>
+<li>Meeting ID: MEETING-ID-HERE</li>
+<li>Passcode: PASSCODE-HERE</li>
 </ul>
-
-<hr width="75%" align="left">
-
-<h3>Resource Management Interface (RMI)</h3>
-
-<p><b>Meeting Link:</b> <a href="RMI-MEETING-URL-HERE"><b>Join Microsoft Teams</b></a></p>
+<p><b>Dial-in (audio only)</b></p>
 <ul>
-  <li>Meeting ID: RMI-MEETING-ID-HERE</li>
-  <li>Passcode: RMI-PASSCODE-HERE</li>
-  <li>Meeting Series: SERIES-DATES-HERE</li>
+<li>DIAL-IN-NUMBER-HERE</li>
+<li>Phone conference ID: PHONE-CONFERENCE-ID-HERE</li>
+<li><a href="DIAL-IN-URL-HERE">Find your local number</a></li>
 </ul>
-
-<p><b>Working Group Page:</b> <a href="RMI-MEETING-PAGE-URL-HERE">RMI Meeting Page</a></p>
-
+</td>
+<td class="slot-cell" valign="top" width="50%">
+<h3>General Meeting<br/>Slot #2</h3>
+<table border="1" cellpadding="6" cellspacing="0" class="time-table" width="100%">
+<tr>
+<th>Location</th>
+<th>Local Time</th>
+</tr>
+<tr><td>US Pacific (San Francisco, PT)</td><td>4:00 PM PT</td></tr>
+<tr><td>US Mountain (Denver, MT)</td><td>5:00 PM MT</td></tr>
+<tr><td>US Central (Chicago, CT)</td><td>6:00 PM CT</td></tr>
+<tr><td>US Eastern (New York, ET)</td><td>7:00 PM ET</td></tr>
+<tr><td>London (UK, BST)</td><td>12:00 AM BST (next day)</td></tr>
+<tr><td>Munich (Germany, CEST)</td><td>1:00 AM CEST (next day)</td></tr>
+<tr><td>Tokyo (Japan, JST)</td><td>8:00 AM JST (next day)</td></tr>
+</table>
+<p><b>Meeting Link:</b> <a href="MEETING-URL-HERE"><b>Join Microsoft Teams</b></a></p>
+<ul>
+<li>Meeting ID: MEETING-ID-HERE</li>
+<li>Passcode: PASSCODE-HERE</li>
+</ul>
+<p><b>Dial-in (audio only)</b></p>
+<ul>
+<li>DIAL-IN-NUMBER-HERE</li>
+<li>Phone conference ID: PHONE-CONFERENCE-ID-HERE</li>
+<li><a href="DIAL-IN-URL-HERE">Find your local number</a></li>
+</ul>
+</td>
+</tr>
+</table></td></tr><tr><td class="meeting-cell meeting-cell--plain" valign="top" width="100%">
+<h3>WORKING-GROUP-NAME-HERE</h3>
+<p><b>Schedule:</b> SCHEDULE-HERE</p>
+<table border="1" cellpadding="6" cellspacing="0" class="time-table" width="100%">
+<tr><th>Location</th><th>Local Time</th></tr>
+<tr><td>US Pacific (San Francisco, PT)</td><td>PACIFIC-TIME-HERE</td></tr>
+<tr><td>US Mountain (Denver, MT)</td><td>MOUNTAIN-TIME-HERE</td></tr>
+<tr><td>US Central (Chicago, CT)</td><td>CENTRAL-TIME-HERE</td></tr>
+<tr><td>US Eastern (New York, ET)</td><td>EASTERN-TIME-HERE</td></tr>
+<tr><td>London (UK, GMT/BST)</td><td>LONDON-TIME-HERE</td></tr>
+<tr><td>Munich (Germany, CET/CEST)</td><td>MUNICH-TIME-HERE</td></tr>
+<tr><td>Tokyo (Japan, JST)</td><td>TOKYO-TIME-HERE</td></tr>
+</table>
+<p><b>Resources:</b></p>
+<ul><li><a href="RESOURCE-URL-HERE">RESOURCE-LABEL-HERE</a></li></ul>
+<p><b>Meeting Link:</b> <a href="MEETING-URL-HERE"><b>JOIN-LABEL-HERE</b></a></p>
+<ul>
+<li>Meeting ID: MEETING-ID-HERE</li>
+<li>Passcode: PASSCODE-HERE</li>
+</ul>
+<p><b>Dial-in (audio only):</b></p><ul><li>DIAL-IN-NUMBER-HERE</li><li>Phone conference ID: PHONE-CONFERENCE-ID-HERE</li></ul><p><b>Video conferencing device:</b></p><ul><li>Tenant key: TENANT-KEY-HERE</li><li>Video ID: VIDEO-ID-HERE</li></ul></td></tr><tr><td class="meeting-cell meeting-cell--shaded" valign="top" width="100%"><h3>ALTERNATING-WORKING-GROUP-NAME-HERE</h3><p><b>Schedule:</b> ALTERNATING-SCHEDULE-HERE</p><table border="0" cellpadding="0" cellspacing="0" class="slot-grid" width="100%"><tr><td class="slot-cell" valign="top" width="50%">
+<h3>Meeting Slot #1</h3>
+<p><b>Schedule:</b> SLOT-1-SCHEDULE-HERE</p>
+<table border="1" cellpadding="6" cellspacing="0" class="time-table" width="100%">
+<tr><th>Location</th><th>Local Time</th></tr>
+<tr><td>US Pacific (San Francisco, PT)</td><td>SLOT-1-PACIFIC-TIME-HERE</td></tr>
+<tr><td>US Mountain (Denver, MT)</td><td>SLOT-1-MOUNTAIN-TIME-HERE</td></tr>
+<tr><td>US Central (Chicago, CT)</td><td>SLOT-1-CENTRAL-TIME-HERE</td></tr>
+<tr><td>US Eastern (New York, ET)</td><td>SLOT-1-EASTERN-TIME-HERE</td></tr>
+<tr><td>London (UK, GMT/BST)</td><td>SLOT-1-LONDON-TIME-HERE</td></tr>
+<tr><td>Munich (Germany, CET/CEST)</td><td>SLOT-1-MUNICH-TIME-HERE</td></tr>
+<tr><td>Tokyo (Japan, JST)</td><td>SLOT-1-TOKYO-TIME-HERE</td></tr>
+</table>
+<p><b>Resources:</b></p>
+<ul><li><a href="SLOT-1-RESOURCE-URL-HERE">SLOT-1-RESOURCE-LABEL-HERE</a></li></ul>
+<p><b>Meeting Link:</b> <a href="SLOT-1-MEETING-URL-HERE"><b>SLOT-1-JOIN-LABEL-HERE</b></a></p>
+<ul><li>Meeting ID: SLOT-1-MEETING-ID-HERE</li></ul>
+</td><td class="slot-cell" valign="top" width="50%">
+<h3>Meeting Slot #2</h3>
+<p><b>Schedule:</b> SLOT-2-SCHEDULE-HERE</p>
+<table border="1" cellpadding="6" cellspacing="0" class="time-table" width="100%">
+<tr><th>Location</th><th>Local Time</th></tr>
+<tr><td>US Pacific (San Francisco, PT)</td><td>SLOT-2-PACIFIC-TIME-HERE</td></tr>
+<tr><td>US Mountain (Denver, MT)</td><td>SLOT-2-MOUNTAIN-TIME-HERE</td></tr>
+<tr><td>US Central (Chicago, CT)</td><td>SLOT-2-CENTRAL-TIME-HERE</td></tr>
+<tr><td>US Eastern (New York, ET)</td><td>SLOT-2-EASTERN-TIME-HERE</td></tr>
+<tr><td>London (UK, GMT/BST)</td><td>SLOT-2-LONDON-TIME-HERE</td></tr>
+<tr><td>Munich (Germany, CET/CEST)</td><td>SLOT-2-MUNICH-TIME-HERE</td></tr>
+<tr><td>Tokyo (Japan, JST)</td><td>SLOT-2-TOKYO-TIME-HERE</td></tr>
+</table>
+<p><b>Resources:</b></p>
+<ul><li><a href="SLOT-2-RESOURCE-URL-HERE">SLOT-2-RESOURCE-LABEL-HERE</a></li></ul>
+<p><b>Meeting Link:</b> <a href="SLOT-2-MEETING-URL-HERE"><b>SLOT-2-JOIN-LABEL-HERE</b></a></p>
+<ul><li>Meeting ID: SLOT-2-MEETING-ID-HERE</li></ul>
+</td></tr></table></td></tr></table>
