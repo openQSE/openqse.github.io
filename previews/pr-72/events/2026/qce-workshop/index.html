@@ -153,6 +153,15 @@ document.addEventListener('click', function() {
   width: 8rem;
 }
 
+.info-table a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.info-table a:hover {
+  text-decoration: underline;
+}
+
 /* Calendar buttons */
 .cal-buttons {
   display: flex;
@@ -225,6 +234,20 @@ document.addEventListener('click', function() {
 
 .format-table tr:last-child td {
   border-bottom: none;
+}
+
+.format-table ul {
+  margin: 0.25rem 0 0 1rem;
+}
+
+.schedule-links a {
+  color: #2563eb;
+  text-decoration: none;
+  margin-right: 0.75rem;
+}
+
+.schedule-links a:hover {
+  text-decoration: underline;
 }
 
 /* Speakers grid */
@@ -381,16 +404,6 @@ document.addEventListener('click', function() {
   text-decoration: underline;
 }
 
-.placeholder-notice {
-  background: #fef9c3;
-  border-left: 4px solid #facc15;
-  padding: 0.75rem 1rem;
-  border-radius: 0 4px 4px 0;
-  font-size: 0.9rem;
-  color: #713f12;
-  margin-bottom: 1.5rem;
-}
-
 @media (max-width: 600px) {
   .organizer-card {
     flex-direction: column;
@@ -407,10 +420,6 @@ document.addEventListener('click', function() {
   <a href="/previews/pr-72/events/">Events</a> &rsaquo;
   <a href="/previews/pr-72/events/2026/">2026</a> &rsaquo;
   IEEE QCE-2026 Workshop
-</div>
-
-<div class="placeholder-notice">
-  Workshop details are being finalized. Check back soon for the full program, schedule, and registration information.
 </div>
 
 <!-- ═══════════════════════════════════════════════════ Overview -->
@@ -450,62 +459,31 @@ document.addEventListener('click', function() {
   <table class="info-table">
     <tr>
       <td>Event</td>
-      <td><a href="https://qce.quantum.ieee.org/" target="_blank" rel="noopener noreferrer">IEEE Quantum Week 2026 (QCE26)</a></td>
+      <td>openQSE Workshop @ <a href="https://qce.quantum.ieee.org/2026/" target="_blank" rel="noopener noreferrer">IEEE Quantum Week 2026 (QCE26)</a></td>
     </tr>
     <tr>
-      <td>Date</td>
-      <td>TBD &mdash; September 2026</td>
+      <td>When</td>
+      <td>Thursday, September 17, 2026</td>
     </tr>
     <tr>
-      <td>Time</td>
-      <td>TBD</td>
+      <td>Where</td>
+      <td>Room 714A, Metro Toronto Convention Centre, Toronto, Ontario, Canada</td>
     </tr>
     <tr>
-      <td>Duration</td>
-      <td>4.5 hours</td>
-    </tr>
-    <tr>
-      <td>Location</td>
-      <td>TBD</td>
-    </tr>
-    <tr>
-      <td>Room</td>
-      <td>TBD</td>
+      <td>Sessions</td>
+      <td class="schedule-links">
+        <a href="https://qce.quantum.ieee.org/2026/qce26-schedule/workshop-schedule/#113-1" target="_blank" rel="noopener noreferrer">Session 1: 10:00&ndash;11:30 AM EDT</a> |&nbsp;
+        <a href="https://qce.quantum.ieee.org/2026/qce26-schedule/workshop-schedule/#113-2" target="_blank" rel="noopener noreferrer">Session 2: 1:00&ndash;2:30 PM EDT</a> |&nbsp;
+        <a href="https://qce.quantum.ieee.org/2026/qce26-schedule/workshop-schedule/#113-3" target="_blank" rel="noopener noreferrer">Session 3: 3:00&ndash;4:30 PM EDT</a>
+      </td>
     </tr>
     <tr>
       <td>Format</td>
-      <td>Hybrid (in-person + remote) &mdash; TBC</td>
+      <td>In-person workshop</td>
     </tr>
   </table>
-</div>
-
-<!-- ═══════════════════════════════════════════════════ Calendar -->
-<div class="oqse-section">
-  <h2>Add to Calendar</h2>
-  <p>Once the date is confirmed, add the workshop to your calendar:</p>
   <div class="cal-buttons">
-    <!--
-      TODO: Replace # hrefs with real calendar links once date/time/location are confirmed.
-      Google Calendar URL format:
-        https://calendar.google.com/calendar/render?action=TEMPLATE
-          &text=OQSE+Workshop+at+IEEE+QCE26
-          &dates=20260901T090000Z/20260901T133000Z
-          &details=openQSE+Workshop+at+IEEE+Quantum+Week+2026
-          &location=TBD
-      .ics file: place at events/2026/qce-workshop/QCE2026-openQSE-workshop.ics
-    -->
-    <a class="cal-btn" href="#" title="Add to Google Calendar">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="3" y="4" width="18" height="17" rx="2" stroke="#4285F4" stroke-width="2" fill="white"/>
-        <path d="M16 2v4M8 2v4M3 9h18" stroke="#4285F4" stroke-width="2" stroke-linecap="round"/>
-        <rect x="8" y="13" width="3" height="3" rx="0.5" fill="#EA4335"/>
-        <rect x="13" y="13" width="3" height="3" rx="0.5" fill="#34A853"/>
-        <rect x="8" y="17" width="3" height="2" rx="0.5" fill="#FBBC05"/>
-        <rect x="13" y="17" width="3" height="2" rx="0.5" fill="#4285F4"/>
-      </svg>
-      Google Calendar
-    </a>
-    <a class="cal-btn" href="#" download="QCE2026-openQSE-workshop.ics" title="Download .ics for Apple Calendar or Outlook">
+    <a class="cal-btn" href="/previews/pr-72/assets/files/events/2026/qce-workshop/QCE2026-openQSE-workshop.ics" download="QCE2026-openQSE-workshop.ics" title="Download .ics for Apple Calendar or Outlook">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="3" y="4" width="18" height="17" rx="2" stroke="#555" stroke-width="2" fill="white"/>
         <path d="M16 2v4M8 2v4M3 9h18" stroke="#555" stroke-width="2" stroke-linecap="round"/>
@@ -514,6 +492,100 @@ document.addEventListener('click', function() {
       Apple / Outlook (.ics)
     </a>
   </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ Program -->
+<div class="oqse-section">
+  <h2 id="program">Program</h2>
+
+  <p>Each topical block will reserve time for discussion and audience feedback as timing permits.</p>
+
+  <table class="format-table">
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Block</th>
+        <th>Speakers and topics</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>10:00&ndash;10:15 AM EDT</td>
+        <td>Workshop intro</td>
+        <td>
+          <div><strong>Moderator:</strong> Amir Shehata</div>
+          <ul>
+            <li>Amir Shehata (ORNL) -- welcome, framing, and workshop goals</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>10:15&ndash;11:15 AM EDT</td>
+        <td>Applications</td>
+        <td>
+          <div><strong>Moderator:</strong> Ermal Rrapaj</div>
+          <ul>
+            <li>Ermal Rrapaj (NERSC/LBNL) -- Introduction for applications session</li>
+            <li>Blake Johnson (IBM) -- applications perspective</li>
+            <li>Sona Najafi (IQM) -- applications perspective</li>
+            <li>Rafael Haenel (QuEra) -- applications perspective</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>11:15&ndash;11:30 AM EDT</td>
+        <td>Discussion</td>
+        <td>Discussion, synthesis, and transition.</td>
+      </tr>
+      <tr>
+        <td>1:00&ndash;2:00 PM EDT</td>
+        <td>Runtime / Quantum Resource Interface</td>
+        <td>
+          <div><strong>Moderators:</strong> Thomas Naughton and Amir Shehata</div>
+          <ul>
+            <li>Thomas Naughton (ORNL) -- Introduction and update on QRI Working Group</li>
+            <li>Muhammad Osama (AMD) -- Open Runtime for Quantum and QHPC</li>
+            <li>Phillip Seitz (Quantinuum) -- Tierkreis: Quantum-classical hybrid workflow management system</li>
+            <li>Doug Jacobson (SchedMD/NVIDIA) -- Perspectives and requirements for workflow managers</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>2:00&ndash;2:30 PM EDT</td>
+        <td>FTQC Compiler Requirements, Part 1</td>
+        <td>
+          <div><strong>Moderator:</strong> Lee J. O'Riordan</div>
+          <ul>
+            <li>Lee J. O'Riordan (Xanadu) -- Introduction to FTQC compiler session</li>
+            <li>Josh Izaac (Xanadu) -- Programming of heterogeneous quantum workloads for low-latency FTQC R&amp;D</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>3:00&ndash;3:30 PM EDT</td>
+        <td>FTQC Compiler Requirements, Part 2</td>
+        <td>
+          <div><strong>Moderator:</strong> Lee J. O'Riordan</div>
+          <ul>
+            <li>Lukas Bergholzer (MQSC) -- Structured program representations and compilation</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>3:30&ndash;4:30 PM EDT</td>
+        <td>Control Electronics</td>
+        <td>
+          <div><strong>Moderator:</strong> Andrea Delgado</div>
+          <ul>
+            <li>Andrea Delgado (Qblox) -- Introduction to Quantum Control</li>
+            <li>Kasra Nowrouzi (QuNorth) -- Co-design for Open Quantum Architectures</li>
+            <li>Sara Sussman (Fermilab) -- AI for Quantum Control</li>
+            <li>Daniel Weigand (Qblox) -- Compilation for Quantum Control</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <!-- ═══════════════════════════════════════════════════ Objectives -->
@@ -539,53 +611,6 @@ document.addEventListener('click', function() {
   </ul>
 </div>
 
-<!-- ═══════════════════════════════════════════════════ Program -->
-<div class="oqse-section">
-  <h2>Program</h2>
-
-  <p>The workshop is 4.5 hours and combines short technical talks with structured interactive
-     sessions. The tentative format is:</p>
-
-  <table class="format-table">
-    <thead>
-      <tr>
-        <th>Segment</th>
-        <th>Duration</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Opening overview</td>
-        <td>25 min</td>
-        <td>Introduction to openQSE, workshop goals, and framing of cross-layer co-design challenges.</td>
-      </tr>
-      <tr>
-        <td>Invited talks</td>
-        <td>95 min</td>
-        <td>Short technical presentations (15&ndash;20 min each) from practitioners across the quantum computing stack.</td>
-      </tr>
-      <tr>
-        <td>Co-design sessions</td>
-        <td>90 min</td>
-        <td>Facilitated small-group breakouts analyzing example workloads, followed by group synthesis.</td>
-      </tr>
-      <tr>
-        <td>Panel</td>
-        <td>45 min</td>
-        <td>Moderated discussion with speakers and participants on open challenges and directions.</td>
-      </tr>
-      <tr>
-        <td>Closing discussion</td>
-        <td>15 min</td>
-        <td>Summary of key findings, action items, and next steps.</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <p style="margin-top:1rem;"><em>Detailed schedule and speaker assignments will be posted as they are confirmed.</em></p>
-</div>
-
 <!-- ═══════════════════════════════════════════════════ Target Audience -->
 <div class="oqse-section">
   <h2>Target Audience</h2>
@@ -603,20 +628,8 @@ document.addEventListener('click', function() {
 <!-- ═══════════════════════════════════════════════════ Speakers -->
 <div class="oqse-section">
   <h2>Speakers</h2>
-  <p><em>Invited speakers will be announced as they are confirmed.</em></p>
-  <!--
-    TODO: Add speaker cards here as speakers are confirmed.
-    Use the pattern below for each speaker:
-
-    <div class="speakers-grid">
-      <div class="speaker-card">
-        <div class="speaker-name">Speaker Name</div>
-        <div class="speaker-org">Affiliation</div>
-        <div class="speaker-title">Talk Title</div>
-        <div class="speaker-abstract">Abstract text.</div>
-      </div>
-    </div>
-  -->
+  <p>The current planned speaker and facilitator roster is embedded in the schedule above.
+     Additional talk details will be posted as confirmations are finalized.</p>
 </div>
 
 <!-- ═══════════════════════════════════════════════════ Organizers -->
