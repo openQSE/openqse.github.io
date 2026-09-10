@@ -1,0 +1,96 @@
+<style>
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.event-card {
+  padding: 1.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+  background: white;
+}
+
+.event-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.event-type {
+  display: inline-block;
+  background: #e0f2fe;
+  color: #075985;
+  border-radius: 9999px;
+  padding: 0.15rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.event-card h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.event-card h2 a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.event-card h2 a:hover {
+  text-decoration: underline;
+}
+
+.event-meta {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.75rem;
+}
+
+.event-card p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.event-tag {
+  display: inline-block;
+  background: #dbeafe;
+  color: #1e40af;
+  border-radius: 9999px;
+  padding: 0.15rem 0.75rem;
+  font-size: 0.8rem;
+  margin-top: 0.75rem;
+  margin-right: 0.25rem;
+}
+</style>
+
+{% assign event_count = 0 %}
+<div class="events-grid">
+  {% for event in site.data.events %}
+    {% if include.year == nil or event.year == include.year %}
+      {% assign event_count = event_count | plus: 1 %}
+      <article class="event-card">
+        <div class="event-type">{{ event.event_type }}</div>
+        <h2><a href="{{ event.url | relative_url }}">{{ event.title }}</a></h2>
+        <div class="event-meta">
+          {{ event.date_label }}{% if event.venue %} &nbsp;&middot;&nbsp; {{ event.venue }}{% endif %}
+        </div>
+        <p>{{ event.summary }}</p>
+        {% if event.tags %}
+          <div class="event-tags">
+            {% for tag in event.tags %}
+              <span class="event-tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </article>
+    {% endif %}
+  {% endfor %}
+</div>
+
+{% if event_count == 0 %}
+  <p>No events are listed yet.</p>
+{% endif %}
