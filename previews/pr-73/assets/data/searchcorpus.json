@@ -1,0 +1,76 @@
+[ 
+ 
+ 
+{ 
+"title"    : "Community", 
+"desc"     : "Community", 
+"category" : "page", 
+"url"      : "/previews/pr-73/community/", 
+"date"     : "January 1, 1970" 
+}, 
+ 
+{ 
+"title"    : "", 
+"desc"     : "", 
+"category" : "page", 
+"url"      : "/previews/pr-73/workshops/QCE2026/", 
+"date"     : "January 1, 1970" 
+}, 
+ 
+{ 
+"title"    : "openQSE: Co-Designing the Quantum Software Stack from Applications to Control Systems", 
+"desc"     : "openQSE: Co-Designing the Quantum Software Stack from Applications to Control Systems", 
+"category" : "page", 
+"url"      : "/previews/pr-73/events/2026/qce-workshop/", 
+"date"     : "January 1, 1970" 
+}, 
+ 
+{ 
+"title"    : "OpenQSE: An Open Ecosystem for Quantum-HPC Software", 
+"desc"     : "OpenQSE: An Open Ecosystem for Quantum-HPC Software", 
+"category" : "page", 
+"url"      : "/previews/pr-73/events/2026/qce-bof/", 
+"date"     : "January 1, 1970" 
+}, 
+ 
+{ 
+"title"    : "2026 Events", 
+"desc"     : "2026 Events", 
+"category" : "page", 
+"url"      : "/previews/pr-73/events/2026/", 
+"date"     : "January 1, 1970" 
+}, 
+ 
+{ 
+"title"    : "Events", 
+"desc"     : "Events", 
+"category" : "page", 
+"url"      : "/previews/pr-73/events/", 
+"date"     : "January 1, 1970" 
+}, 
+ 
+{ 
+"title"    : "OpenQSE", 
+"desc"     : "OpenQSE", 
+"category" : "page", 
+"url"      : "/previews/pr-73/", 
+"date"     : "January 1, 1970" 
+}, 
+ 
+{ 
+"title"    : "Meetings", 
+"desc"     : "Meetings", 
+"category" : "page", 
+"url"      : "/previews/pr-73/meetings/", 
+"date"     : "January 1, 1970" 
+}, 
+ 
+{ 
+"title"    : "Tag Index", 
+"desc"     : "Tag Index", 
+"category" : "page", 
+"url"      : "/previews/pr-73/tags/", 
+"date"     : "January 1, 1970" 
+} 
+ 
+]
