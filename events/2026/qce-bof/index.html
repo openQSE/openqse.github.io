@@ -1,0 +1,306 @@
+---
+layout: page
+title: "OpenQSE: An Open Ecosystem for Quantum-HPC Software"
+subtitle: "Birds-of-a-Feather session at IEEE Quantum Week 2026"
+permalink: /events/2026/qce-bof/
+event_year: "2026"
+event_type: BoF
+---
+
+<style>
+.oqse-section {
+  margin-top: 2.5rem;
+}
+
+.oqse-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e3a5f;
+  border-bottom: 2px solid #dbeafe;
+  padding-bottom: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.oqse-section h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e40af;
+  margin: 1.25rem 0 0.5rem;
+}
+
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.info-table td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: top;
+}
+
+.info-table td:first-child {
+  font-weight: 600;
+  color: #374151;
+  white-space: nowrap;
+  width: 8rem;
+}
+
+.info-table a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.info-table a:hover {
+  text-decoration: underline;
+}
+
+.cal-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.cal-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  color: #374151;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.cal-btn:hover {
+  background: #f3f4f6;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-decoration: none;
+}
+
+.oqse-section ul {
+  margin: 0.5rem 0 0 1.25rem;
+  color: #374151;
+}
+
+.oqse-section ul li {
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+
+.agenda-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  margin-top: 0.75rem;
+}
+
+.agenda-table th {
+  background: #eff6ff;
+  color: #1e3a5f;
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  font-weight: 600;
+  border-bottom: 2px solid #bfdbfe;
+}
+
+.agenda-table td {
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: top;
+}
+
+.agenda-table td:first-child {
+  white-space: nowrap;
+  font-weight: 600;
+  color: #374151;
+  width: 12rem;
+}
+
+.agenda-table td:nth-child(2) {
+  font-weight: 600;
+  color: #111827;
+}
+
+.agenda-table tr:last-child td {
+  border-bottom: none;
+}
+
+.materials-callout {
+  background: #f8fafc;
+  border-left: 4px solid #93c5fd;
+  color: #334155;
+  padding: 0.9rem 1rem;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.breadcrumb {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumb a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+</style>
+
+<div class="breadcrumb">
+  <a href="{{ '/events/' | relative_url }}">Events</a> &rsaquo;
+  <a href="{{ '/events/2026/' | relative_url }}">2026</a> &rsaquo;
+  IEEE QCE-2026 BoF
+</div>
+
+<!-- Overview -->
+<div class="oqse-section">
+  <h2>Overview</h2>
+
+  <p>OpenQSE is an emerging, vendor-neutral quantum-HPC software ecosystem effort defining the
+     interfaces, architecture, and community practices needed to make quantum resources usable
+     within high-performance computing (HPC) and cloud environments&mdash;without requiring any
+     single project or vendor to own the full stack. This community meetup will convene QC
+     researchers, application developers, SDK and compiler
+     contributors, hardware vendors, HPC facility operators, and system software teams to discuss
+     how open interfaces can reduce fragmentation across quantum runtimes, resource management,
+     orchestration, execution, observability, and application workflows. The session takes a
+     top-down, practitioner-first approach: starting from the workflows,
+     integration challenges, and deployment realities practitioners face today, and working
+     downward to identify the interface boundaries and community agreements needed to resolve
+     them. Short framing remarks are followed by a sequence of moderated whole-room discussion
+     items designed to identify community requirements and priorities. Discussion topics include
+     the OpenQSE reference architecture, quantum-HPC stack integration, NISQ and fault-tolerant
+     system readiness, testing and validation, and governance models for shared specifications.</p>
+
+  <p>The discussion-first format captures requirements from the practitioner's vantage
+     point&mdash;participants whose systems, applications, and institutions face different
+     integration constraints. Participants leave with a clearer picture of where their tools fit
+     in the ecosystem, what collaboration is needed, and how to contribute to OpenQSE after
+     QCE'26. IEEE QCE'26 is a primary opportunity to gather broad community input; requirements
+     surfaced here will shape the OpenQSE roadmap and working group agendas. The outcome is a
+     practical roadmap establishing OpenQSE as a durable community effort, identifying priorities
+     for working groups and defining community engagement paths.</p>
+</div>
+
+<!-- Details -->
+<div class="oqse-section">
+  <h2>Details</h2>
+  <table class="info-table">
+    <tr>
+      <td>Event</td>
+      <td>OpenQSE BoF @ <a href="https://qce.quantum.ieee.org/2026/" target="_blank" rel="noopener noreferrer">IEEE Quantum Week 2026 (QCE26)</a></td>
+    </tr>
+    <tr>
+      <td>When</td>
+      <td>Monday, September 14, 2026, 3:00&ndash;4:30 PM EDT</td>
+    </tr>
+    <tr>
+      <td>Where</td>
+      <td>Room 601A/B, Metro Toronto Convention Centre, Toronto, Ontario, Canada</td>
+    </tr>
+    <tr>
+      <td>Sessions</td>
+      <td><a href="https://qce.quantum.ieee.org/2026/qce26-schedule/bof-schedule/#1884" target="_blank" rel="noopener noreferrer">OpenQSE BoF: 3:00&ndash;4:30 PM EDT</a></td>
+    </tr>
+    <tr>
+      <td>Format</td>
+      <td>90-minute in-person Birds-of-a-Feather session</td>
+    </tr>
+  </table>
+  <div class="cal-buttons">
+    <a class="cal-btn" href="{{ '/assets/files/events/2026/qce-bof/QCE2026-openQSE-bof.ics' | relative_url }}" download="QCE2026-openQSE-bof.ics" title="Download .ics for Apple Calendar or Outlook">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="4" width="18" height="17" rx="2" stroke="#555" stroke-width="2" fill="white"/>
+        <path d="M16 2v4M8 2v4M3 9h18" stroke="#555" stroke-width="2" stroke-linecap="round"/>
+        <path d="M8 14h8M8 17h5" stroke="#555" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      Apple / Outlook (.ics)
+    </a>
+  </div>
+</div>
+
+<!-- Agenda -->
+<div class="oqse-section">
+  <h2 id="agenda">Agenda</h2>
+
+  <table class="agenda-table">
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Title / Topic</th>
+        <th>Speaker (Org)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>3:00&ndash;3:05 PM</td>
+        <td>Opening introduction</td>
+        <td>Amir Shehata (Oak Ridge National Laboratory)</td>
+      </tr>
+      <tr>
+        <td>3:05&ndash;3:30 PM</td>
+        <td>View from U.S. Department of Energy</td>
+        <td>Laura Schulz (Argonne National Laboratory)</td>
+      </tr>
+      <tr>
+        <td>3:30&ndash;3:55 PM</td>
+        <td>View from Europe</td>
+        <td>Gabriella Bettonte (E4 Computer Engineering SpA)</td>
+      </tr>
+      <tr>
+        <td>3:55&ndash;4:05 PM</td>
+        <td>Quantum Resource Interface working group update</td>
+        <td>Thomas Naughton (Oak Ridge National Laboratory)</td>
+      </tr>
+      <tr>
+        <td>4:05&ndash;4:15 PM</td>
+        <td>System Architecture working group update</td>
+        <td>Sebastian Stern (Amazon Web Services)</td>
+      </tr>
+      <tr>
+        <td>4:15&ndash;4:25 PM</td>
+        <td>Quantum Runtime working group update</td>
+        <td>Amir Shehata (Oak Ridge National Laboratory)</td>
+      </tr>
+      <tr>
+        <td>4:25&ndash;4:30 PM</td>
+        <td>Highlights for community roadmap and open discussion</td>
+        <td>All organizers and participants</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Organizers -->
+<div class="oqse-section">
+  <h2>Organizers</h2>
+
+  <ul>
+    <li>Sebastian Stern (Amazon Web Services)</li>
+    <li>Amir Shehata (Oak Ridge National Laboratory)</li>
+    <li>Thomas Naughton (Oak Ridge National Laboratory)</li>
+    <li>Laura Schulz (Argonne National Laboratory)</li>
+    <li>Kevin Kissell (Alice and Bob)</li>
+    <li>Gabriella Bettonte (E4 Computer Engineering SpA)</li>
+  </ul>
+</div>
+
+<!-- Materials -->
+<div class="oqse-section">
+  <h2>Materials</h2>
+  <div class="materials-callout">
+    Slides, notes, and other materials will be posted here when available.
+  </div>
+</div>
