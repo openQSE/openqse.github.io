@@ -148,6 +148,8 @@ exclude:
   - Gemfile.lock
   - LICENSE
   - README.md
+  - workshops/README.md
+  - workshops/QCE2026/README.md
   - CLAUDE.md
   - docs/
   - _includes.bak
