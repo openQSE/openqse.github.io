@@ -22,6 +22,9 @@ navbar-links:
     - Confluence:
         url: "https://openqse.atlassian.net"
         new-window: true
+    - Seminar Series:
+        url: "https://github.com/openQSE/openqse-admin/wiki/Seminar-Series"
+        new-window: true
 
 ################
 # --- Logo --- #
