@@ -11,3 +11,7 @@ ehthumbs.db
 Gemfile.lock
 
 .jekyll-cache/*
+
+# ElectroBoy local runtime state
+.electroboy/local/
+.electroboy/shared/runs/*/progress/
