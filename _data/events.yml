@@ -21,3 +21,15 @@
     - QCE2026
     - IEEE Quantum Week
     - BoF
+
+- title: "SC26: OpenQSE BoF"
+  url: "/events/2026/sc-bof/"
+  year: "2026"
+  date_label: "November 18, 2026, 12:15 PM–1:15 PM CST"
+  venue: "SC26, W194b"
+  event_type: "BoF"
+  summary: "OpenQSE Birds-of-a-Feather session at SC26 focused on building an open quantum-HPC software ecosystem and identifying community priorities."
+  tags:
+    - SC26
+    - BoF
+    - Quantum-HPC
