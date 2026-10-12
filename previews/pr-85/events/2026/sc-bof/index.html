@@ -1,0 +1,376 @@
+<!DOCTYPE HTML>
+<html>
+
+<head lang="en">
+    <title> SC26 BoF: OpenQSE: Building an Open Quantum-HPC Software Ecosystem - openQSE</title>
+
+<meta charset="UTF-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="The goal is for openQSE to be a unified initiative to bring together vendors, collaborators, labs and universities in building an open community." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="icon" type="image/png" href="/previews/pr-85/assets/img/openQSE-logo.png">
+
+<link rel="stylesheet" href="/previews/pr-85/assets/css/tailwind.min.css">
+<link rel="stylesheet" href="/previews/pr-85/assets/css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+
+<style>
+    .gradient {
+        background: linear-gradient(90deg, #07326a 0%, #064089 50%, #0F2027 100%);
+    }
+</style>
+
+</head>
+
+<body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
+
+    <nav id="header" class="fixed w-full z-30 top-0 text-white">
+    <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+        <div class="pl-4 flex items-center">
+            <a class="text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="/previews/pr-85/">
+                <img src="/previews/pr-85/assets/img/openQSE-logo.png" style="max-height: 1em; float: left" id="logo" />
+                <span style="padding-left: 0.5em; font-size: .6em; vertical-align: top;">openQSE</span>
+            </a>
+        </div>
+        <div class="block lg:hidden pr-4">
+            <button id="nav-toggle"
+                class="flex items-center p-1 text-blue-400 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Menu</title>
+                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                </svg>
+            </button>
+        </div>
+        <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20"
+            id="nav-content">
+            <ul class="list-reset lg:flex justify-end flex-1 items-center">
+    <li class="mr-3">
+        <a class="inline-block py-2 px-4 text-white no-underline hover:text-blue-500 toggleColour" href="/previews/pr-85/meetings">Meetings</a>
+    </li>
+    <li class="mr-3">
+        <a class="inline-block py-2 px-4 text-white no-underline hover:text-blue-500 toggleColour" href="/previews/pr-85/community">Community</a>
+    </li>
+    <li class="mr-3 relative">
+        <a class="inline-block py-2 px-4 text-white no-underline hover:text-blue-500 toggleColour cursor-pointer" onclick="toggleDropdown(event, 'dropdown-events')">Events ▾</a>
+        <ul id="dropdown-events" class="absolute hidden bg-white text-gray-800 shadow-lg mt-2 py-2 rounded z-50" style="min-width: 120px;">
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="/previews/pr-85/events/2026/">2026</a></li>
+        </ul>
+    </li>
+    <li class="mr-3 relative">
+        <a class="inline-block py-2 px-4 text-white no-underline hover:text-blue-500 toggleColour cursor-pointer" onclick="toggleDropdown(event, 'dropdown-resources')">Resources ▾</a>
+        <ul id="dropdown-resources" class="absolute hidden bg-white text-gray-800 shadow-lg mt-2 py-2 rounded z-50" style="min-width: 150px;">
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="https://github.com/openQSE" target="_blank" rel="noopener noreferrer">Github</a></li>
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="https://openqse.slack.com" target="_blank" rel="noopener noreferrer">Slack</a></li>
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="https://openqse.atlassian.net" target="_blank" rel="noopener noreferrer">Confluence</a></li>
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="https://github.com/openQSE/openqse-admin/wiki/Seminar-Series" target="_blank" rel="noopener noreferrer">Seminar Series</a></li>
+        </ul>
+    </li>
+    <li class="mr-3 relative">
+        <a class="inline-block py-2 px-4 text-white no-underline hover:text-blue-500 toggleColour cursor-pointer" onclick="toggleDropdown(event, 'dropdown-working-groups')">Working Groups ▾</a>
+        <ul id="dropdown-working-groups" class="absolute hidden bg-white text-gray-800 shadow-lg mt-2 py-2 rounded z-50" style="min-width: 260px;">
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="https://openqse.atlassian.net/wiki/x/BQBtCQ" target="_blank" rel="noopener noreferrer">System Architecture &amp; Workflows</a></li>
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="https://openqse.atlassian.net/wiki/x/A4BrCQ" target="_blank" rel="noopener noreferrer">Compilers</a></li>
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="https://openqse.atlassian.net/wiki/x/DIBoCQ" target="_blank" rel="noopener noreferrer">Quantum Resource Interface</a></li>
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="https://openqse.atlassian.net/wiki/x/AoBgCQ" target="_blank" rel="noopener noreferrer">Runtime</a></li>
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="https://openqse.atlassian.net/wiki/x/AoDVBg" target="_blank" rel="noopener noreferrer">Control Electronics</a></li>
+        </ul>
+    </li>
+</ul>
+
+<script>
+function toggleDropdown(event, dropdownId) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const dropdown = document.getElementById(dropdownId);
+    const allDropdowns = document.querySelectorAll('[id^="dropdown-"]');
+
+    // Close all other dropdowns
+    allDropdowns.forEach(function(dd) {
+        if (dd.id !== dropdownId) {
+            dd.classList.add('hidden');
+        }
+    });
+
+    // Toggle this dropdown
+    dropdown.classList.toggle('hidden');
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', function() {
+    const allDropdowns = document.querySelectorAll('[id^="dropdown-"]');
+    allDropdowns.forEach(function(dd) {
+        dd.classList.add('hidden');
+    });
+});
+</script>
+
+        </div>
+    </div>
+    <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
+</nav>
+
+<section class="pt-24">
+    <div class="container mx-auto px-2 pt-4 pb-12 text-gray-800">
+        <h1 class="w-full my-2 text-3xl font-bold leading-tight text-center text-white">
+            SC26 BoF: OpenQSE: Building an Open Quantum-HPC Software Ecosystem
+        </h1>
+    </div>
+</section>
+
+
+    <section class="bg-white py-8 page">
+        <div class="container mx-auto px-2 pt-4 pb-12 text-gray-800">
+            <style>
+.info-table, .agenda-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.info-table td, .agenda-table th, .agenda-table td {
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: top;
+}
+
+.info-table td:first-child {
+  width: 9rem;
+  font-weight: 600;
+  color: #374151;
+  white-space: nowrap;
+}
+
+.info-table a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.info-table a:hover {
+  text-decoration: underline;
+}
+
+.agenda-table th {
+  background: #eff6ff;
+  color: #1e3a5f;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid #bfdbfe;
+}
+
+.agenda-table td:first-child {
+  width: 8rem;
+  white-space: nowrap;
+  font-weight: 600;
+  color: #374151;
+}
+
+.info-table ul, .agenda-table ul {
+  margin: 0.25rem 0 0 1rem;
+}
+
+.open-items {
+  color: #b91c1c;
+}
+</style>
+
+<div class="open-items">
+<h2>Open items</h2>
+
+<ul>
+  <li>Develop the final agenda and participation materials.</li>
+  <li>The Control Electronics Working Group is not included in this session's planned speaker lineup.</li>
+</ul>
+</div>
+
+<h2>Overview</h2>
+
+<p>Quantum computing resources are increasingly integrated into HPC and cloud environments,
+but software stacks remain isolated, vendor-specific, and often proprietary. OpenQSE is a
+community effort developing an open, modular ecosystem of vendor-neutral specifications to
+close the interoperability gaps that fragment hybrid quantum-classical workflows.</p>
+
+<p>This BoF will briefly share the initiative's roadmap and working-group progress, then open
+the floor for structured discussion with HPC facility staff, application teams, vendors, and
+researchers to identify priorities and shape the direction together. The intended outcome is a
+prioritized set of integration artifacts the community identifies as most urgent for near-term
+development.</p>
+
+<h2>Details</h2>
+
+<table class="info-table">
+  <tr>
+    <td>Event</td>
+    <td>OpenQSE BoF @ <a href="https://sc26.supercomputing.org/" target="_blank" rel="noopener noreferrer">Supercomputing &rsquo;26</a></td>
+  </tr>
+  <tr>
+    <td>When</td>
+    <td>Wednesday, November 18, 2026, 12:15 PM&ndash;1:15 PM CST</td>
+  </tr>
+  <tr>
+    <td>Where</td>
+    <td>W194b</td>
+  </tr>
+  <tr>
+    <td>Sessions</td>
+    <td><a href="https://sc26.conference-program.com/presentation/?id=bof172&amp;sess=sess402" target="_blank" rel="noopener noreferrer">BoF172: OpenQSE, 12:15 PM&ndash;1:15 PM CST</a></td>
+  </tr>
+  <tr>
+    <td>Format</td>
+    <td>60-minute Birds of a Feather session</td>
+  </tr>
+</table>
+
+<h2>Schedule</h2>
+
+<table class="agenda-table">
+  <thead>
+    <tr>
+      <th>Time</th>
+      <th>Segment</th>
+      <th>Lead / contributors</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0:00&ndash;0:05</td>
+      <td><strong>Welcome and Community Overview</strong><br>Purpose, participation norms, and a high-level overview of the OpenQSE community</td>
+      <td>Thomas Naughton and/or Amir Shehata</td>
+    </tr>
+    <tr>
+      <td>0:05&ndash;0:35</td>
+      <td><strong>Working Group Updates</strong><br>Brief status updates and roadmap highlights</td>
+      <td>
+        <ul>
+          <li>Runtime Working Group &mdash; Amir Shehata</li>
+          <li>System Architecture Working Group &mdash; Sebastian Stern</li>
+          <li>Compiler Working Group &mdash; Michael Ferguson</li>
+          <li>Quantum Resource Interface &mdash; Yoonho Park</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>0:35&ndash;0:55</td>
+      <td><strong>Structured whole-room discussion</strong><br>Three topic prompts to frame discussion:
+        <ul>
+          <li>[Topic prompt 1 &mdash; session-leader input]</li>
+          <li>[Topic prompt 2 &mdash; session-leader input]</li>
+          <li>[Topic prompt 3 &mdash; session-leader input]</li>
+        </ul>
+      </td>
+      <td>All participants</td>
+    </tr>
+    <tr>
+      <td>0:55&ndash;1:00</td>
+      <td><strong>Wrap-up</strong><br>Priorities, next steps, and ways to participate</td>
+      <td>Session facilitators and participants</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Organizers</h2>
+
+<ul>
+  <li>Thomas Naughton, Oak Ridge National Laboratory (session lead)</li>
+  <li>Amir Shehata, Oak Ridge National Laboratory</li>
+  <li>Sebastian Stern, Amazon Web Services (AWS)</li>
+  <li>Yoonho Park, IBM</li>
+  <li>Michael Ferguson, HPE</li>
+  <li>Lukas Burgholzer, Munich Quantum Software Company (MQSC) / Technical University of Munich</li>
+  <li>Ermal Rrapaj, Lawrence Berkeley National Laboratory</li>
+</ul>
+
+        </div>
+    </section>
+
+    <footer class="bg-white">
+        <div class="container mx-auto px-8">
+    <div class="w-full flex flex-col md:flex-row py-6">
+        <div class="flex-1 mb-6 text-black">
+            <a class="no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="/previews/pr-85/">
+                <img src="/previews/pr-85/assets/img/openQSE-logo.png" style="max-height: 1em; float: left" id="logo" />
+                <span style="padding-left: 0.5em; font-size: .6em; vertical-align: top;" id="logo-text">openQSE</span>
+            </a>
+            <p class="text-gray-500 text-sm mt-2">
+                &copy;2026 openQSE Initiative
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    var scrollpos = window.scrollY;
+    var header = document.getElementById("header");
+    var navcontent = document.getElementById("nav-content");
+    var logo = document.getElementById("logo");
+    var toToggle = document.querySelectorAll(".toggleColour");
+
+    document.addEventListener('scroll', function () {
+        scrollpos = window.scrollY;
+
+        if (scrollpos > 10) {
+            header.classList.add("bg-white");
+            header.classList.add("text-gray-800");
+            header.classList.remove("text-white");
+            for (var i = 0; i < toToggle.length; i++) {
+                toToggle[i].classList.add("text-gray-800");
+                toToggle[i].classList.remove("text-white");
+            }
+            header.classList.add("shadow");
+            navcontent.classList.remove("bg-gray-100");
+            navcontent.classList.add("bg-white");
+        } else {
+            header.classList.remove("bg-white");
+            header.classList.remove("text-gray-800");
+            header.classList.add("text-white");
+            for (var i = 0; i < toToggle.length; i++) {
+                toToggle[i].classList.add("text-white");
+                toToggle[i].classList.remove("text-gray-800");
+            }
+            header.classList.remove("shadow");
+            navcontent.classList.remove("bg-white");
+            navcontent.classList.add("bg-gray-100");
+        }
+    });
+</script>
+
+<script>
+    var navMenuDiv = document.getElementById("nav-content");
+    var navMenu = document.getElementById("nav-toggle");
+
+    document.onclick = check;
+
+    function check(e) {
+        var target = (e && e.target) || (event && event.srcElement);
+
+        if (!checkParent(target, navMenuDiv)) {
+            if (checkParent(target, navMenu)) {
+                if (navMenuDiv.classList.contains("hidden")) {
+                    navMenuDiv.classList.remove("hidden");
+                } else {
+                    navMenuDiv.classList.add("hidden");
+                }
+            } else {
+                navMenuDiv.classList.add("hidden");
+            }
+        }
+    }
+
+    function checkParent(t, elm) {
+        while (t.parentNode) {
+            if (t == elm) {
+                return true;
+            }
+            t = t.parentNode;
+        }
+        return false;
+    }
+</script>
+
+    </footer>
+
+</body>
+
+</html>
