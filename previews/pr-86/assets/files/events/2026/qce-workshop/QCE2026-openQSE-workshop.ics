@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//openQSE//QCE2026 Workshop//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:qce2026-openqse-workshop-session-1@openqse.org
+DTSTAMP:20260910T000000Z
+DTSTART:20260917T140000Z
+DTEND:20260917T153000Z
+SUMMARY:openQSE Workshop at IEEE QCE26 - Session 1
+DESCRIPTION:openQSE: Co-Designing the Quantum-HPC Software Stack from Applications to Control Systems. Session 1: workshop intro, applications, and discussion.
+LOCATION:Room 714A, IEEE Quantum Week 2026
+URL:https://qce.quantum.ieee.org/2026/qce26-schedule/workshop-schedule/#113-1
+END:VEVENT
+BEGIN:VEVENT
+UID:qce2026-openqse-workshop-session-2@openqse.org
+DTSTAMP:20260910T000000Z
+DTSTART:20260917T170000Z
+DTEND:20260917T183000Z
+SUMMARY:openQSE Workshop at IEEE QCE26 - Session 2
+DESCRIPTION:openQSE: Co-Designing the Quantum-HPC Software Stack from Applications to Control Systems. Session 2: runtime / quantum resource interface and FTQC compiler requirements, part 1.
+LOCATION:Room 714A, IEEE Quantum Week 2026
+URL:https://qce.quantum.ieee.org/2026/qce26-schedule/workshop-schedule/#113-2
+END:VEVENT
+BEGIN:VEVENT
+UID:qce2026-openqse-workshop-session-3@openqse.org
+DTSTAMP:20260910T000000Z
+DTSTART:20260917T190000Z
+DTEND:20260917T203000Z
+SUMMARY:openQSE Workshop at IEEE QCE26 - Session 3
+DESCRIPTION:openQSE: Co-Designing the Quantum-HPC Software Stack from Applications to Control Systems. Session 3: FTQC compiler requirements, part 2, and control electronics.
+LOCATION:Room 714A, IEEE Quantum Week 2026
+URL:https://qce.quantum.ieee.org/2026/qce26-schedule/workshop-schedule/#113-3
+END:VEVENT
+END:VCALENDAR
