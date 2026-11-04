@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//openQSE//QCE2026 BoF//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:qce2026-openqse-bof@openqse.org
+DTSTAMP:20260910T000000Z
+DTSTART:20260914T190000Z
+DTEND:20260914T203000Z
+SUMMARY:OpenQSE: An Open Ecosystem for Quantum-HPC Software
+DESCRIPTION:OpenQSE Birds-of-a-Feather session at IEEE Quantum Week 2026 focused on open interfaces, community requirements, and roadmap priorities for quantum-HPC software.
+LOCATION:Room 601A/B, IEEE Quantum Week 2026
+URL:https://qce.quantum.ieee.org/2026/qce26-schedule/bof-schedule/#1884
+END:VEVENT
+END:VCALENDAR
