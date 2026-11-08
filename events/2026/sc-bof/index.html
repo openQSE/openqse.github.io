@@ -55,19 +55,9 @@ event_type: BoF
   margin: 0.25rem 0 0 1rem;
 }
 
-.open-items {
-  color: #b91c1c;
-}
 </style>
 
-<div class="open-items">
-<h2>Open items</h2>
 
-<ul>
-  <li>Develop the final agenda and participation materials.</li>
-  <li>The Control Electronics Working Group is not included in this session's planned speaker lineup.</li>
-</ul>
-</div>
 
 <h2>Overview</h2>
 
@@ -80,7 +70,7 @@ close the interoperability gaps that fragment hybrid quantum-classical workflows
 the floor for structured discussion with HPC facility staff, application teams, vendors, and
 researchers to identify priorities and shape the direction together. The intended outcome is a
 prioritized set of integration artifacts the community identifies as most urgent for near-term
-development.</p>
+development. We are using the openQSE demonstration effort focused on preparing a demo for SC26 to guide the BoF discussion and encourage interaction across the community and working groups.</p>
 
 <h2>Details</h2>
 
@@ -107,61 +97,75 @@ development.</p>
   </tr>
 </table>
 
-<h2>Schedule</h2>
+<h2>Agenda</h2>
 
 <table class="agenda-table">
   <thead>
     <tr>
       <th>Time</th>
       <th>Segment</th>
-      <th>Lead / contributors</th>
+      <th>Speaker(s)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>0:00&ndash;0:05</td>
-      <td><strong>Welcome and Community Overview</strong><br>Purpose, participation norms, and a high-level overview of the OpenQSE community</td>
-      <td>Thomas Naughton and/or Amir Shehata</td>
+      <td>0:00&ndash;0:03</td>
+      <td><strong>Welcome and Community Overview</strong><br>High-level overview of the OpenQSE community and working groups, and outline for the BoF</td>
+      <td>Thomas Naughton</td>
     </tr>
     <tr>
-      <td>0:05&ndash;0:35</td>
-      <td><strong>Working Group Updates</strong><br>Brief status updates and roadmap highlights</td>
-      <td>
-        <ul>
-          <li>Runtime Working Group &mdash; Amir Shehata</li>
-          <li>System Architecture Working Group &mdash; Sebastian Stern</li>
-          <li>Compiler Working Group &mdash; Michael Ferguson</li>
-          <li>Quantum Resource Interface &mdash; Yoonho Park</li>
-        </ul>
-      </td>
+      <td>0:03&ndash;0:09</td>
+      <td><strong>SC26 Demo Overview</strong><br>Demo objective, the openQSE stack, and a highlight clip</td>
+      <td>Amir Shehata</td>
     </tr>
     <tr>
-      <td>0:35&ndash;0:55</td>
-      <td><strong>Structured whole-room discussion</strong><br>Three topic prompts to frame discussion:
-        <ul>
-          <li>[Topic prompt 1 &mdash; session-leader input]</li>
-          <li>[Topic prompt 2 &mdash; session-leader input]</li>
-          <li>[Topic prompt 3 &mdash; session-leader input]</li>
-        </ul>
-      </td>
-      <td>All participants</td>
+      <td>0:09&ndash;0:15</td>
+      <td><strong>System Architecture Working Group</strong><br>The reference implementation, with AWS Braket as a worked example</td>
+      <td>Sebastian Stern</td>
     </tr>
     <tr>
-      <td>0:55&ndash;1:00</td>
-      <td><strong>Wrap-up</strong><br>Priorities, next steps, and ways to participate</td>
-      <td>Session facilitators and participants</td>
+      <td>0:15&ndash;0:21</td>
+      <td><strong>System Orchestration: Flux + QFw</strong><br>Lightning talk on Flux integration</td>
+      <td>Vanessa Sochat</td>
+    </tr>
+    <tr>
+      <td>0:21&ndash;0:27</td>
+      <td><strong>Runtime Working Group</strong><br>The application quantum runtime interface</td>
+      <td>Amir Shehata</td>
+    </tr>
+    <tr>
+      <td>0:27&ndash;0:33</td>
+      <td><strong>Compiler Working Group</strong><br>Compiling for specific quantum devices</td>
+      <td>Michael Ferguson</td>
+    </tr>
+    <tr>
+      <td>0:33&ndash;0:45</td>
+      <td><strong>Quantum Resource Interface Working Group</strong><br>QRMI and QDMI in the demo, and interface gaps</td>
+      <td>Yoonho Park and Lukas Burgholzer</td>
+    </tr>
+    <tr>
+      <td>0:45&ndash;0:51</td>
+      <td><strong>Control Systems (emerging Working Group)</strong><br>Real-time hardware decoder integration</td>
+      <td>Elise Jennings</td>
+    </tr>
+    <tr>
+      <td>0:51&ndash;1:00</td>
+      <td><strong>Q&amp;A and Wrap-up</strong><br>Questions, priorities, next steps, and how to participate</td>
+      <td>Ermal Rrapaj (moderator)</td>
     </tr>
   </tbody>
 </table>
 
-<h2>Organizers</h2>
+<h2>Speakers</h2>
 
 <ul>
-  <li>Thomas Naughton, Oak Ridge National Laboratory (session lead)</li>
+  <li>Thomas Naughton, Oak Ridge National Laboratory</li>
   <li>Amir Shehata, Oak Ridge National Laboratory</li>
   <li>Sebastian Stern, Amazon Web Services (AWS)</li>
+  <li>Vanessa Sochat, Lawrence Livermore National Laboratory</li>
   <li>Yoonho Park, IBM</li>
   <li>Michael Ferguson, HPE</li>
   <li>Lukas Burgholzer, Munich Quantum Software Company (MQSC) / Technical University of Munich</li>
+  <li>Elise Jennings, RiverLane</li>
   <li>Ermal Rrapaj, Lawrence Berkeley National Laboratory</li>
 </ul>
