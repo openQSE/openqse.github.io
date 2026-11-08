@@ -10,6 +10,14 @@
 }, 
  
 { 
+"title"    : "", 
+"desc"     : "", 
+"category" : "page", 
+"url"      : "/previews/pr-85/workshops/QCE2026/", 
+"date"     : "January 1, 1970" 
+}, 
+ 
+{ 
 "title"    : "OpenQSE: An Open Ecosystem for Quantum-HPC Software", 
 "desc"     : "OpenQSE: An Open Ecosystem for Quantum-HPC Software", 
 "category" : "page", 
@@ -46,14 +54,6 @@
 "desc"     : "Events", 
 "category" : "page", 
 "url"      : "/previews/pr-85/events/", 
-"date"     : "January 1, 1970" 
-}, 
- 
-{ 
-"title"    : "", 
-"desc"     : "", 
-"category" : "page", 
-"url"      : "/previews/pr-85/workshops/QCE2026/", 
 "date"     : "January 1, 1970" 
 }, 
  
