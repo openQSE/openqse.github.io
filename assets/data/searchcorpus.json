@@ -10,10 +10,10 @@
 }, 
  
 { 
-"title"    : "openQSE: Co-Designing the Quantum Software Stack from Applications to Control Systems", 
-"desc"     : "openQSE: Co-Designing the Quantum Software Stack from Applications to Control Systems", 
+"title"    : "", 
+"desc"     : "", 
 "category" : "page", 
-"url"      : "/events/2026/qce-workshop/", 
+"url"      : "/workshops/QCE2026/", 
 "date"     : "January 1, 1970" 
 }, 
  
@@ -22,6 +22,14 @@
 "desc"     : "OpenQSE: An Open Ecosystem for Quantum-HPC Software", 
 "category" : "page", 
 "url"      : "/events/2026/qce-bof/", 
+"date"     : "January 1, 1970" 
+}, 
+ 
+{ 
+"title"    : "openQSE: Co-Designing the Quantum Software Stack from Applications to Control Systems", 
+"desc"     : "openQSE: Co-Designing the Quantum Software Stack from Applications to Control Systems", 
+"category" : "page", 
+"url"      : "/events/2026/qce-workshop/", 
 "date"     : "January 1, 1970" 
 }, 
  
@@ -38,14 +46,6 @@
 "desc"     : "Events", 
 "category" : "page", 
 "url"      : "/events/", 
-"date"     : "January 1, 1970" 
-}, 
- 
-{ 
-"title"    : "", 
-"desc"     : "", 
-"category" : "page", 
-"url"      : "/workshops/QCE2026/", 
 "date"     : "January 1, 1970" 
 }, 
  
