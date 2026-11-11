@@ -26,6 +26,14 @@
 }, 
  
 { 
+"title"    : "SC26 BoF: OpenQSE: Building an Open Quantum-HPC Software Ecosystem", 
+"desc"     : "SC26 BoF: OpenQSE: Building an Open Quantum-HPC Software Ecosystem", 
+"category" : "page", 
+"url"      : "/events/2026/sc-bof/", 
+"date"     : "January 1, 1970" 
+}, 
+ 
+{ 
 "title"    : "openQSE: Co-Designing the Quantum Software Stack from Applications to Control Systems", 
 "desc"     : "openQSE: Co-Designing the Quantum Software Stack from Applications to Control Systems", 
 "category" : "page", 
