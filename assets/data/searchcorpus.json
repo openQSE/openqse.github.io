@@ -26,6 +26,14 @@
 }, 
  
 { 
+"title"    : "SC26 openQSE Demonstration", 
+"desc"     : "SC26 openQSE Demonstration", 
+"category" : "page", 
+"url"      : "/events/2026/sc-demo/", 
+"date"     : "January 1, 1970" 
+}, 
+ 
+{ 
 "title"    : "SC26 BoF: OpenQSE: Building an Open Quantum-HPC Software Ecosystem", 
 "desc"     : "SC26 BoF: OpenQSE: Building an Open Quantum-HPC Software Ecosystem", 
 "category" : "page", 
