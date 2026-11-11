@@ -36,3 +36,16 @@
     - SC26
     - BoF
     - Quantum-HPC
+
+- title: "SC26: openQSE Demo Session"
+  url: "/events/2026/sc-demo/"
+  year: "2026"
+  date: "2026-11-16"
+  date_label: "November 16, 2026, 11:00 AM–12:00 PM CST"
+  venue: "SC26, W179a"
+  event_type: "Demo"
+  summary: "SC26 workshop session presenting openQSE, its quantum-HPC interfaces, and workflow tools for real quantum-HPC applications."
+  tags:
+    - SC26
+    - Demo
+    - Quantum-HPC
