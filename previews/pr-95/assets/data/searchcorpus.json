@@ -58,6 +58,14 @@
 }, 
  
 { 
+"title"    : "Logos", 
+"desc"     : "Logos", 
+"category" : "page", 
+"url"      : "/previews/pr-95/logos/", 
+"date"     : "January 1, 1970" 
+}, 
+ 
+{ 
 "title"    : "Meetings", 
 "desc"     : "Meetings", 
 "category" : "page", 
