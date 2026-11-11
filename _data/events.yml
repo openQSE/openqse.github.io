@@ -27,7 +27,7 @@
 - title: "SC26: OpenQSE BoF"
   url: "/events/2026/sc-bof/"
   year: "2026"
-  date: "2026-11-18"
+  date: "2026-11-18T12:15:00"
   date_label: "November 18, 2026, 12:15 PM–1:15 PM CST"
   venue: "SC26, W194b"
   event_type: "BoF"
@@ -37,14 +37,14 @@
     - BoF
     - Quantum-HPC
 
-- title: "SC26: openQSE Demo Session"
+- title: "SC26: openQSE Community Demonstration"
   url: "/events/2026/sc-demo/"
   year: "2026"
-  date: "2026-11-16"
-  date_label: "November 16, 2026, 11:00 AM–12:00 PM CST"
-  venue: "SC26, W179a"
+  date: "2026-11-18T11:00:00"
+  date_label: "November 18, 2026, 11:00 AM–12:00 PM CST"
+  venue: "Department of Energy Booth #4829"
   event_type: "Demo"
-  summary: "SC26 workshop session presenting openQSE, its quantum-HPC interfaces, and workflow tools for real quantum-HPC applications."
+  summary: "The SC26 openQSE Demonstration presents the quantum-HPC interfaces, workflow tools, and application integrations that connect quantum resources with HPC systems."
   tags:
     - SC26
     - Demo

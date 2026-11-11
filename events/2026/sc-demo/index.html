@@ -7,6 +7,42 @@ event_year: "2026"
 event_type: Demo
 ---
 
+<style>
+.info-table, .agenda-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.info-table td, .agenda-table th, .agenda-table td {
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: top;
+}
+
+.info-table td:first-child {
+  width: 9rem;
+  font-weight: 600;
+  color: #374151;
+  white-space: nowrap;
+}
+
+.agenda-table th {
+  background: #eff6ff;
+  color: #1e3a5f;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid #bfdbfe;
+}
+
+.agenda-table td:first-child {
+  width: 5rem;
+  white-space: nowrap;
+  font-weight: 600;
+  color: #374151;
+}
+</style>
+
 <h2>Overview</h2>
 
 <p>The SC26 openQSE Demonstration presents the open Quantum Software Ecosystem (openQSE),
@@ -23,11 +59,11 @@ support real quantum-HPC applications.</p>
   </tr>
   <tr>
     <td>When</td>
-    <td>Monday, November 16, 2026, 11:00 AM&ndash;12:00 PM CST</td>
+    <td>Wednesday, November 18, 2026, 11:00 AM&ndash;12:00 PM CST</td>
   </tr>
   <tr>
     <td>Where</td>
-    <td>Dept. of Energy Booth #4829</td>
+    <td>Department of Energy Booth #4829</td>
   </tr>
   <tr>
     <td>Format</td>
@@ -35,10 +71,140 @@ support real quantum-HPC applications.</p>
   </tr>
 </table>
 
-<h2>Presenters</h2>
+<h2>Agenda</h2>
 
-<ul>
-  <li>Amir Shehata, Oak Ridge National Laboratory</li>
-  <li>Doug Oucharek, Oak Ridge National Laboratory</li>
-  <li>Vanessa Sochat, Lawrence Livermore National Laboratory</li>
-</ul>
+<table class="agenda-table">
+  <thead>
+    <tr>
+      <th>Speaker #</th>
+      <th>Segment</th>
+      <th>Speaker(s)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><th colspan="3">SC26 openQSE demonstration</th></tr>
+    <tr>
+      <td>1</td>
+      <td><strong>Opening and Demonstration Overview</strong><br>ORNL — openQSE demo</td>
+      <td>Amir Shehata (ORNL)</td>
+    </tr>
+    <tr><th colspan="3">Workflow and application integration</th></tr>
+    <tr>
+      <td>2</td>
+      <td><strong>Prefect, Qiskit compiler, QRMI, and SQD integration</strong><br>Poughkeepsie testbed</td>
+      <td>Shweta Salaria (IBM)</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><strong>Tierkreis</strong></td>
+      <td>Philipp Seitz (Quantinuum)</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><strong>Streamflow</strong></td>
+      <td>Doriana Medic (University of Turin)</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><strong>Flux Orchestration</strong></td>
+      <td>Vanessa Sochat (LLNL)</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><strong>PyCOMPS</strong></td>
+      <td>Mar Tejedor (BSC)</td>
+    </tr>
+    <tr><th colspan="3">Materials application</th></tr>
+    <tr>
+      <td>7</td>
+      <td><strong>Materials application integration</strong><br>Analogue quantum programming</td>
+      <td>Aleksander Wennersteen (Pasqal)</td>
+    </tr>
+    <tr><th colspan="3">Compiler integration</th></tr>
+    <tr>
+      <td>8</td>
+      <td><strong>MQT Core and QDMI</strong></td>
+      <td>Lukas Burgholzer (MQSC)</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td><strong>Compiler abstraction</strong><br>Switching between Qiskit and MQT Core</td>
+      <td>Michael Ferguson (HPE)</td>
+    </tr>
+    <tr><th colspan="3">IISc software stack</th></tr>
+    <tr>
+      <td>10</td>
+      <td><strong>Software stack integration</strong><br>Including code optimization</td>
+      <td>Yogesh Simmhan (IISc)</td>
+    </tr>
+    <tr><th colspan="3">QEC and decoding</th></tr>
+    <tr>
+      <td>11</td>
+      <td><strong>Backline QEC support</strong></td>
+      <td>Joseph Lee (Xanadu)</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td><strong>Decoder integration</strong></td>
+      <td>Elise Jennings (Riverlane)</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td><strong>Control integration</strong></td>
+      <td>Smriti Bajaj (Dell/Qblox)</td>
+    </tr>
+    <tr><th colspan="3">Execution resources and deployment</th></tr>
+    <tr>
+      <td>14</td>
+      <td><strong>Hardware testbed support</strong></td>
+      <td>Yasuko Eckert (AMD)</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td><strong>Federated demonstration through MQV QDMI</strong></td>
+      <td>Jorge Echavarria (MQV)</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td><strong>Cloud support</strong></td>
+      <td>Doug Oucharek (AWS)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Resources</h2>
+
+<table class="agenda-table">
+  <thead>
+    <tr>
+      <th>Resource</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/openQSE/QFw-SLURM-Cluster">QFw Slurm Cluster</a></td>
+      <td>Source code and documentation for a containerized Slurm environment for running QFw quantum and hybrid workflows.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/openQSE/QFw-SLURM-Cluster/blob/main/docs/recipes/build-and-start-cluster.md">Build and start the cluster</a></td>
+      <td>Configure, build, and launch the Docker-based cluster, then verify its Slurm nodes. Includes instructions for stopping and recreating the environment.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/openQSE/QFw-SLURM-Cluster/blob/main/docs/recipes/run-pasqal-emu-free-job.md">Pasqal EMU_FREE site service</a></td>
+      <td>Configure Pasqal Cloud's free emulator as a shared site device and run Pulser jobs through QFw. The operator supplies the cloud credentials and controls user access.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/openQSE/QFw-SLURM-Cluster/blob/main/docs/recipes/run-pasqal-pulser-job.md">Pulser jobs on Pasqal</a></td>
+      <td>Run Pulser examples on Pasqal's EMU_FREE emulator or FRESNEL QPU using your own cloud account and a job-owned quantum resource manager. Supports QRMI and native QDMI access.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/openQSE/QFw-SLURM-Cluster/blob/main/docs/recipes/run-prefect-sqd-closed-loop.md">Prefect SQD closed loop</a></td>
+      <td>Set up and run a Prefect workflow that optimizes quantum circuit parameters, samples circuits, recovers configurations with sample-based quantum diagonalization (SQD), and runs a classical solver through Slurm MPI jobs.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/openQSE/QFw-SLURM-Cluster/blob/main/docs/backline.md">Backline QEC integration</a></td>
+      <td>Configure the Backline quantum resource manager to reserve a controller, QEC decoder coprocessor, and transport. Applications use the assigned resources to execute PennyLane/Catalyst programs directly.</td>
+    </tr>
+  </tbody>
+</table>
