@@ -68,8 +68,9 @@
 </style>
 
 {% assign event_count = 0 %}
+{% assign sorted_events = site.data.events | sort: "date" | reverse %}
 <div class="events-grid">
-  {% for event in site.data.events %}
+  {% for event in sorted_events %}
     {% if include.year == nil or event.year == include.year %}
       {% assign event_count = event_count | plus: 1 %}
       <article class="event-card">
