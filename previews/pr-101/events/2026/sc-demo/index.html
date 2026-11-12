@@ -1,0 +1,588 @@
+<!DOCTYPE HTML>
+<html>
+
+<head lang="en">
+    <title> SC26 openQSE Demonstration - openQSE</title>
+
+<meta charset="UTF-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="The goal is for openQSE to be a unified initiative to bring together vendors, collaborators, labs and universities in building an open community." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="icon" type="image/png" href="/previews/pr-101/assets/img/openQSE-logo.png">
+
+<link rel="stylesheet" href="/previews/pr-101/assets/css/tailwind.min.css">
+<link rel="stylesheet" href="/previews/pr-101/assets/css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+
+<style>
+    .gradient {
+        background: linear-gradient(90deg, #07326a 0%, #064089 50%, #0F2027 100%);
+    }
+</style>
+
+</head>
+
+<body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
+
+    <nav id="header" class="fixed w-full z-30 top-0 text-white">
+    <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+        <div class="pl-4 flex items-center">
+            <a class="text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="/previews/pr-101/">
+                <img src="/previews/pr-101/assets/img/openQSE-logo.png" style="max-height: 1em; float: left" id="logo" />
+                <span style="padding-left: 0.5em; font-size: .6em; vertical-align: top;">openQSE</span>
+            </a>
+        </div>
+        <div class="block lg:hidden pr-4">
+            <button id="nav-toggle"
+                class="flex items-center p-1 text-blue-400 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Menu</title>
+                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                </svg>
+            </button>
+        </div>
+        <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20"
+            id="nav-content">
+            <ul class="list-reset lg:flex justify-end flex-1 items-center">
+    <li class="mr-3">
+        <a class="inline-block py-2 px-4 text-white no-underline hover:text-blue-500 toggleColour" href="/previews/pr-101/meetings">Meetings</a>
+    </li>
+    <li class="mr-3">
+        <a class="inline-block py-2 px-4 text-white no-underline hover:text-blue-500 toggleColour" href="/previews/pr-101/community">Community</a>
+    </li>
+    <li class="mr-3 relative">
+        <a class="inline-block py-2 px-4 text-white no-underline hover:text-blue-500 toggleColour cursor-pointer" onclick="toggleDropdown(event, 'dropdown-events')">Events ▾</a>
+        <ul id="dropdown-events" class="absolute hidden bg-white text-gray-800 shadow-lg mt-2 py-2 rounded z-50" style="min-width: 120px;">
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="/previews/pr-101/events/2026/">2026</a></li>
+        </ul>
+    </li>
+    <li class="mr-3 relative">
+        <a class="inline-block py-2 px-4 text-white no-underline hover:text-blue-500 toggleColour cursor-pointer" onclick="toggleDropdown(event, 'dropdown-resources')">Resources ▾</a>
+        <ul id="dropdown-resources" class="absolute hidden bg-white text-gray-800 shadow-lg mt-2 py-2 rounded z-50" style="min-width: 150px;">
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="/previews/pr-101/logos/">Logos</a></li>
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="https://github.com/openQSE" target="_blank" rel="noopener noreferrer">Github</a></li>
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="https://openqse.slack.com" target="_blank" rel="noopener noreferrer">Slack</a></li>
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="https://openqse.atlassian.net" target="_blank" rel="noopener noreferrer">Confluence</a></li>
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="https://github.com/openQSE/openqse-admin/wiki/Seminar-Series" target="_blank" rel="noopener noreferrer">Seminar Series</a></li>
+        </ul>
+    </li>
+    <li class="mr-3 relative">
+        <a class="inline-block py-2 px-4 text-white no-underline hover:text-blue-500 toggleColour cursor-pointer" onclick="toggleDropdown(event, 'dropdown-working-groups')">Working Groups ▾</a>
+        <ul id="dropdown-working-groups" class="absolute hidden bg-white text-gray-800 shadow-lg mt-2 py-2 rounded z-50" style="min-width: 260px;">
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="https://openqse.atlassian.net/wiki/x/BQBtCQ" target="_blank" rel="noopener noreferrer">System Architecture &amp; Workflows</a></li>
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="https://openqse.atlassian.net/wiki/x/A4BrCQ" target="_blank" rel="noopener noreferrer">Compilers</a></li>
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="https://openqse.atlassian.net/wiki/x/DIBoCQ" target="_blank" rel="noopener noreferrer">Quantum Resource Interface</a></li>
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="https://openqse.atlassian.net/wiki/x/AoBgCQ" target="_blank" rel="noopener noreferrer">Runtime</a></li>
+            <li><a class="block px-4 py-2 hover:bg-gray-100 hover:text-blue-500 no-underline text-gray-800" href="https://openqse.atlassian.net/wiki/x/AoDVBg" target="_blank" rel="noopener noreferrer">Control Electronics</a></li>
+        </ul>
+    </li>
+</ul>
+
+<script>
+function toggleDropdown(event, dropdownId) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const dropdown = document.getElementById(dropdownId);
+    const allDropdowns = document.querySelectorAll('[id^="dropdown-"]');
+
+    // Close all other dropdowns
+    allDropdowns.forEach(function(dd) {
+        if (dd.id !== dropdownId) {
+            dd.classList.add('hidden');
+        }
+    });
+
+    // Toggle this dropdown
+    dropdown.classList.toggle('hidden');
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', function() {
+    const allDropdowns = document.querySelectorAll('[id^="dropdown-"]');
+    allDropdowns.forEach(function(dd) {
+        dd.classList.add('hidden');
+    });
+});
+</script>
+
+        </div>
+    </div>
+    <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
+</nav>
+
+<section class="pt-24">
+    <div class="container mx-auto px-2 pt-4 pb-12 text-gray-800">
+        <h1 class="w-full my-2 text-3xl font-bold leading-tight text-center text-white">
+            SC26 openQSE Demonstration
+        </h1>
+    </div>
+</section>
+
+
+    <section class="bg-white py-8 page">
+        <div class="container mx-auto px-2 pt-4 pb-12 text-gray-800">
+            <style>
+.info-table, .agenda-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.info-table td, .agenda-table th, .agenda-table td {
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: top;
+}
+
+.info-table td:first-child {
+  width: 9rem;
+  font-weight: 600;
+  color: #374151;
+  white-space: nowrap;
+}
+
+.agenda-table th {
+  background: #eff6ff;
+  color: #1e3a5f;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid #bfdbfe;
+}
+
+.agenda-table td:first-child {
+  width: 5rem;
+  white-space: nowrap;
+  font-weight: 600;
+  color: #374151;
+}
+
+.resource-table td:first-child {
+  width: 16rem;
+  white-space: normal;
+}
+
+.contributors-table td:first-child {
+  width: 15rem;
+  white-space: normal;
+}
+
+.community-stats-figure {
+  margin: 1rem 0 2rem;
+}
+
+.community-stats-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.community-stats-figure figcaption {
+  margin-top: 0.5rem;
+  color: #4b5563;
+  font-size: 0.9rem;
+}
+</style>
+
+<h2>Overview</h2>
+
+<p>The SC26 openQSE Demonstration presents the open Quantum Software Ecosystem (openQSE),
+including the interfaces that connect quantum resources to HPC systems and the workflow
+tools and libraries built on top of them. It shows how these software layers fit together to
+support real quantum-HPC applications.</p>
+
+<h2>Details</h2>
+
+<table class="info-table">
+  <tr>
+    <td>Event</td>
+    <td>openQSE SC26 Community Demonstration @ <a href="https://sc26.supercomputing.org/" target="_blank" rel="noopener noreferrer">Supercomputing &rsquo;26</a></td>
+  </tr>
+  <tr>
+    <td>When</td>
+    <td>Wednesday, November 18, 2026, 11:00 AM&ndash;12:00 PM CST</td>
+  </tr>
+  <tr>
+    <td>Where</td>
+    <td>Department of Energy Booth #4829</td>
+  </tr>
+  <tr>
+    <td>Format</td>
+    <td>Demonstration</td>
+  </tr>
+</table>
+
+<h2>Agenda</h2>
+
+<table class="agenda-table">
+  <thead>
+    <tr>
+      <th>Speaker #</th>
+      <th>Segment</th>
+      <th>Speaker(s)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><th colspan="3">SC26 openQSE demonstration</th></tr>
+    <tr>
+      <td>1</td>
+      <td><strong>Opening and Demonstration Overview</strong><br>ORNL — openQSE demo</td>
+      <td>Amir Shehata (ORNL)</td>
+    </tr>
+    <tr><th colspan="3">Workflow and application integration</th></tr>
+    <tr>
+      <td>2</td>
+      <td><strong>Prefect, Qiskit compiler, QRMI, and SQD integration</strong><br>Poughkeepsie testbed</td>
+      <td>Shweta Salaria (IBM)</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><strong>Tierkreis</strong></td>
+      <td>Philipp Seitz (Quantinuum)</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><strong>Streamflow</strong></td>
+      <td>Doriana Medic (University of Turin)</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><strong>Flux Orchestration</strong></td>
+      <td>Vanessa Sochat (LLNL)</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><strong>PyCOMPS</strong></td>
+      <td>Mar Tejedor (BSC)</td>
+    </tr>
+    <tr><th colspan="3">Materials application</th></tr>
+    <tr>
+      <td>7</td>
+      <td><strong>Materials application integration</strong><br>Analogue quantum programming</td>
+      <td>Aleksander Wennersteen (Pasqal)</td>
+    </tr>
+    <tr><th colspan="3">Compiler integration</th></tr>
+    <tr>
+      <td>8</td>
+      <td><strong>MQT Core and QDMI</strong></td>
+      <td>Lukas Burgholzer (MQSC)</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td><strong>Compiler abstraction</strong><br>Switching between Qiskit and MQT Core</td>
+      <td>Michael Ferguson (HPE)</td>
+    </tr>
+    <tr><th colspan="3">IISc software stack</th></tr>
+    <tr>
+      <td>10</td>
+      <td><strong>Software stack integration</strong><br>Including code optimization</td>
+      <td>Yogesh Simmhan (IISc)</td>
+    </tr>
+    <tr><th colspan="3">QEC and decoding</th></tr>
+    <tr>
+      <td>11</td>
+      <td><strong>Backline QEC support</strong></td>
+      <td>Joseph Lee (Xanadu)</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td><strong>Decoder integration</strong></td>
+      <td>Elise Jennings (Riverlane)</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td><strong>Control integration</strong></td>
+      <td>Smriti Bajaj (Dell/Qblox)</td>
+    </tr>
+    <tr><th colspan="3">Execution resources and deployment</th></tr>
+    <tr>
+      <td>14</td>
+      <td><strong>Hardware testbed support</strong></td>
+      <td>Yasuko Eckert (AMD)</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td><strong>Federated demonstration through MQV QDMI</strong></td>
+      <td>Jorge Echavarria (MQV)</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td><strong>Cloud support</strong></td>
+      <td>Doug Oucharek (AWS)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Community Contributions</h2>
+
+<figure class="community-stats-figure">
+  <img class="community-stats-image"
+       src="/previews/pr-101/assets/img/events/2026/sc-demo/qfw-community-stats.png"
+       alt="QFw community work statistics showing commits across QFw, DEFw, QFw-SLURM-Cluster, qfw-slurm, qhw-admission, and qhw-scheduler, along with contributing organizations">
+  <figcaption>QFw community contribution statistics, derived November 12, 2026.</figcaption>
+</figure>
+
+<h2>Demo Contributors</h2>
+
+<table class="agenda-table contributors-table">
+  <thead>
+    <tr>
+      <th>Company / organization</th>
+      <th>Contributor name(s)</th>
+      <th>SC26 booth(s)</th>
+      <th>Area of contribution</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AMD</td>
+      <td>Yasuko Eckert</td>
+      <td>3028</td>
+      <td>Hardware testbeds</td>
+    </tr>
+    <tr>
+      <td>Barcelona Supercomputing Center (BSC)</td>
+      <td>Mar Tejedor</td>
+      <td>4259</td>
+      <td>PyCOMPS integration</td>
+    </tr>
+    <tr>
+      <td>Dell Technologies</td>
+      <td>Smriti Bajaj</td>
+      <td>2223</td>
+      <td>Dell deployment and integration with the on-premises Qblox cluster</td>
+    </tr>
+    <tr>
+      <td>HPE</td>
+      <td>Andy Stone; Michael Ferguson; Aaron Lott</td>
+      <td>3017</td>
+      <td>Compiler integration</td>
+    </tr>
+    <tr>
+      <td>IBM</td>
+      <td>Shweta Salaria; Yoonho Park; Claudio Carvalho</td>
+      <td>1806</td>
+      <td>Qiskit; Prefect; SQD workflow; QRMI</td>
+    </tr>
+    <tr>
+      <td>Indian Institute of Science (IISc)</td>
+      <td>Yogesh Simmhan; Abdur Rahman Hatim</td>
+      <td>&mdash;</td>
+      <td>IISc integration</td>
+    </tr>
+    <tr>
+      <td>Lawrence Livermore National Laboratory (LLNL)</td>
+      <td>Vanessa Sochat</td>
+      <td>4829 (DOE Booth)</td>
+      <td>Flux integration</td>
+    </tr>
+    <tr>
+      <td>Munich Quantum Software Company (MQSC)</td>
+      <td>Lukas Burgholzer; Daniel Haag</td>
+      <td>&mdash;</td>
+      <td>QDMI; MQT Core</td>
+    </tr>
+    <tr>
+      <td>Munich Quantum Valley (MQV)</td>
+      <td>Jorge Echavarria; Marco De Pascale</td>
+      <td>4254</td>
+      <td>Munich Quantum Valley integration</td>
+    </tr>
+    <tr>
+      <td>Oak Ridge National Laboratory (ORNL)</td>
+      <td>Doug Oucharek; Amir Shehata</td>
+      <td>4829 (DOE Booth)</td>
+      <td><code>qfw-slurm</code>; <code>qhw-admission</code>; <code>qhw-scheduling</code>; <code>qhw-data</code>; QFw-SLURM-Cluster</td>
+    </tr>
+    <tr>
+      <td>Pasqal</td>
+      <td>Aleksander Wennersteen</td>
+      <td>5232</td>
+      <td>Pasqal integration</td>
+    </tr>
+    <tr>
+      <td>Qblox</td>
+      <td>Andrea Delgado</td>
+      <td>5639</td>
+      <td>Qblox integration and digital twin</td>
+    </tr>
+    <tr>
+      <td>Quantinuum</td>
+      <td>Philipp Seitz; John Children</td>
+      <td>4838</td>
+      <td>Tierkreis</td>
+    </tr>
+    <tr>
+      <td>Riverlane</td>
+      <td>Elise Jennings</td>
+      <td>&mdash;</td>
+      <td>Deltaflow integration</td>
+    </tr>
+    <tr>
+      <td>University of Turin</td>
+      <td>Doriana Medic; Francesco Medina</td>
+      <td>&mdash;</td>
+      <td>Streamflow integration</td>
+    </tr>
+    <tr>
+      <td>Xanadu</td>
+      <td>Joseph Lee</td>
+      <td>&mdash;</td>
+      <td>Backline integration</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><small>&mdash; indicates that no dedicated SC26 booth has been identified.</small></p>
+
+<h2>DOE Demo Resources</h2>
+
+<table class="agenda-table resource-table">
+  <thead>
+    <tr>
+      <th>Resource</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/openQSE/QFw-SLURM-Cluster">QFw Slurm Cluster</a></td>
+      <td>Source code and documentation for a containerized Slurm environment for running QFw quantum and hybrid workflows.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/openQSE/QFw-SLURM-Cluster/blob/main/docs/recipes/build-and-start-cluster.md">Build and start the cluster</a></td>
+      <td>Configure, build, and launch the Docker-based cluster, then verify its Slurm nodes. Includes instructions for stopping and recreating the environment.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/openQSE/QFw-SLURM-Cluster/blob/main/docs/recipes/run-pasqal-emu-free-job.md">Pasqal EMU_FREE site service</a></td>
+      <td>Configure Pasqal Cloud's free emulator as a shared site device and run Pulser jobs through QFw. The operator supplies the cloud credentials and controls user access.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/openQSE/QFw-SLURM-Cluster/blob/main/docs/recipes/run-pasqal-pulser-job.md">Pulser jobs on Pasqal</a></td>
+      <td>Run Pulser examples on Pasqal's EMU_FREE emulator or FRESNEL QPU using your own cloud account and a job-owned quantum resource manager. Supports QRMI and native QDMI access.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/openQSE/QFw-SLURM-Cluster/blob/main/docs/recipes/run-prefect-sqd-closed-loop.md">Prefect SQD closed loop</a></td>
+      <td>Set up and run a Prefect workflow that optimizes quantum circuit parameters, samples circuits, recovers configurations with sample-based quantum diagonalization (SQD), and runs a classical solver through Slurm MPI jobs.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/openQSE/QFw-SLURM-Cluster/blob/main/docs/backline.md">Backline QEC integration</a></td>
+      <td>Configure the Backline quantum resource manager to reserve a controller, QEC decoder coprocessor, and transport. Applications use the assigned resources to execute PennyLane/Catalyst programs directly.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/openQSE/QFw/blob/main/docs/recipes/run-against-aws-braket.md">Run QFw against Amazon Braket</a></td>
+      <td>Set up an Amazon Braket account, configure the service's AWS identity and device file, perform free checks, and run the first circuits through QFw.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/openQSE/QFw-SLURM-Cluster/blob/main/docs/long-running-qpmd-deployment.md">Site services with the AWS QPM</a></td>
+      <td>Deploy long-running site services, including the AWS quantum resource manager (QPM), with <code>aws-sv1</code> and <code>aws-cepheus</code> exposed as site devices.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/munich-quantum-software/amazon-braket-qdmi-device">Amazon Braket QDMI library</a></td>
+      <td>QDMI device library for Amazon Braket, maintained by munich-quantum-software.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/openQSE/chemistry_he">Helium chemistry workflow</a></td>
+      <td>He4 fragment molecular orbital (FMO) calculations and the paired unitary coupled cluster doubles (pUCCD) variational quantum eigensolver (VQE). The Braket stages are a pending patch.</td>
+    </tr>
+    <tr>
+      <td><a href="https://openqse.atlassian.net/wiki/spaces/Collaborat/pages/235896836">DOE demo scenario diagram</a></td>
+      <td>Scenario diagram in the Workflow Diagrams folder of openQSE Confluence. Sign-in is required.</td>
+    </tr>
+  </tbody>
+</table>
+
+        </div>
+    </section>
+
+    <footer class="bg-white">
+        <div class="container mx-auto px-8">
+    <div class="w-full flex flex-col md:flex-row py-6">
+        <div class="flex-1 mb-6 text-black">
+            <a class="no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="/previews/pr-101/">
+                <img src="/previews/pr-101/assets/img/openQSE-logo.png" style="max-height: 1em; float: left" id="logo" />
+                <span style="padding-left: 0.5em; font-size: .6em; vertical-align: top;" id="logo-text">openQSE</span>
+            </a>
+            <p class="text-gray-500 text-sm mt-2">
+                &copy;2026 openQSE Initiative
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    var scrollpos = window.scrollY;
+    var header = document.getElementById("header");
+    var navcontent = document.getElementById("nav-content");
+    var logo = document.getElementById("logo");
+    var toToggle = document.querySelectorAll(".toggleColour");
+
+    document.addEventListener('scroll', function () {
+        scrollpos = window.scrollY;
+
+        if (scrollpos > 10) {
+            header.classList.add("bg-white");
+            header.classList.add("text-gray-800");
+            header.classList.remove("text-white");
+            for (var i = 0; i < toToggle.length; i++) {
+                toToggle[i].classList.add("text-gray-800");
+                toToggle[i].classList.remove("text-white");
+            }
+            header.classList.add("shadow");
+            navcontent.classList.remove("bg-gray-100");
+            navcontent.classList.add("bg-white");
+        } else {
+            header.classList.remove("bg-white");
+            header.classList.remove("text-gray-800");
+            header.classList.add("text-white");
+            for (var i = 0; i < toToggle.length; i++) {
+                toToggle[i].classList.add("text-white");
+                toToggle[i].classList.remove("text-gray-800");
+            }
+            header.classList.remove("shadow");
+            navcontent.classList.remove("bg-white");
+            navcontent.classList.add("bg-gray-100");
+        }
+    });
+</script>
+
+<script>
+    var navMenuDiv = document.getElementById("nav-content");
+    var navMenu = document.getElementById("nav-toggle");
+
+    document.onclick = check;
+
+    function check(e) {
+        var target = (e && e.target) || (event && event.srcElement);
+
+        if (!checkParent(target, navMenuDiv)) {
+            if (checkParent(target, navMenu)) {
+                if (navMenuDiv.classList.contains("hidden")) {
+                    navMenuDiv.classList.remove("hidden");
+                } else {
+                    navMenuDiv.classList.add("hidden");
+                }
+            } else {
+                navMenuDiv.classList.add("hidden");
+            }
+        }
+    }
+
+    function checkParent(t, elm) {
+        while (t.parentNode) {
+            if (t == elm) {
+                return true;
+            }
+            t = t.parentNode;
+        }
+        return false;
+    }
+</script>
+
+    </footer>
+
+</body>
+
+</html>
