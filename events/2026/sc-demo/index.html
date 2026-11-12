@@ -158,6 +158,16 @@ document.addEventListener('click', function() {
   font-weight: 600;
   color: #374151;
 }
+
+.resource-table td:first-child {
+  width: 16rem;
+  white-space: normal;
+}
+
+.contributors-table td:first-child {
+  width: 15rem;
+  white-space: normal;
+}
 </style>
 
 <h2>Overview</h2>
@@ -289,9 +299,110 @@ support real quantum-HPC applications.</p>
   </tbody>
 </table>
 
-<h2>Resources</h2>
+<h2>Demo Contributors</h2>
 
-<table class="agenda-table">
+<table class="agenda-table contributors-table">
+  <thead>
+    <tr>
+      <th>Company / organization</th>
+      <th>Contributor name(s)</th>
+      <th>SC26 booth(s)</th>
+      <th>Area of contribution</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AMD</td>
+      <td>Yasuko Eckert</td>
+      <td>3028; 6721ES; 6821ES; S208</td>
+      <td>Hardware testbeds</td>
+    </tr>
+    <tr>
+      <td>Barcelona Supercomputing Center (BSC)</td>
+      <td>Mar Tejedor</td>
+      <td>4259</td>
+      <td>PyCOMPS integration</td>
+    </tr>
+    <tr>
+      <td>Dell Technologies</td>
+      <td>Smriti Bajaj</td>
+      <td>2223</td>
+      <td>Dell deployment and integration with the on-premises Qblox cluster</td>
+    </tr>
+    <tr>
+      <td>HPE</td>
+      <td>Andy Stone; Michael Ferguson; Aaron Lott</td>
+      <td>3017; S109</td>
+      <td>Compiler integration</td>
+    </tr>
+    <tr>
+      <td>IBM</td>
+      <td>Shweta Salaria; Yoonho Park; Claudio Carvalho</td>
+      <td>1806</td>
+      <td>Qiskit; Prefect; SQD workflow; QRMI</td>
+    </tr>
+    <tr>
+      <td>Lawrence Livermore National Laboratory (LLNL)</td>
+      <td>Vanessa Sochat</td>
+      <td>4829 (DOE Booth)</td>
+      <td>Flux integration</td>
+    </tr>
+    <tr>
+      <td>Munich Quantum Software Company (MQSC)</td>
+      <td>Lukas Burgholzer; Daniel Haag</td>
+      <td>&mdash;</td>
+      <td>QDMI; MQT Core</td>
+    </tr>
+    <tr>
+      <td>Munich Quantum Valley (MQV)</td>
+      <td>Jorge Echavarria; Marco De Pascale</td>
+      <td>4254</td>
+      <td>Munich Quantum Valley integration</td>
+    </tr>
+    <tr>
+      <td>Oak Ridge National Laboratory (ORNL)</td>
+      <td>Doug Oucharek; Amir Shehata</td>
+      <td>4829 (DOE Booth)</td>
+      <td><code>qfw-slurm</code>; <code>qhw-admission</code>; <code>qhw-scheduling</code>; <code>qhw-data</code>; QFw-SLURM-Cluster</td>
+    </tr>
+    <tr>
+      <td>Qblox</td>
+      <td>Andrea Delgado</td>
+      <td>5639</td>
+      <td>Qblox integration and digital twin</td>
+    </tr>
+    <tr>
+      <td>Quantinuum</td>
+      <td>Philipp Seitz; John Children</td>
+      <td>4838</td>
+      <td>Tierkreis</td>
+    </tr>
+    <tr>
+      <td>Riverlane</td>
+      <td>Elise Jennings</td>
+      <td>&mdash;</td>
+      <td>Deltaflow integration</td>
+    </tr>
+    <tr>
+      <td>University of Turin</td>
+      <td>Doriana Medic; Francesco Medina</td>
+      <td>&mdash;</td>
+      <td>Streamflow integration</td>
+    </tr>
+    <tr>
+      <td>Xanadu</td>
+      <td>Joseph Lee</td>
+      <td>&mdash;</td>
+      <td>Backline integration</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><small>&mdash; indicates that no dedicated SC26 booth has been identified.</small></p>
+
+<h2>DOE Demo Resources</h2>
+
+<table class="agenda-table resource-table">
   <thead>
     <tr>
       <th>Resource</th>
@@ -322,6 +433,26 @@ support real quantum-HPC applications.</p>
     <tr>
       <td><a href="https://github.com/openQSE/QFw-SLURM-Cluster/blob/main/docs/backline.md">Backline QEC integration</a></td>
       <td>Configure the Backline quantum resource manager to reserve a controller, QEC decoder coprocessor, and transport. Applications use the assigned resources to execute PennyLane/Catalyst programs directly.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/openQSE/QFw/blob/main/docs/recipes/run-against-aws-braket.md">Run QFw against Amazon Braket</a></td>
+      <td>Set up an Amazon Braket account, configure the service's AWS identity and device file, perform free checks, and run the first circuits through QFw.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/openQSE/QFw-SLURM-Cluster/blob/main/docs/long-running-qpmd-deployment.md">Site services with the AWS QPM</a></td>
+      <td>Deploy long-running site services, including the AWS quantum resource manager (QPM), with <code>aws-sv1</code> and <code>aws-cepheus</code> exposed as site devices.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/munich-quantum-software/amazon-braket-qdmi-device">Amazon Braket QDMI library</a></td>
+      <td>QDMI device library for Amazon Braket, maintained by munich-quantum-software.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/openQSE/chemistry_he">Helium chemistry workflow</a></td>
+      <td>He4 fragment molecular orbital (FMO) calculations and the paired unitary coupled cluster doubles (pUCCD) variational quantum eigensolver (VQE). The Braket stages are a pending patch.</td>
+    </tr>
+    <tr>
+      <td><a href="https://openqse.atlassian.net/wiki/spaces/Collaborat/pages/235896836">DOE demo scenario diagram</a></td>
+      <td>Scenario diagram in the Workflow Diagrams folder of openQSE Confluence. Sign-in is required.</td>
     </tr>
   </tbody>
 </table>
