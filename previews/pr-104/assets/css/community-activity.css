@@ -1,4 +1,4 @@
-/* Homepage community module. Keep its styles independent of Tailwind's build. */
+/* Shared community module. Keep its styles independent of Tailwind's build. */
 .community-activity {
   --community-ink: #102c4f;
   --community-blue: #1864bb;
