@@ -9,6 +9,7 @@ Thumbs.db
 ehthumbs.db
 
 Gemfile.lock
+__pycache__/
 
 .jekyll-cache/*
 

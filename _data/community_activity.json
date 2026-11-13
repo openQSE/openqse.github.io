@@ -1,0 +1,462 @@
+{
+  "schema_version": 1,
+  "config_sha256": "97fa2530d5815b992c065aa7738e37d18fd734b564076639bb313c34fbcedacc",
+  "generated_at": "2026-11-13T18:01:10Z",
+  "since": "2026-07-01T00:00:00Z",
+  "repositories": [
+    {
+      "name": "QFw",
+      "full_name": "openQSE/QFw",
+      "url": "https://github.com/openQSE/QFw",
+      "branch": "main",
+      "description": "Quantum workflow infrastructure",
+      "commits": 722,
+      "contributors": 13,
+      "commits_last_7_days": 113,
+      "activity": [
+        {
+          "count": 16,
+          "height": 7
+        },
+        {
+          "count": 17,
+          "height": 7
+        },
+        {
+          "count": 60,
+          "height": 19
+        },
+        {
+          "count": 39,
+          "height": 13
+        },
+        {
+          "count": 52,
+          "height": 17
+        },
+        {
+          "count": 47,
+          "height": 15
+        },
+        {
+          "count": 17,
+          "height": 7
+        },
+        {
+          "count": 113,
+          "height": 34
+        }
+      ]
+    },
+    {
+      "name": "DEFw",
+      "full_name": "openQSE/DEFw",
+      "url": "https://github.com/openQSE/DEFw",
+      "branch": "master",
+      "description": "Distributed execution framework",
+      "commits": 80,
+      "contributors": 2,
+      "commits_last_7_days": 0,
+      "activity": [
+        {
+          "count": 2,
+          "height": 18
+        },
+        {
+          "count": 4,
+          "height": 34
+        },
+        {
+          "count": 1,
+          "height": 10
+        },
+        {
+          "count": 0,
+          "height": 2
+        },
+        {
+          "count": 1,
+          "height": 10
+        },
+        {
+          "count": 0,
+          "height": 2
+        },
+        {
+          "count": 4,
+          "height": 34
+        },
+        {
+          "count": 0,
+          "height": 2
+        }
+      ]
+    },
+    {
+      "name": "QFw-SLURM-Cluster",
+      "full_name": "openQSE/QFw-SLURM-Cluster",
+      "url": "https://github.com/openQSE/QFw-SLURM-Cluster",
+      "branch": "main",
+      "description": "Workflows, deployment & integration",
+      "commits": 309,
+      "contributors": 13,
+      "commits_last_7_days": 29,
+      "activity": [
+        {
+          "count": 15,
+          "height": 13
+        },
+        {
+          "count": 28,
+          "height": 22
+        },
+        {
+          "count": 26,
+          "height": 21
+        },
+        {
+          "count": 19,
+          "height": 16
+        },
+        {
+          "count": 22,
+          "height": 18
+        },
+        {
+          "count": 44,
+          "height": 34
+        },
+        {
+          "count": 31,
+          "height": 25
+        },
+        {
+          "count": 29,
+          "height": 23
+        }
+      ]
+    },
+    {
+      "name": "qfw-slurm",
+      "full_name": "openQSE/qfw-slurm",
+      "url": "https://github.com/openQSE/qfw-slurm",
+      "branch": "main",
+      "description": "Quantum resources meet Slurm",
+      "commits": 67,
+      "contributors": 2,
+      "commits_last_7_days": 0,
+      "activity": [
+        {
+          "count": 0,
+          "height": 2
+        },
+        {
+          "count": 1,
+          "height": 4
+        },
+        {
+          "count": 2,
+          "height": 5
+        },
+        {
+          "count": 0,
+          "height": 2
+        },
+        {
+          "count": 2,
+          "height": 5
+        },
+        {
+          "count": 19,
+          "height": 34
+        },
+        {
+          "count": 0,
+          "height": 2
+        },
+        {
+          "count": 0,
+          "height": 2
+        }
+      ]
+    },
+    {
+      "name": "qhw-admission",
+      "full_name": "openQSE/qhw-admission",
+      "url": "https://github.com/openQSE/qhw-admission",
+      "branch": "main",
+      "description": "Quantum workload admission",
+      "commits": 24,
+      "contributors": 1,
+      "commits_last_7_days": 0,
+      "activity": [
+        {
+          "count": 0,
+          "height": 2
+        },
+        {
+          "count": 0,
+          "height": 2
+        },
+        {
+          "count": 0,
+          "height": 2
+        },
+        {
+          "count": 0,
+          "height": 2
+        },
+        {
+          "count": 0,
+          "height": 2
+        },
+        {
+          "count": 1,
+          "height": 34
+        },
+        {
+          "count": 0,
+          "height": 2
+        },
+        {
+          "count": 0,
+          "height": 2
+        }
+      ]
+    },
+    {
+      "name": "qhw-scheduler",
+      "full_name": "openQSE/qhw-scheduler",
+      "url": "https://github.com/openQSE/qhw-scheduler",
+      "branch": "main",
+      "description": "Quantum workload scheduling",
+      "commits": 45,
+      "contributors": 1,
+      "commits_last_7_days": 0,
+      "activity": [
+        {
+          "count": 0,
+          "height": 2
+        },
+        {
+          "count": 0,
+          "height": 2
+        },
+        {
+          "count": 0,
+          "height": 2
+        },
+        {
+          "count": 0,
+          "height": 2
+        },
+        {
+          "count": 0,
+          "height": 2
+        },
+        {
+          "count": 0,
+          "height": 2
+        },
+        {
+          "count": 0,
+          "height": 2
+        },
+        {
+          "count": 0,
+          "height": 2
+        }
+      ]
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Amir Shehata",
+      "login": "amirshehataornl",
+      "url": "https://github.com/amirshehataornl",
+      "avatar_url": "https://github.com/amirshehataornl.png?size=80",
+      "institution": null,
+      "commits": 515,
+      "repositories": [
+        "DEFw",
+        "QFw",
+        "QFw-SLURM-Cluster",
+        "qfw-slurm",
+        "qhw-admission",
+        "qhw-scheduler"
+      ]
+    },
+    {
+      "name": "Doug Oucharek",
+      "login": "DougSO",
+      "url": "https://github.com/DougSO",
+      "avatar_url": "https://github.com/DougSO.png?size=80",
+      "institution": null,
+      "commits": 458,
+      "repositories": [
+        "DEFw",
+        "QFw",
+        "QFw-SLURM-Cluster",
+        "qfw-slurm"
+      ]
+    },
+    {
+      "name": "Abdur Rahman Hatim",
+      "login": "hat-im",
+      "url": "https://github.com/hat-im",
+      "avatar_url": "https://github.com/hat-im.png?size=80",
+      "institution": null,
+      "commits": 104,
+      "repositories": [
+        "QFw",
+        "QFw-SLURM-Cluster"
+      ]
+    },
+    {
+      "name": "Daniel Haag",
+      "login": "denialhaag",
+      "url": "https://github.com/denialhaag",
+      "avatar_url": "https://github.com/denialhaag.png?size=80",
+      "institution": null,
+      "commits": 40,
+      "repositories": [
+        "QFw",
+        "QFw-SLURM-Cluster"
+      ]
+    },
+    {
+      "name": "Andy Stone",
+      "login": "stonea",
+      "url": "https://github.com/stonea",
+      "avatar_url": "https://github.com/stonea.png?size=80",
+      "institution": null,
+      "commits": 31,
+      "repositories": [
+        "QFw",
+        "QFw-SLURM-Cluster"
+      ]
+    },
+    {
+      "name": "Claudio Carvalho",
+      "login": "cclaudio",
+      "url": "https://github.com/cclaudio",
+      "avatar_url": "https://github.com/cclaudio.png?size=80",
+      "institution": null,
+      "commits": 23,
+      "repositories": [
+        "QFw",
+        "QFw-SLURM-Cluster"
+      ]
+    },
+    {
+      "name": "Mar Tejedor",
+      "login": "martejedor",
+      "url": "https://github.com/martejedor",
+      "avatar_url": "https://github.com/martejedor.png?size=80",
+      "institution": null,
+      "commits": 17,
+      "repositories": [
+        "QFw",
+        "QFw-SLURM-Cluster"
+      ]
+    },
+    {
+      "name": "Shweta Salaria",
+      "login": "shwetasalaria",
+      "url": "https://github.com/shwetasalaria",
+      "avatar_url": "https://github.com/shwetasalaria.png?size=80",
+      "institution": null,
+      "commits": 17,
+      "repositories": [
+        "QFw",
+        "QFw-SLURM-Cluster"
+      ]
+    },
+    {
+      "name": "Joseph Lee",
+      "login": "josephleekl",
+      "url": "https://github.com/josephleekl",
+      "avatar_url": "https://github.com/josephleekl.png?size=80",
+      "institution": null,
+      "commits": 15,
+      "repositories": [
+        "QFw",
+        "QFw-SLURM-Cluster"
+      ]
+    },
+    {
+      "name": "Aleksander Wennersteen",
+      "login": "awennersteen",
+      "url": "https://github.com/awennersteen",
+      "avatar_url": "https://github.com/awennersteen.png?size=80",
+      "institution": null,
+      "commits": 14,
+      "repositories": [
+        "QFw",
+        "QFw-SLURM-Cluster"
+      ]
+    },
+    {
+      "name": "Francesco Medina",
+      "login": "francescomedina",
+      "url": "https://github.com/francescomedina",
+      "avatar_url": "https://github.com/francescomedina.png?size=80",
+      "institution": null,
+      "commits": 5,
+      "repositories": [
+        "QFw-SLURM-Cluster"
+      ]
+    },
+    {
+      "name": "Marcel Walter",
+      "login": "marcelwa",
+      "url": "https://github.com/marcelwa",
+      "avatar_url": "https://github.com/marcelwa.png?size=80",
+      "institution": null,
+      "commits": 5,
+      "repositories": [
+        "QFw",
+        "QFw-SLURM-Cluster"
+      ]
+    },
+    {
+      "name": "Lukas Burgholzer",
+      "login": "burgholzer",
+      "url": "https://github.com/burgholzer",
+      "avatar_url": "https://github.com/burgholzer.png?size=80",
+      "institution": null,
+      "commits": 2,
+      "repositories": [
+        "QFw"
+      ]
+    },
+    {
+      "name": "Alain Roy",
+      "login": "AlainRoy",
+      "url": "https://github.com/AlainRoy",
+      "avatar_url": "https://github.com/AlainRoy.png?size=80",
+      "institution": null,
+      "commits": 1,
+      "repositories": [
+        "QFw-SLURM-Cluster"
+      ]
+    },
+    {
+      "name": "ORNL Quantum Testbed",
+      "login": null,
+      "url": null,
+      "avatar_url": null,
+      "institution": null,
+      "commits": 1,
+      "repositories": [
+        "QFw"
+      ]
+    }
+  ],
+  "summary": {
+    "commits": 1247,
+    "contributors": 15,
+    "repositories": 6,
+    "commits_last_7_days": 142
+  }
+}

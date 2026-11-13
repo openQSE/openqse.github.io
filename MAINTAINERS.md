@@ -50,6 +50,14 @@ This is the most common "gotcha" when maintaining this site. Unlike many Jekyll 
 
 ## Common Tasks
 
+### Homepage community activity
+
+The homepage includes daily GitHub activity for the configured openQSE
+repositories. Edit `_data/community_activity_config.json` to change the date
+window, repositories, contributor aliases or curated institution credits.
+See [the community activity guide](docs/community-activity.md) for refresh,
+counting, preview and verification instructions.
+
 ### Adding a New Page
 
 1. Create your page file (e.g., `about.html` or `about.md`) in the root directory

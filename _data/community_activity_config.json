@@ -1,0 +1,36 @@
+{
+  "since": "2026-07-01T00:00:00Z",
+  "include_merge_commits": true,
+  "exclude_bot_commits": false,
+  "repositories": [
+    {"repository": "openQSE/QFw", "branch": "main", "description": "Quantum workflow infrastructure"},
+    {"repository": "openQSE/DEFw", "branch": "master", "description": "Distributed execution framework"},
+    {"repository": "openQSE/QFw-SLURM-Cluster", "branch": "main", "description": "Workflows, deployment & integration"},
+    {"repository": "openQSE/qfw-slurm", "branch": "main", "description": "Quantum resources meet Slurm"},
+    {"repository": "openQSE/qhw-admission", "branch": "main", "description": "Quantum workload admission"},
+    {"repository": "openQSE/qhw-scheduler", "branch": "main", "description": "Quantum workload scheduling"}
+  ],
+  "people": {
+    "github:copilot": {"exclude": true},
+    "github:burgholzer": {
+      "name": "Lukas Burgholzer",
+      "aliases": ["burgholzer@me.com"]
+    }
+  },
+  "institutions": [
+    "Oak Ridge National Laboratory",
+    "Lawrence Livermore National Laboratory",
+    "Barcelona Supercomputing Center",
+    "Technical University of Munich",
+    "Indian Institute of Science",
+    "University of Turin",
+    "IBM",
+    "HPE",
+    "Munich Quantum Software Company",
+    "Pasqal",
+    "Xanadu",
+    "IonQ",
+    "Quantinuum",
+    "Qblox"
+  ]
+}

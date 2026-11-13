@@ -8,6 +8,11 @@ on:
         type: string
         default: ""
         description: "Base URL for Jekyll build"
+      refresh_community_activity:
+        required: false
+        type: boolean
+        default: false
+        description: "Refresh public GitHub statistics before the production build"
 
 jobs:
   build:
@@ -15,6 +20,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Test community activity collector
+        run: python3 -m unittest discover -s tests -p 'test_community_activity.py' -v
+
+      - name: Refresh community activity
+        if: inputs.refresh_community_activity
+        run: python3 scripts/update_community_activity.py --allow-stale
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+      - name: Validate community activity snapshot
+        run: python3 scripts/update_community_activity.py --check
 
       # IMPORTANT: If you change ruby-version here, update across all workflows
       - name: Setup Ruby

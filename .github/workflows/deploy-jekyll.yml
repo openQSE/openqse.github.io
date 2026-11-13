@@ -9,6 +9,10 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+  # UTC, away from the top of the hour. Refresh statistics without source commits.
+  schedule:
+    - cron: "23 8 * * *"
+
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: write
@@ -25,6 +29,7 @@ jobs:
     uses: ./.github/workflows/build-jekyll.yml
     with:
       baseurl: ""
+      refresh_community_activity: true
 
   # Deploy to production
   deploy:
