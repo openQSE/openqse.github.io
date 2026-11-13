@@ -1,6 +1,6 @@
-# Homepage community activity
+# Community activity widget
 
-The homepage's community section is rendered by Jekyll from a JSON snapshot.
+The shared community section is rendered by Jekyll from a JSON snapshot.
 It works without JavaScript, browser API calls or a separate service. Only the
 website repository changes; the six watched repositories are read-only inputs.
 
@@ -83,10 +83,13 @@ ending today. Recent counts use seven UTC calendar days including today.
 ## Presentation
 
 The include `_includes/community-activity.html` owns the section, and its CSS is
-scoped in `assets/css/community-activity.css`. The `community_activity: true`
-front matter flag on the homepage loads both. Jekyll's `relative_url` filter
-keeps the stylesheet working under PR preview paths. Contributor details use
-native disclosure elements, with keyboard focus and reduced-motion styles.
+scoped in `assets/css/community-activity.css`. Set the
+`community_activity: true` front matter flag on every page that renders the
+widget so the shared stylesheet loads. The homepage layout includes the widget
+automatically; other pages can place `{% include community-activity.html %}` at
+the desired location. Jekyll's `relative_url` filter keeps the stylesheet
+working under PR preview paths. Contributor details use native disclosure
+elements, with keyboard focus and reduced-motion styles.
 
 The initial committed snapshot was collected from GitHub on November 13, 2026;
 its numbers are real, rather than placeholders. The collector, configuration,
