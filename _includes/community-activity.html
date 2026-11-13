@@ -1,0 +1,99 @@
+{% assign activity = site.data.community_activity %}
+{% assign activity_config = site.data.community_activity_config %}
+{% if activity %}
+<section class="community-activity" aria-labelledby="community-activity-title">
+  <div class="community-activity__inner">
+    <div class="community-activity__heading">
+      <div>
+        <p class="community-activity__eyebrow">An ecosystem, built together</p>
+        <h2 id="community-activity-title">Open software.<br><span>Shared momentum.</span></h2>
+        <p class="community-activity__intro">A growing body of work from the people connecting quantum computing and HPC. Every contribution moves it forward.</p>
+      </div>
+      <a class="community-activity__link" href="https://github.com/openQSE">Explore the code <span aria-hidden="true">↗</span></a>
+    </div>
+
+    <div class="community-activity__overview">
+      <div class="community-activity__total">
+        <svg class="community-activity__orbit" viewBox="0 0 240 200" aria-hidden="true" focusable="false">
+          <g fill="none" stroke="currentColor">
+            <ellipse cx="120" cy="100" rx="102" ry="42" transform="rotate(-35 120 100)"/>
+            <ellipse cx="120" cy="100" rx="102" ry="42" transform="rotate(35 120 100)"/>
+            <ellipse cx="120" cy="100" rx="102" ry="42" transform="rotate(90 120 100)"/>
+          </g>
+          <g fill="currentColor"><circle cx="42" cy="134" r="5"/><circle cx="151" cy="32" r="5"/><circle cx="194" cy="141" r="5"/></g>
+        </svg>
+        <p class="community-activity__eyebrow">Community work</p>
+        <p class="community-activity__big-number">{{ activity.summary.commits }}</p>
+        <p class="community-activity__total-label">commits on main branches</p>
+        <p class="community-activity__period">Since {{ activity.since | date: '%B %-d, %Y' }}</p>
+        <div class="community-activity__total-footer">
+          <span><strong>{{ activity.summary.contributors }}</strong> contributors</span>
+          <span><strong>{{ activity.summary.repositories }}</strong> repositories</span>
+        </div>
+      </div>
+
+      <div class="community-activity__projects">
+        {% for repository in activity.repositories %}
+        <a class="community-activity__project" href="{{ repository.url | escape }}" aria-label="{{ repository.name | escape }}: {{ repository.commits }} commits, {{ repository.contributors }} contributors">
+          <div class="community-activity__project-top"><span class="community-activity__project-index">0{{ forloop.index }}</span><span aria-hidden="true">↗</span></div>
+          <h3>{{ repository.name | escape }}</h3>
+          <p class="community-activity__project-description">{{ repository.description | escape }}</p>
+          <div class="community-activity__project-stats">
+            <div><strong>{{ repository.commits }}</strong><span>commits</span></div>
+            <svg class="community-activity__sparkline" viewBox="0 0 94 36" aria-hidden="true" focusable="false">
+              {% for week in repository.activity %}
+              {% assign bar_x = forloop.index0 | times: 12 %}
+              {% assign bar_y = 35 | minus: week.height %}
+              <rect x="{{ bar_x }}" y="{{ bar_y }}" width="9" height="{{ week.height }}" rx="2"/>
+              {% endfor %}
+            </svg>
+          </div>
+          <p class="community-activity__project-caption">{{ repository.contributors }} contributors <span aria-hidden="true">·</span> {{ repository.commits_last_7_days }} commits in 7 days</p>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="community-activity__people">
+      <div>
+        <p class="community-activity__eyebrow">The people behind the progress</p>
+        <h3>Many perspectives. One open ecosystem.</h3>
+      </div>
+      <div class="community-activity__avatars" aria-label="Some of our contributors">
+        {% for person in activity.contributors limit: 9 %}
+        {% if person.url %}<a href="{{ person.url | escape }}" title="{{ person.name | escape }}">{% else %}<span title="{{ person.name | escape }}">{% endif %}
+          {% if person.avatar_url %}<img src="{{ person.avatar_url | escape }}" alt="{{ person.name | escape }}" loading="lazy" width="44" height="44">{% else %}<span class="community-activity__initial" aria-label="{{ person.name | escape }}">{{ person.name | slice: 0, 1 | upcase | escape }}</span>{% endif %}
+        {% if person.url %}</a>{% else %}</span>{% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <details class="community-activity__contributors">
+      <summary>Meet the contributors <span>{{ activity.summary.contributors }}</span><span class="community-activity__chevron" aria-hidden="true">+</span></summary>
+      <ul>
+        {% for person in activity.contributors %}
+        <li>
+          {% if person.url %}<a href="{{ person.url | escape }}">{{ person.name | escape }}</a>{% else %}<span>{{ person.name | escape }}</span>{% endif %}
+          <small>{{ person.commits }} commit credits{% if person.institution %} · {{ person.institution | escape }}{% endif %}</small>
+          <small>{{ person.repositories | join: ', ' | escape }}</small>
+        </li>
+        {% endfor %}
+      </ul>
+    </details>
+
+    <div class="community-activity__institutions">
+      <p class="community-activity__eyebrow">With contributions from across the community</p>
+      <ul>{% for institution in activity_config.institutions %}<li>{{ institution | escape }}</li>{% endfor %}</ul>
+    </div>
+
+    <div class="community-activity__footnote">
+      <p><span class="community-activity__status-dot" aria-hidden="true"></span>Updated {{ activity.generated_at | date: '%b %-d, %Y at %H:%M %Z' }} <span aria-hidden="true">·</span> Refreshed daily</p>
+      <details>
+        <summary>How we count</summary>
+        <p>Commits reachable from each configured main branch since {{ activity.since | date: '%B %-d, %Y' }}, using the commit date. DEFw uses its <code>master</code> branch. {% if activity_config.include_merge_commits %}Merge commits are included.{% else %}Merge commits are excluded.{% endif %} {% if activity_config.exclude_bot_commits %}Bot-authored commits are excluded.{% else %}Automated commits are included in the totals.{% endif %} Charts show eight weeks of activity in seven-day groups. The last-seven-days count includes today (UTC).</p>
+        <p>People are identified from commit authors and co-author credits; bot accounts are omitted from the people list. A shared commit can credit more than one person. Unlinked identities may appear separately until reconciled. Repository totals can overlap when histories share commits. Institution acknowledgements are curated from our community credits, rather than inferred from email addresses or tied to this date window.</p>
+      </details>
+    </div>
+  </div>
+</section>
+{% endif %}

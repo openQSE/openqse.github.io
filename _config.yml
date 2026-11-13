@@ -155,6 +155,8 @@ exclude:
   - workshops/QCE2026/README.md
   - CLAUDE.md
   - docs/
+  - scripts/
+  - tests/
   - _includes.bak
   - _layouts.bak
   - vendor/
