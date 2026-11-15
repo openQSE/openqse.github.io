@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"jcontent="width=device-width, initial-scale=1.0">
+    <title>OpenQSE Meeting Info</title>
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: left;
+            margin-top: 50px;
+        }
+        form {
+            display: inline-block;
+            text-align: left;
+            margin: auto;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+        }
+        .message {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>OpenQSE Meeting Info</h1>
+        <p>
+        Complete the CAPTCHA then submit the form to get the meeting links.
+        </p>
+        <form id="captcha-form">
+            <div class="h-captcha" data-sitekey="bdd4df64-c40e-4898-8fea-dcbe75d4993c"></div>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="message" id="message"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById('captcha-form');
+        const messageDiv = document.getElementById('message');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevent traditional form submission
+
+            // Simulate CAPTCHA validation
+            const hCaptchaResponse = hcaptcha.getResponse();
+            if (hCaptchaResponse) {
+                // Generate a unique token
+                const token = btoa(Date.now() + Math.random().toString()).substring(0, 16);
+
+                // Redirect to success.html with token as a query parameter
+                window.location.href = `success.html?auth=${token}`;
+            } else {
+                // Display an error if CAPTCHA isn't completed
+                messageDiv.textContent = "Please complete the CAPTCHA before proceeding.";
+                messageDiv.style.color = "red";
+            }
+        });
+    </script>
+</body>
+</html>
+
