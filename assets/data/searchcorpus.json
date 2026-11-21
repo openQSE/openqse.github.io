@@ -18,18 +18,10 @@
 }, 
  
 { 
-"title"    : "OpenQSE: An Open Ecosystem for Quantum-HPC Software", 
-"desc"     : "OpenQSE: An Open Ecosystem for Quantum-HPC Software", 
+"title"    : "SC26 BoF: OpenQSE: Building an Open Quantum-HPC Software Ecosystem", 
+"desc"     : "SC26 BoF: OpenQSE: Building an Open Quantum-HPC Software Ecosystem", 
 "category" : "page", 
-"url"      : "/events/2026/qce-bof/", 
-"date"     : "January 1, 1970" 
-}, 
- 
-{ 
-"title"    : "SC26 Panel: Beyond the Add-On: Absorbing Quantum Into the HPC Ecosystem", 
-"desc"     : "SC26 Panel: Beyond the Add-On: Absorbing Quantum Into the HPC Ecosystem", 
-"category" : "page", 
-"url"      : "/events/2026/sc-panel/", 
+"url"      : "/events/2026/sc-bof/", 
 "date"     : "January 1, 1970" 
 }, 
  
@@ -42,18 +34,26 @@
 }, 
  
 { 
-"title"    : "SC26 BoF: OpenQSE: Building an Open Quantum-HPC Software Ecosystem", 
-"desc"     : "SC26 BoF: OpenQSE: Building an Open Quantum-HPC Software Ecosystem", 
-"category" : "page", 
-"url"      : "/events/2026/sc-bof/", 
-"date"     : "January 1, 1970" 
-}, 
- 
-{ 
 "title"    : "openQSE: Co-Designing the Quantum Software Stack from Applications to Control Systems", 
 "desc"     : "openQSE: Co-Designing the Quantum Software Stack from Applications to Control Systems", 
 "category" : "page", 
 "url"      : "/events/2026/qce-workshop/", 
+"date"     : "January 1, 1970" 
+}, 
+ 
+{ 
+"title"    : "OpenQSE: An Open Ecosystem for Quantum-HPC Software", 
+"desc"     : "OpenQSE: An Open Ecosystem for Quantum-HPC Software", 
+"category" : "page", 
+"url"      : "/events/2026/qce-bof/", 
+"date"     : "January 1, 1970" 
+}, 
+ 
+{ 
+"title"    : "SC26 Panel: Beyond the Add-On: Absorbing Quantum Into the HPC Ecosystem", 
+"desc"     : "SC26 Panel: Beyond the Add-On: Absorbing Quantum Into the HPC Ecosystem", 
+"category" : "page", 
+"url"      : "/events/2026/sc-panel/", 
 "date"     : "January 1, 1970" 
 }, 
  
